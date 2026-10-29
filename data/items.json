@@ -201,6 +201,36 @@
     "full_text_read": false
   },
   {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quoting Ted Sanders",
+    "url": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
+    "summary_zh": "OpenAI 的 Ted Sanders 解释其模型命名：Luna、Terra、Sol、Astra 按模型规模排序，规模是不同模型表现差异的主要原因；版本号则反映发布顺序、与其他版本的关系和提升幅度。选型时可据此理解 OpenAI 各档模型的定位。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quoting Terk Terkowitz",
+    "url": "https://simonwillison.net/2026/Oct/28/terk-terkowitz/",
+    "summary_zh": "Amazon 工程管理层的内部更新提到：AI 工具帮不上忙时，应把情况记录下来作为发现分享，而不是当成失败。能说清 AI 在哪里不管用，被视为专业判断力的体现。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
     "date": "2026-10-27",
     "added": "2026-10-29",
     "source": "Anthropic News",
@@ -452,6 +482,39 @@
     "difficulty": "进阶",
     "relevance": 4,
     "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+    "url": "https://huggingface.co/papers/2610.37230",
+    "summary_zh": "针对 agent 服务的调度框架：现有系统判断会话时不考虑外部工具结果是否就绪，且靠启发式分配 GPU。TAO 综合工具就绪时间、随时间衰减的缓存复用收益和 token 占用给会话-节点打分，再用动态规划做调度，延迟最多降 26.8%、首 token 时间降 36.3%。适合自建 agent 推理服务时参考。",
+    "tags": [
+      "agent",
+      "inference",
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+    "url": "https://huggingface.co/papers/2610.35201",
+    "summary_zh": "为扩散语言模型的强化学习做 token 级信用分配：按每个 token 提交后对剩余掩码位置置信度的提升打分，用于选择训练时间步和加权学习信号。在 LLaDA-8B-Instruct 上 MATH500 最多提升 9.0 分。偏模型训练研究，了解即可。",
+    "tags": [
+      "reasoning",
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true
   },
   {
     "date": "2026-10-26",

@@ -6,7 +6,7 @@
 
 - [2026-10-29](digests/2026-10-29.md)
 
-## 全部资源（58 条）
+## 全部资源（62 条）
 
 | 日期 | 来源 | 类型 | 标题 | 摘要 | 标签 | 难度 | 相关度 |
 |---|---|---|---|---|---|---|---|
@@ -20,6 +20,8 @@
 | 2026-10-28 | Simon Willison | blog | [The October inflection point for vibe game development](https://simonwillison.net/2026/Oct/28/vibe-game-development/) | 作者认为 Claude Opus 5.5 已经能设计出真正好玩的游戏，并分享了四个 vibe coding 做的浏览器游戏。 | case-study | 入门 | 2 |
 | 2026-10-28 | Latent Space | blog | [[AINews] Anthropic ends Coding Interviews: "Hunger beats tenure"](https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/) | Anthropic 招聘经理表示已停止传统编程面试，因为 Claude 做这些题比候选人更好；建议初级工程师优先关注业务影响、快速做出可用原型、专注一个好想法。对理解 AI Engineer 岗位要求变化很有参考价值。（未读到正文） | career | 入门 | 4 |
 | 2026-10-28 | Latent Space | blog | [Why Agents Love Supabase](https://latent.space/p/supabase/) | Supabase 创始人谈如何做 agent 友好的后端：无 Docker 的本地运行时、放在 Git 里的声明式 schema、贴近数据库的计算，以及 agent 带来的注册增长。（未读到正文） | agent, infra | 进阶 | 3 |
+| 2026-10-28 | Simon Willison | blog | [Quoting Ted Sanders](https://simonwillison.net/2026/Oct/28/ted-sanders/) | OpenAI 的 Ted Sanders 解释其模型命名：Luna、Terra、Sol、Astra 按模型规模排序，规模是不同模型表现差异的主要原因；版本号则反映发布顺序、与其他版本的关系和提升幅度。选型时可据此理解 OpenAI 各档模型的定位。 | model-release | 入门 | 2 |
+| 2026-10-28 | Simon Willison | blog | [Quoting Terk Terkowitz](https://simonwillison.net/2026/Oct/28/terk-terkowitz/) | Amazon 工程管理层的内部更新提到：AI 工具帮不上忙时，应把情况记录下来作为发现分享，而不是当成失败。能说清 AI 在哪里不管用，被视为专业判断力的体现。 | career | 入门 | 2 |
 | 2026-10-27 | Anthropic News | blog | [Early progress on accelerating drug development with Claude](https://www.anthropic.com/research/early-progress-drug-development) | 与六家药物研发机构合作用 Claude 加速新药开发的早期成果。（未读到正文） | case-study | 入门 | 1 |
 | 2026-10-27 | OpenAI News | blog | [Retell uses OpenAI models to help power 100M monthly calls](https://openai.com/index/retell-ai) | 语音 agent 公司 Retell 的案例，GPT-6 Astra 在其语音 agent 基准上表现最好。（未读到正文） | agent, case-study | 入门 | 2 |
 | 2026-10-27 | Google DeepMind | blog | [Genie 4: A new generation of world simulation](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/) | 新一代世界模型 Genie 4，可实时生成高真实感的模拟环境。（未读到正文） | model-release, multimodal | 研究 | 1 |
@@ -33,6 +35,8 @@
 | 2026-10-27 | HF Daily Papers | paper | [VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation](https://huggingface.co/papers/2610.35864) | 评测多模态 agent 通过写代码生成视频的能力（仅根据标题）。（未读到正文） | agent, eval, multimodal | 研究 | 1 |
 | 2026-10-27 | LangChain Blog | blog | [How We Built Our Design Agent](https://www.langchain.com/blog/design-agent) | 在 Slack 里生成视频、图片和幻灯片的设计 agent，每个线程一个沙箱电脑。经验是把设计师的判断写进 skills、共享 wiki 和代码检查，模型变强后删掉硬编码规则；长任务由主 agent 当「幕僚长」调度异步子 agent，发布前需人工批准。 | agent, multi-agent, skills | 进阶 | 4 |
 | 2026-10-27 | Latent Space | blog | [How Anthropic ships Claude with Claude: Separating the Brain from the Hands](https://latent.space/p/opus55/) | 与 Anthropic 团队聊 Opus 5.5、Claude Platform 以及 agent 背后的工程设计（「把大脑和手分开」）。（未读到正文） | agent, architecture | 进阶 | 4 |
+| 2026-10-27 | HF Daily Papers | paper | [TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving](https://huggingface.co/papers/2610.37230) | 针对 agent 服务的调度框架：现有系统判断会话时不考虑外部工具结果是否就绪，且靠启发式分配 GPU。TAO 综合工具就绪时间、随时间衰减的缓存复用收益和 token 占用给会话-节点打分，再用动态规划做调度，延迟最多降 26.8%、首 token 时间降 36.3%。适合自建 agent 推理服务时参考。 | agent, inference, infra | 研究 | 3 |
+| 2026-10-27 | HF Daily Papers | paper | [DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models](https://huggingface.co/papers/2610.35201) | 为扩散语言模型的强化学习做 token 级信用分配：按每个 token 提交后对剩余掩码位置置信度的提升打分，用于选择训练时间步和加权学习信号。在 LLaDA-8B-Instruct 上 MATH500 最多提升 9.0 分。偏模型训练研究，了解即可。 | reasoning, fine-tuning | 研究 | 1 |
 | 2026-10-26 | OpenAI News | blog | [Introducing GPT-6.1 Terra](https://openai.com/index/introducing-gpt-6-1-terra) | OpenAI 发布中档模型 GPT-6.1 Terra，主打快速高效的视觉推理、精确的 computer use 和自然写作。API changelog 同步上线了模型页和提示词/迁移指南。（未读到正文） | model-release, tool-use, multimodal | 入门 | 4 |
 | 2026-10-26 | OpenAI News | blog | [How Ultrafast cut incident investigation from hours to minutes at OpenAI](https://openai.com/index/openai-cut-incident-investigation) | OpenAI 工程师如何用 Codex Ultrafast 把故障排查从几小时缩短到几分钟，也涉及安全分析和代码重构。（未读到正文） | agent, case-study | 入门 | 3 |
 | 2026-10-26 | OpenAI News | blog | [Greptile takes bug detection beyond code review with GPT-6 Astra](https://openai.com/index/greptile-code-review-codex-astra) | Greptile 用 GPT-6 Astra 测试用户流程、用 Codex 减少返工的代码审查 agent 案例。（未读到正文） | agent, case-study | 入门 | 2 |
