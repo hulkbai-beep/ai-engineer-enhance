@@ -39,9 +39,10 @@ def validate(item):
 
 
 def dedupe(items):
+    # Changelog entries often link the same docs page, so the title is part of the key.
     seen, out = set(), []
     for item in items:
-        key = norm_url(item["url"])
+        key = (norm_url(item["url"]), item["title"].strip())
         if key not in seen:
             seen.add(key)
             out.append(item)
@@ -52,10 +53,13 @@ def cell(text):
     return str(text).replace("|", "\\|").replace("\n", " ")
 
 
+def summary(item):
+    return item["summary_zh"] + ("（未读到正文）" if not item["full_text_read"] else "")
+
+
 def row(item):
-    summary = item["summary_zh"] + ("（未读到正文）" if not item["full_text_read"] else "")
     return (f"| {item['date']} | {cell(item['source'])} | {item['type']} "
-            f"| [{cell(item['title'])}]({item['url']}) | {cell(summary)} "
+            f"| [{cell(item['title'])}]({item['url']}) | {cell(summary(item))} "
             f"| {', '.join(item['tags'])} | {item['difficulty']} | {item['relevance']} |")
 
 
@@ -82,20 +86,21 @@ def skill_line(s, extra=""):
     return f"| [{cell(s['name'])}]({s['url']}) | {cell(s['repo'])} | {s['installs']:,} | {cell(s['desc_zh'])} |{extra}"
 
 
-def skill_section(current, previous, title):
-    """Markdown for a skill ranking: top 20 all-time, new entries, fastest growing."""
+def skill_section(current, previous, title, since=""):
+    """Markdown for a skill ranking: top 20 all-time, new entries, fastest growing (vs the `since` snapshot)."""
     head = "| Skill | 仓库 | 安装量 | 说明 |\n|---|---|---|---|"
     top = sorted(current.values(), key=lambda s: -s["installs"])[:20]
     lines = [f"## {title}", "", "### 最多使用（总安装量前 20）", "", head] + [skill_line(s) for s in top]
     if previous is None:
         lines += ["", "_还没有更早的快照，下次运行起才有「新上榜」和「增长最快」。_"]
         return lines
+    vs = f"（对比 {since}）" if since else ""
     new = sorted((s for k, s in current.items() if k not in previous), key=lambda s: -s["installs"])
-    lines += ["", "### 新上榜", ""]
+    lines += ["", f"### 新上榜{vs}", ""]
     lines += [head] + [skill_line(s) for s in new] if new else ["_没有新上榜的 skill。_"]
     growth = sorted(((s["installs"] - previous[k]["installs"], s) for k, s in current.items() if k in previous),
                     key=lambda x: -x[0])[:10]
-    lines += ["", "### 增长最快", "", "| Skill | 仓库 | 安装量 | 说明 | 增长 |", "|---|---|---|---|---|"]
+    lines += ["", f"### 增长最快{vs}", "", "| Skill | 仓库 | 安装量 | 说明 | 增长 |", "|---|---|---|---|---|"]
     lines += [skill_line(s, f" +{d:,} |") for d, s in growth]
     return lines
 
@@ -113,15 +118,16 @@ def render_digest(items, date, unread):
     must = [i for i in week if i["relevance"] >= 4][:5]
     if must:
         lines += ["## 本周必读", ""]
-        lines += [f"- **[{i['title']}]({i['url']})**（{i['source']}）：{i['summary_zh']}" for i in must] + [""]
+        lines += [f"- **[{i['title']}]({i['url']})**（{i['source']}）：{summary(i)}" for i in must] + [""]
     lines += ["## 本周新增", "", HEADER] + [row(i) for i in week] + [""]
     snap = SKILLS / f"{date.isoformat()}.json"
     if snap.exists():
         prev = snapshots_before(date)
-        lines += skill_section(load_snapshot(snap), load_snapshot(prev[-1]) if prev else None, "本周 Skill 榜") + [""]
+        lines += skill_section(load_snapshot(snap), load_snapshot(prev[-1]) if prev else None, "本周 Skill 榜",
+                               prev[-1].stem if prev else "") + [""]
         trending = json.loads(snap.read_text()).get("trending", [])
         if trending:
-            lines += ["### 24 小时热门（skills.sh Trending）", "", "| Skill | 仓库 | 24h 安装量 | 说明 |", "|---|---|---|---|"]
+            lines += ["### 近期热门（skills.sh Trending 榜）", "", "| Skill | 仓库 | 榜上安装量 | 说明 |", "|---|---|---|---|"]
             lines += [skill_line(s) for s in trending] + [""]
     unread_items = [i for i in week if not i["full_text_read"]]
     if unread or unread_items:
@@ -137,7 +143,7 @@ def render_month(date):
     prev = snapshots_before(month_start)
     lines = skill_section(load_snapshot(SKILLS / f"{date.isoformat()}.json"),
                           load_snapshot(prev[-1]) if prev else None,
-                          f"{date:%Y-%m} Skill 月榜")
+                          f"{date:%Y-%m} Skill 月榜", prev[-1].stem if prev else "")
     return "\n".join([f"# Skill 月榜 {date:%Y-%m}", ""] + lines) + "\n"
 
 

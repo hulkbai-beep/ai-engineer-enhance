@@ -130,13 +130,13 @@
     "type": "blog",
     "title": "Introducing the Document Parsing Protocol",
     "url": "https://www.llamaindex.ai/blog/introducing-the-document-parsing-protocol",
-    "summary_zh": "LlamaIndex 提出的文档解析协议，页面没有描述。",
+    "summary_zh": "LlamaIndex 提出的文档解析协议（DPP），定位为文档解析的「标准答案」：工作草案 0.1 共 140 条规则，覆盖文本、表格、表单、图表和示意图等，每条附示例页面和期望输出，发布在 parseprotocol.com 和 GitHub。对做 RAG 文档预处理的人有参考价值。",
     "tags": [
       "RAG"
     ],
     "difficulty": "进阶",
     "relevance": 3,
-    "full_text_read": false
+    "full_text_read": true
   },
   {
     "date": "2026-10-28",
@@ -229,6 +229,21 @@
     "difficulty": "入门",
     "relevance": 2,
     "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Meta AI",
+    "type": "blog",
+    "title": "How American Universities Are Using AI Models From Meta to Accelerate Medical and Scientific Breakthroughs",
+    "url": "https://research.meta.ai/blog/supporting-medical-scientific-research",
+    "summary_zh": "美国高校用 Meta 的模型做医学和科研的案例（仅根据标题）。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
   },
   {
     "date": "2026-10-27",
@@ -712,7 +727,7 @@
     "type": "paper",
     "title": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
     "url": "https://huggingface.co/papers/2610.34491",
-    "summary_zh": "测了不同 reasoning effort 档位在单次推理和长时程 agent 任务上的效果与成本：高档位常在低档位能解的题上失败，简单题成本最高可差 42 倍。从最低档开始、验证失败后再升档的策略，效果持平或更好且更省钱。",
+    "summary_zh": "测了不同 reasoning effort 档位在单次推理和长时程 agent 任务上的效果与成本：高档位常在低档位能解的题上失败，简单题成本最高可差 42 倍。从最低档开始、验证失败后再升档的策略，效果持平或更好，对多数闭源模型还更省钱。",
     "tags": [
       "agent",
       "reasoning",

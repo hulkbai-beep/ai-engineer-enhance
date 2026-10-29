@@ -41,6 +41,11 @@ class RenderTest(unittest.TestCase):
                             "--date", "2026-10-29")
         self.assertEqual([i["url"] for i in out], ["https://a.com/x", "https://b.com"])
 
+    def test_keeps_different_entries_that_share_a_docs_url(self):
+        out = self.run_main([item("https://docs.x/cli", title="CLI beta"), item("https://docs.x/cli", title="CLI GA")],
+                            "--date", "2026-10-29")
+        self.assertEqual([i["title"] for i in out], ["CLI beta", "CLI GA"])
+
     def test_rejects_missing_field_and_bad_relevance(self):
         bad = item("https://a.com")
         del bad["summary_zh"]
@@ -59,13 +64,23 @@ class RenderTest(unittest.TestCase):
 
     def test_digest_only_this_week_with_must_read_and_unread_sources(self):
         self.run_main([item("https://a.com", relevance=5, title="Hot"),
+                       item("https://c.com", relevance=4, title="Blurb", full_text_read=False),
                        item("https://old.com", added="2026-10-22", title="Old")],
                       "--date", "2026-10-29", "--unread", "Meta AI")
         digest = (render.DIGESTS / "2026-10-29.md").read_text()
         self.assertIn("本周必读", digest)
         self.assertIn("Hot", digest)
+        self.assertIn("- **[Blurb](https://c.com)**（OpenAI）：摘要（未读到正文）", digest)
         self.assertNotIn("Old", digest)
         self.assertIn("来源未读取：Meta AI", digest)
+
+    def test_digest_names_the_snapshot_it_compares_against(self):
+        (render.SKILLS / "2026-10-22.json").write_text(json.dumps(snapshot([("a", 100)])))
+        (render.SKILLS / "2026-10-29.json").write_text(json.dumps(snapshot([("a", 110)])))
+        self.run_main([], "--date", "2026-10-29")
+        digest = (render.DIGESTS / "2026-10-29.md").read_text()
+        self.assertIn("### 新上榜（对比 2026-10-22）", digest)
+        self.assertIn("### 增长最快（对比 2026-10-22）", digest)
 
     def test_skill_ranking_new_and_growth(self):
         (render.SKILLS / "2026-10-22.json").write_text(json.dumps(snapshot([("a", 100), ("b", 50)])))
@@ -85,7 +100,7 @@ class RenderTest(unittest.TestCase):
         (render.SKILLS / "2026-10-29.json").write_text(json.dumps(snap))
         self.run_main([], "--date", "2026-10-29")
         digest = (render.DIGESTS / "2026-10-29.md").read_text()
-        self.assertIn("24 小时热门", digest)
+        self.assertIn("近期热门（skills.sh Trending 榜）", digest)
         self.assertIn("[hot-one]", digest)
 
     def test_first_snapshot_has_no_comparison(self):

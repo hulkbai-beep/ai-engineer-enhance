@@ -6,7 +6,7 @@
 
 - [2026-10-29](digests/2026-10-29.md)
 
-## 全部资源（62 条）
+## 全部资源（63 条）
 
 | 日期 | 来源 | 类型 | 标题 | 摘要 | 标签 | 难度 | 相关度 |
 |---|---|---|---|---|---|---|---|
@@ -15,13 +15,14 @@
 | 2026-10-28 | Google DeepMind | blog | [Gemini 4 Carbon: Our next frontier model](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/) | Google 新一代前沿模型，主打长时程 agentic coding，内部可连续运行数天定位并修复大型代码库中的 bug，在 Artificial Analysis 智能指数 v5.0 排名第一，安全类基准也领先。目前只对部分安全防御者和合作伙伴开放，开发者 API 访问稍后推出；早期定价为每百万 token 输入 2 美元、输出 10 美元。 | model-release, agent | 入门 | 5 |
 | 2026-10-28 | LangChain Blog | blog | [Why aren't you building proactive agents yet?](https://www.langchain.com/blog/proactive-agents) | 主动型、常驻 agent 的核心其实就是定时任务（cron）：夜间整理长期记忆、目标检查、事件流分流、跟进提醒、编排 agent 定时唤醒自己检查子任务。实现上需要支持按任务设置时间、提示词、权限和随机抖动的调度服务，并把调度包装成 agent 可调用的工具。 | agent, tool-use | 进阶 | 5 |
 | 2026-10-28 | LangChain Blog | blog | [Building Evidence-Grounded Agent Memory with OpenWiki and Graphs](https://www.langchain.com/blog/building-agent-memory-openwiki-graphs) | 把 agent 记忆做成持久的「编译后的 wiki」，每条陈述绑定到源文件行的哈希，源变了只需复查受影响的部分。再把引用关系做成证据图，agent 用 locate/expand 工具导航，准确率比单用 wiki 高 27%。 | agent, memory, RAG | 进阶 | 4 |
-| 2026-10-28 | LlamaIndex Blog | blog | [Introducing the Document Parsing Protocol](https://www.llamaindex.ai/blog/introducing-the-document-parsing-protocol) | LlamaIndex 提出的文档解析协议，页面没有描述。（未读到正文） | RAG | 进阶 | 3 |
+| 2026-10-28 | LlamaIndex Blog | blog | [Introducing the Document Parsing Protocol](https://www.llamaindex.ai/blog/introducing-the-document-parsing-protocol) | LlamaIndex 提出的文档解析协议（DPP），定位为文档解析的「标准答案」：工作草案 0.1 共 140 条规则，覆盖文本、表格、表单、图表和示意图等，每条附示例页面和期望输出，发布在 parseprotocol.com 和 GitHub。对做 RAG 文档预处理的人有参考价值。 | RAG | 进阶 | 3 |
 | 2026-10-28 | Simon Willison | blog | [GitHub Octoverse 2026](https://simonwillison.net/2026/Oct/28/github-octoverse-2026/) | 总结 Octoverse 2026 报告：合并 PR、提交和新仓库数量在 2026 年大幅上升，作者认为这是 agentic engineering 改变开发方式的证据。 | agent, career | 入门 | 3 |
 | 2026-10-28 | Simon Willison | blog | [The October inflection point for vibe game development](https://simonwillison.net/2026/Oct/28/vibe-game-development/) | 作者认为 Claude Opus 5.5 已经能设计出真正好玩的游戏，并分享了四个 vibe coding 做的浏览器游戏。 | case-study | 入门 | 2 |
 | 2026-10-28 | Latent Space | blog | [[AINews] Anthropic ends Coding Interviews: "Hunger beats tenure"](https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/) | Anthropic 招聘经理表示已停止传统编程面试，因为 Claude 做这些题比候选人更好；建议初级工程师优先关注业务影响、快速做出可用原型、专注一个好想法。对理解 AI Engineer 岗位要求变化很有参考价值。（未读到正文） | career | 入门 | 4 |
 | 2026-10-28 | Latent Space | blog | [Why Agents Love Supabase](https://latent.space/p/supabase/) | Supabase 创始人谈如何做 agent 友好的后端：无 Docker 的本地运行时、放在 Git 里的声明式 schema、贴近数据库的计算，以及 agent 带来的注册增长。（未读到正文） | agent, infra | 进阶 | 3 |
 | 2026-10-28 | Simon Willison | blog | [Quoting Ted Sanders](https://simonwillison.net/2026/Oct/28/ted-sanders/) | OpenAI 的 Ted Sanders 解释其模型命名：Luna、Terra、Sol、Astra 按模型规模排序，规模是不同模型表现差异的主要原因；版本号则反映发布顺序、与其他版本的关系和提升幅度。选型时可据此理解 OpenAI 各档模型的定位。 | model-release | 入门 | 2 |
 | 2026-10-28 | Simon Willison | blog | [Quoting Terk Terkowitz](https://simonwillison.net/2026/Oct/28/terk-terkowitz/) | Amazon 工程管理层的内部更新提到：AI 工具帮不上忙时，应把情况记录下来作为发现分享，而不是当成失败。能说清 AI 在哪里不管用，被视为专业判断力的体现。 | career | 入门 | 2 |
+| 2026-10-28 | Meta AI | blog | [How American Universities Are Using AI Models From Meta to Accelerate Medical and Scientific Breakthroughs](https://research.meta.ai/blog/supporting-medical-scientific-research) | 美国高校用 Meta 的模型做医学和科研的案例（仅根据标题）。（未读到正文） | case-study | 入门 | 1 |
 | 2026-10-27 | Anthropic News | blog | [Early progress on accelerating drug development with Claude](https://www.anthropic.com/research/early-progress-drug-development) | 与六家药物研发机构合作用 Claude 加速新药开发的早期成果。（未读到正文） | case-study | 入门 | 1 |
 | 2026-10-27 | OpenAI News | blog | [Retell uses OpenAI models to help power 100M monthly calls](https://openai.com/index/retell-ai) | 语音 agent 公司 Retell 的案例，GPT-6 Astra 在其语音 agent 基准上表现最好。（未读到正文） | agent, case-study | 入门 | 2 |
 | 2026-10-27 | Google DeepMind | blog | [Genie 4: A new generation of world simulation](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/) | 新一代世界模型 Genie 4，可实时生成高真实感的模拟环境。（未读到正文） | model-release, multimodal | 研究 | 1 |
@@ -47,7 +48,7 @@
 | 2026-10-26 | HF Daily Papers | paper | [Multiscale Policy Optimization for Long-Horizon LLM Agents](https://huggingface.co/papers/2610.35013) | 面向长时程 LLM agent 的强化学习方法 MPO，用多尺度优势估计加 turn 级重要性采样，在 turn 级做信用分配、turn 内再细到 token。在搜索、工具调用、自动化任务上稳定超过强 RL 基线。 | agent, fine-tuning | 研究 | 3 |
 | 2026-10-26 | Simon Willison | blog | [GPT-6.1 Terra](https://simonwillison.net/2026/Oct/26/gpt-61-terra/) | GPT-6.1 Terra 的定位和定价对比，强调视觉推理和 computer use。 | model-release | 入门 | 2 |
 | 2026-10-25 | HF Daily Papers | paper | [Memory Tax: Dissecting the Net Value of Agent Memory](https://huggingface.co/papers/2610.34073) | 把 agent 记忆系统的净价值拆成「记忆收益」和「记忆税」，以朴素 RAG 为基线做大规模评测。发现很多专门的记忆系统反而不如直接检索原始历史，因为整理和压缩过程丢掉或模糊了证据，做 agent 记忆前值得先读。 | agent, memory, RAG, eval | 进阶 | 5 |
-| 2026-10-25 | HF Daily Papers | paper | [What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents](https://huggingface.co/papers/2610.34491) | 测了不同 reasoning effort 档位在单次推理和长时程 agent 任务上的效果与成本：高档位常在低档位能解的题上失败，简单题成本最高可差 42 倍。从最低档开始、验证失败后再升档的策略，效果持平或更好且更省钱。 | agent, reasoning, inference | 进阶 | 5 |
+| 2026-10-25 | HF Daily Papers | paper | [What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents](https://huggingface.co/papers/2610.34491) | 测了不同 reasoning effort 档位在单次推理和长时程 agent 任务上的效果与成本：高档位常在低档位能解的题上失败，简单题成本最高可差 42 倍。从最低档开始、验证失败后再升档的策略，效果持平或更好，对多数闭源模型还更省钱。 | agent, reasoning, inference | 进阶 | 5 |
 | 2026-10-24 | LangChain Blog | blog | [The five components of building a 'company harness'](https://www.langchain.com/blog/components-building-company-harness) | LangChain 内部 agent 体系的五个组件：存在于 Slack 等日常聊天工具、知道是谁在提问并区分代用户/自身身份、全局和按用户的记忆、能访问认证服务的沙箱代码执行、大量由定时或事件触发而非手动启动的运行。 | agent, architecture | 进阶 | 4 |
 | 2026-10-24 | Sebastian Raschka | blog | [Building Reasoning Models from the Ground Up: A Full Video Course](https://magazine.sebastianraschka.com/p/building-reasoning-models) | 约 11 小时、8 节的配套编程视频课，用 Python 和 PyTorch 在预训练的 Qwen3 上动手实现评测、推理时扩展、强化学习和蒸馏。（未读到正文） | reasoning, fine-tuning | 进阶 | 4 |
 | 2026-10-23 | Claude API release notes | docs | [Claude Tag API (beta)](https://platform.claude.com/docs/en/manage-claude/claude-tag-api) | 面向 Claude Enterprise 的 beta API，用来读写 Slack 频道和工作区里的 Claude Tag 设置，需要 Admin API key。 | admin | 入门 | 1 |
