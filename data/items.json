@@ -1,0 +1,1262 @@
+[
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "AI for Science expands to foundations and research institutions",
+    "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+    "summary_zh": "AI for Science 项目扩展到 20 个科学基金会和研究机构。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Legora is building the agentic operating system for legal work",
+    "url": "https://openai.com/index/legora",
+    "summary_zh": "法律 AI 公司 Legora 的客户案例。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+    "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+    "summary_zh": "商业合作新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "The future of the firm",
+    "url": "https://openai.com/index/the-future-of-the-firm",
+    "summary_zh": "关于 AI 如何进入组织架构的观点文章。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "OpenAI API changelog",
+    "type": "docs",
+    "title": "ChatGPT Pro and Business subscribers can claim free API credits",
+    "url": "https://developers.openai.com/api/docs/guides/chatgpt-api-credits",
+    "summary_zh": "符合条件的 ChatGPT Pro / Business 订阅用户绑定自己的 API 组织后，每月最多可领 500 美元 API 额度，适合个人做实验。",
+    "tags": [
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Gemini 4 Carbon: Our next frontier model",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "summary_zh": "Google 新一代前沿模型，主打长时程 agentic coding，内部可连续运行数天定位并修复大型代码库中的 bug，在 Artificial Analysis 智能指数 v5.0 排名第一，安全类基准也领先。目前只对部分安全防御者和合作伙伴开放，开发者 API 访问稍后推出；早期定价为每百万 token 输入 2 美元、输出 10 美元。",
+    "tags": [
+      "model-release",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Why aren't you building proactive agents yet?",
+    "url": "https://www.langchain.com/blog/proactive-agents",
+    "summary_zh": "主动型、常驻 agent 的核心其实就是定时任务（cron）：夜间整理长期记忆、目标检查、事件流分流、跟进提醒、编排 agent 定时唤醒自己检查子任务。实现上需要支持按任务设置时间、提示词、权限和随机抖动的调度服务，并把调度包装成 agent 可调用的工具。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Building Evidence-Grounded Agent Memory with OpenWiki and Graphs",
+    "url": "https://www.langchain.com/blog/building-agent-memory-openwiki-graphs",
+    "summary_zh": "把 agent 记忆做成持久的「编译后的 wiki」，每条陈述绑定到源文件行的哈希，源变了只需复查受影响的部分。再把引用关系做成证据图，agent 用 locate/expand 工具导航，准确率比单用 wiki 高 27%。",
+    "tags": [
+      "agent",
+      "memory",
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "LlamaIndex Blog",
+    "type": "blog",
+    "title": "Introducing the Document Parsing Protocol",
+    "url": "https://www.llamaindex.ai/blog/introducing-the-document-parsing-protocol",
+    "summary_zh": "LlamaIndex 提出的文档解析协议，页面没有描述。",
+    "tags": [
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "GitHub Octoverse 2026",
+    "url": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
+    "summary_zh": "总结 Octoverse 2026 报告：合并 PR、提交和新仓库数量在 2026 年大幅上升，作者认为这是 agentic engineering 改变开发方式的证据。",
+    "tags": [
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "The October inflection point for vibe game development",
+    "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+    "summary_zh": "作者认为 Claude Opus 5.5 已经能设计出真正好玩的游戏，并分享了四个 vibe coding 做的浏览器游戏。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Anthropic ends Coding Interviews: \"Hunger beats tenure\"",
+    "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/",
+    "summary_zh": "Anthropic 招聘经理表示已停止传统编程面试，因为 Claude 做这些题比候选人更好；建议初级工程师优先关注业务影响、快速做出可用原型、专注一个好想法。对理解 AI Engineer 岗位要求变化很有参考价值。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-10-29",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Why Agents Love Supabase",
+    "url": "https://latent.space/p/supabase/",
+    "summary_zh": "Supabase 创始人谈如何做 agent 友好的后端：无 Docker 的本地运行时、放在 Git 里的声明式 schema、贴近数据库的计算，以及 agent 带来的注册增长。",
+    "tags": [
+      "agent",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Early progress on accelerating drug development with Claude",
+    "url": "https://www.anthropic.com/research/early-progress-drug-development",
+    "summary_zh": "与六家药物研发机构合作用 Claude 加速新药开发的早期成果。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+    "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+    "summary_zh": "与美国 GSA 的新协议，政府客户使用 Claude 享 40% 折扣。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Retell uses OpenAI models to help power 100M monthly calls",
+    "url": "https://openai.com/index/retell-ai",
+    "summary_zh": "语音 agent 公司 Retell 的案例，GPT-6 Astra 在其语音 agent 基准上表现最好。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+    "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+    "summary_zh": "商业合作新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How Check Point accelerates vulnerability research with Daybreak",
+    "url": "https://openai.com/index/check-point-daybreak",
+    "summary_zh": "客户案例。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Genie 4: A new generation of world simulation",
+    "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "summary_zh": "新一代世界模型 Genie 4，可实时生成高真实感的模拟环境。",
+    "tags": [
+      "model-release",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+    "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+    "summary_zh": "让模型在交互和离线「睡眠」阶段之间交替：睡眠时通过蒸馏把短期上下文写入扩展的长期参数，并生成合成数据自我提升。学新任务时不遗忘旧任务，长上下文召回可扩展到 1000 万 token。",
+    "tags": [
+      "fine-tuning",
+      "memory"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Gemini API changelog",
+    "type": "docs",
+    "title": "Gemini API CLI (gemini-api) beta",
+    "url": "https://ai.google.dev/gemini-api/docs/cli",
+    "summary_zh": "无状态、零依赖的 Gemini API 命令行客户端，面向 coding agent、脚本和 CI 流水线，配合 Interactions API 生成文本和媒体、分析文件、运行托管 agent。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "The Trinity: Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+    "url": "https://huggingface.co/papers/2610.36077",
+    "summary_zh": "研究多模态 agent 由能力驱动的递归自我改进（仅根据标题，未读摘要）。",
+    "tags": [
+      "agent",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory",
+    "url": "https://huggingface.co/papers/2610.24520",
+    "summary_zh": "评测 agent 能否从记忆中零散的弱证据推断出用户习惯的基准（仅根据标题）。",
+    "tags": [
+      "agent",
+      "memory",
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "SearchHorizonBench: A Benchmark for Search Value in AI Agents",
+    "url": "https://huggingface.co/papers/2610.34714",
+    "summary_zh": "评测 AI agent 判断「是否值得继续搜索」能力的基准（仅根据标题）。",
+    "tags": [
+      "agent",
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+    "url": "https://huggingface.co/papers/2610.32046",
+    "summary_zh": "比较测试时记忆演化和测试时训练在科学发现任务上的效果（仅根据标题）。",
+    "tags": [
+      "memory"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data",
+    "url": "https://huggingface.co/papers/2610.37386",
+    "summary_zh": "一种不需要校准数据的 MoE 解码通道选择方法，用于推理加速（仅根据标题）。",
+    "tags": [
+      "inference"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+    "url": "https://huggingface.co/papers/2610.35864",
+    "summary_zh": "评测多模态 agent 通过写代码生成视频的能力（仅根据标题）。",
+    "tags": [
+      "agent",
+      "eval",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "How We Built Our Design Agent",
+    "url": "https://www.langchain.com/blog/design-agent",
+    "summary_zh": "在 Slack 里生成视频、图片和幻灯片的设计 agent，每个线程一个沙箱电脑。经验是把设计师的判断写进 skills、共享 wiki 和代码检查，模型变强后删掉硬编码规则；长任务由主 agent 当「幕僚长」调度异步子 agent，发布前需人工批准。",
+    "tags": [
+      "agent",
+      "multi-agent",
+      "skills"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-10-29",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "How Anthropic ships Claude with Claude: Separating the Brain from the Hands",
+    "url": "https://latent.space/p/opus55/",
+    "summary_zh": "与 Anthropic 团队聊 Opus 5.5、Claude Platform 以及 agent 背后的工程设计（「把大脑和手分开」）。",
+    "tags": [
+      "agent",
+      "architecture"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+    "url": "https://www.anthropic.com/news/s1-sec",
+    "summary_zh": "Anthropic 向 SEC 提交 IPO 注册文件。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Introducing GPT-6.1 Terra",
+    "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+    "summary_zh": "OpenAI 发布中档模型 GPT-6.1 Terra，主打快速高效的视觉推理、精确的 computer use 和自然写作。API changelog 同步上线了模型页和提示词/迁移指南。",
+    "tags": [
+      "model-release",
+      "tool-use",
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+    "url": "https://openai.com/index/openai-cut-incident-investigation",
+    "summary_zh": "OpenAI 工程师如何用 Codex Ultrafast 把故障排查从几小时缩短到几分钟，也涉及安全分析和代码重构。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+    "url": "https://openai.com/index/greptile-code-review-codex-astra",
+    "summary_zh": "Greptile 用 GPT-6 Astra 测试用户流程、用 Codex 减少返工的代码审查 agent 案例。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+    "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+    "summary_zh": "CodeRabbit 用 GPT-6.1 Sol 构建安全审查 agent，帮助开发者审阅风险和修复建议。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Working with academic communities to build scientific understanding",
+    "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+    "summary_zh": "模型在 Kakeya 猜想、指数时间假设等问题上的结果，以及研究者如何验证。",
+    "tags": [
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "ChatGPT's expanding world of work",
+    "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+    "summary_zh": "基于近 100 个国家、165 种工作活动的数据，分析人们如何在工作中使用 ChatGPT。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How Fanatics and OpenAI streamline the fan experience",
+    "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+    "summary_zh": "客户案例。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "Gemini API changelog",
+    "type": "docs",
+    "title": "Generate Content API storage on by default",
+    "url": "https://ai.google.dev/gemini-api/docs/logs-datasets#configure-logging",
+    "summary_zh": "新建的付费项目调用 generateContent 时默认存储请求（store=true），如不希望保存需按请求设 store=false 或在日志设置里关闭。",
+    "tags": [
+      "privacy"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+    "url": "https://huggingface.co/papers/2610.35013",
+    "summary_zh": "面向长时程 LLM agent 的强化学习方法 MPO，用多尺度优势估计加 turn 级重要性采样，在 turn 级做信用分配、turn 内再细到 token。在搜索、工具调用、自动化任务上稳定超过强 RL 基线。",
+    "tags": [
+      "agent",
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "GPT-6.1 Terra",
+    "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+    "summary_zh": "GPT-6.1 Terra 的定位和定价对比，强调视觉推理和 computer use。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-25",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+    "url": "https://huggingface.co/papers/2610.34073",
+    "summary_zh": "把 agent 记忆系统的净价值拆成「记忆收益」和「记忆税」，以朴素 RAG 为基线做大规模评测。发现很多专门的记忆系统反而不如直接检索原始历史，因为整理和压缩过程丢掉或模糊了证据，做 agent 记忆前值得先读。",
+    "tags": [
+      "agent",
+      "memory",
+      "RAG",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-25",
+    "added": "2026-10-29",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
+    "url": "https://huggingface.co/papers/2610.34491",
+    "summary_zh": "测了不同 reasoning effort 档位在单次推理和长时程 agent 任务上的效果与成本：高档位常在低档位能解的题上失败，简单题成本最高可差 42 倍。从最低档开始、验证失败后再升档的策略，效果持平或更好且更省钱。",
+    "tags": [
+      "agent",
+      "reasoning",
+      "inference"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-24",
+    "added": "2026-10-29",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "The five components of building a 'company harness'",
+    "url": "https://www.langchain.com/blog/components-building-company-harness",
+    "summary_zh": "LangChain 内部 agent 体系的五个组件：存在于 Slack 等日常聊天工具、知道是谁在提问并区分代用户/自身身份、全局和按用户的记忆、能访问认证服务的沙箱代码执行、大量由定时或事件触发而非手动启动的运行。",
+    "tags": [
+      "agent",
+      "architecture"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-24",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "battledrones v14: Compass Rose, a four player map",
+    "url": "https://simonwillison.net/2026/Oct/24/battledrones/",
+    "summary_zh": "个人游戏项目更新。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-24",
+    "added": "2026-10-29",
+    "source": "Sebastian Raschka",
+    "type": "blog",
+    "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
+    "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+    "summary_zh": "约 11 小时、8 节的配套编程视频课，用 Python 和 PyTorch 在预训练的 Qwen3 上动手实现评测、推理时扩展、强化学习和蒸馏。",
+    "tags": [
+      "reasoning",
+      "fine-tuning"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Claude Tag API (beta)",
+    "url": "https://platform.claude.com/docs/en/manage-claude/claude-tag-api",
+    "summary_zh": "面向 Claude Enterprise 的 beta API，用来读写 Slack 频道和工作区里的 Claude Tag 设置，需要 Admin API key。",
+    "tags": [
+      "admin"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+    "summary_zh": "ChatGPT 存储系统 Habitat 如何做多租户、全局缓存并接入 Azure Cosmos DB，读取速度提升 12 倍。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Securing our frontier model training environment",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+    "summary_zh": "前沿模型训练和评测环境的隔离措施，包括离线环境和高算力红队测试。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+    "url": "https://openai.com/index/anima",
+    "summary_zh": "客户案例。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "OpenAI and Poland's NASK partner to advance AI safety and security",
+    "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+    "summary_zh": "合作新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "Bringing foundational models to the front lines of TB screening",
+    "url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+    "summary_zh": "基础模型用于结核病筛查，医疗应用。",
+    "tags": [
+      "science"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Context Engineering Starts with Retrieval",
+    "url": "https://www.langchain.com/blog/context-engineering-starts-with-retrieval",
+    "summary_zh": "上下文工程的基础是检索：先 glob/grep 搜索再分页读取，大结果写到文件只返回路径和预览，关键词不够时再加语义检索。推荐「检索、落盘、委派」模式，让子 agent 读文件后只返回关键事实，检索到的文本一律当作不可信数据。",
+    "tags": [
+      "agent",
+      "RAG",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Introducing Kimi K3.1 Pro",
+    "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+    "summary_zh": "Moonshot 的 Kimi K3.1 Pro 已上 API，承诺 11 月 4 日前开放权重，Artificial Analysis 排名接近前沿。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quick Study",
+    "url": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+    "summary_zh": "个人小工具。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-23",
+    "added": "2026-10-29",
+    "source": "The Batch",
+    "type": "blog",
+    "title": "The Batch issue 376",
+    "url": "https://www.deeplearning.ai/the-batch/issue-376",
+    "summary_zh": "本期涉及 Meta 的 Muse Wonder 和 Spark 开放发布、ChatGPT 的教育用途、Reflection 与 NVIDIA 的合作，以及工程负责人如何帮团队提升 AI 能力。",
+    "tags": [
+      "model-release",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Donating Agent Skills to the Agentic AI Foundation",
+    "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+    "summary_zh": "Anthropic 把 Agent Skills 开放标准捐给 Linux 基金会旗下的 Agentic AI Foundation，由 Anthropic、Google、OpenAI 等公司的工程师共同维护，已有 70 多个 agent 平台采用。之后会有版本化发布、正式提案流程和面向 skill 作者的安全指南，写的 skill 可以跨平台复用。",
+    "tags": [
+      "agent",
+      "skills"
+    ],
+    "difficulty": "入门",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Open call for guest investigators in the life sciences",
+    "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+    "summary_zh": "面向生命科学领域招募客座研究者。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Claude Models on Google Cloud (Anthropic managed)",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+    "summary_zh": "由 Anthropic 运营、通过你的 Google Cloud 项目访问的 Claude API，用 Google Cloud IAM 控制权限、Marketplace 计费；Opus 5.5 的 Fast mode 也在这里可用。",
+    "tags": [
+      "deployment"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Build more responsive apps with the Decisions API",
+    "url": "https://openai.com/index/decisions-api",
+    "summary_zh": "Decisions API 正式可用（基于 gpt-6-luna），用于快速、低成本的分类和判断类调用。GA 版本支持共享输入的 prompt cache 折扣、每题附图、input_json 结构化输入，单次最多 400 个问题。",
+    "tags": [
+      "inference",
+      "structured-output"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "What FDE means at OpenAI",
+    "url": "https://openai.com/index/forward-deployed-engineering-means",
+    "summary_zh": "解释 OpenAI 的 Forward Deployed Engineer 岗位做什么，对了解 AI Engineer 相关岗位要求有参考价值。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+    "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+    "summary_zh": "客户案例。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Beyond tree cover: mapping the world's forest types",
+    "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+    "summary_zh": "全球森林类型地图，与 LLM 工程无关。",
+    "tags": [
+      "science"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "Flint-interactive: A language for creating interactive data visualizations",
+    "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+    "summary_zh": "一种描述交互式图表的语言，编译器把用户操作转成语义事件，让 AI agent 不写底层可视化代码也能在对话里生成可交互图表。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "LlamaIndex Blog",
+    "type": "blog",
+    "title": "Introducing OCRia-1",
+    "url": "https://www.llamaindex.ai/blog/parse-ocria-1",
+    "summary_zh": "新的文档解析模型，在 ParseBench 上达到最佳并在四个表格解析基准上领先，兼顾准确、速度和成本，适合 RAG 的文档预处理。",
+    "tags": [
+      "RAG",
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-22",
+    "added": "2026-10-29",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Donating Agent Skills to the Agentic AI Foundation",
+    "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/",
+    "summary_zh": "对 Agent Skills 捐赠给 Agentic AI Foundation 的简评。",
+    "tags": [
+      "skills"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+    "url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+    "summary_zh": "人事新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Claude API version 2026-10-21 and new major SDK versions",
+    "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+    "summary_zh": "发布 API 版本 2026-10-21，各语言 SDK 和 ant CLI 同步出大版本（Python SDK 2.0.0、TypeScript SDK 1.0.0 等）并默认使用新版本。SDK 有与 API 版本无关的破坏性改动，许可证从 MIT 改为 Apache 2.0，升级前要看迁移指南。",
+    "tags": [
+      "model-release",
+      "migration"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "User profiles: enforcement_status and enforcement_actions",
+    "url": "https://platform.claude.com/docs/en/manage-claude/user-profiles",
+    "summary_zh": "用户档案新增执法状态字段，平台方可以查到自己的终端客户是否被 Anthropic 限制或封禁。",
+    "tags": [
+      "admin",
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Using thousands of AI agents to uncover new leads in biological data",
+    "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+    "summary_zh": "用分布式的数千个 AI agent 在数百万脑细胞数据中寻找研究线索，是大规模多 agent 协作的实例。",
+    "tags": [
+      "agent",
+      "multi-agent"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How we built ChatGPT's novel ad stack for user trust and relevance",
+    "url": "https://openai.com/index/building-chatgpt-ad-stack",
+    "summary_zh": "用 LLM 理解对话意图来投放广告，同时让广告和回答保持分离的系统设计。",
+    "tags": [
+      "infra",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+    "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+    "summary_zh": "agent 发现大量开源漏洞后，协调研究者和维护者进行披露与修复的机制。",
+    "tags": [
+      "safety",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "OpenAI models are coming to Google Cloud",
+    "url": "https://openai.com/index/openai-models-google-cloud",
+    "summary_zh": "OpenAI 模型和 Codex 上架 Google Cloud Model Garden。",
+    "tags": [
+      "deployment"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+    "url": "https://openai.com/index/cloudflare-cyber",
+    "summary_zh": "Cloudflare 用 OpenAI Daybreak 做漏洞调查的客户案例。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How AT&T is rethinking in-house legal work with OpenAI",
+    "url": "https://openai.com/index/att-legal",
+    "summary_zh": "客户案例。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Broad access through consistent standards",
+    "url": "https://openai.com/index/broad-access-through-consistent-standards",
+    "summary_zh": "分发合作伙伴的使用政策说明。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+    "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+    "summary_zh": "广告业务新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+    "url": "https://openai.com/index/empowering-cyber-defenders",
+    "summary_zh": "政策类文章。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "OpenAI API changelog",
+    "type": "docs",
+    "title": "Restrict service tiers per project",
+    "url": "https://developers.openai.com/api/docs/guides/error-codes",
+    "summary_zh": "平台设置可以按项目选择允许使用的服务层级，组织级也能统一限制。",
+    "tags": [
+      "admin"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+    "url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+    "summary_zh": "AI 辅助超声用于孕产护理，医疗应用。",
+    "tags": [
+      "science"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "Solving a 31-year-old grand challenge in mathematics – the KLS conjecture",
+    "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+    "summary_zh": "证明了 KLS 猜想，过程中由人指导、多个 AI agent 探索大量候选证明路线，是人机协作科研的例子。",
+    "tags": [
+      "agent",
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-21",
+    "added": "2026-10-29",
+    "source": "Mistral",
+    "type": "blog",
+    "title": "Mistral Advances AI for Engineering with NVIDIA",
+    "url": "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/",
+    "summary_zh": "Mistral 与 NVIDIA 在工业工程领域的合作新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  }
+]

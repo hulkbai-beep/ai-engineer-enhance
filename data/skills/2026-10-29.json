@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-29",
+  "source": "skills.sh",
+  "note": "All Time 第 24-26 名和第 32 名之后在页面上被折叠，未列出；安装量是页面上四舍五入后的数字",
+  "skills": [
+    {
+      "name": "find-skills",
+      "repo": "vercel-labs/skills",
+      "url": "https://www.skills.sh/vercel-labs/skills/find-skills",
+      "installs": 4100000,
+      "desc_zh": "帮你搜索和安装合适的 skill"
+    },
+    {
+      "name": "grill-me",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/grill-me",
+      "installs": 1500000,
+      "desc_zh": "让 agent 反复追问你，把需求和方案问清楚"
+    },
+    {
+      "name": "hyperframes-cli",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-cli",
+      "installs": 1300000,
+      "desc_zh": "HeyGen HyperFrames 视频制作命令行"
+    },
+    {
+      "name": "agent-browser",
+      "repo": "vercel-labs/agent-browser",
+      "url": "https://www.skills.sh/vercel-labs/agent-browser/agent-browser",
+      "installs": 1300000,
+      "desc_zh": "让 agent 操作浏览器"
+    },
+    {
+      "name": "hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes",
+      "installs": 1300000,
+      "desc_zh": "用 HyperFrames 生成视频"
+    },
+    {
+      "name": "grill-with-docs",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/grill-with-docs",
+      "installs": 1200000,
+      "desc_zh": "结合文档追问、澄清需求"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/improve-codebase-architecture",
+      "installs": 1200000,
+      "desc_zh": "分析并改进代码库架构"
+    },
+    {
+      "name": "media-use",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/media-use",
+      "installs": 1200000,
+      "desc_zh": "在视频中使用媒体素材"
+    },
+    {
+      "name": "tdd",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/tdd",
+      "installs": 1200000,
+      "desc_zh": "测试驱动开发流程"
+    },
+    {
+      "name": "reddit-automation",
+      "repo": "flowkit-labs/skills",
+      "url": "https://www.skills.sh/flowkit-labs/skills/reddit-automation",
+      "installs": 1100000,
+      "desc_zh": "Reddit 自动化操作"
+    },
+    {
+      "name": "design-mobile-apps",
+      "repo": "designed-by-ai/skills",
+      "url": "https://www.skills.sh/designed-by-ai/skills/design-mobile-apps",
+      "installs": 1100000,
+      "desc_zh": "移动应用界面设计"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/setup-matt-pocock-skills",
+      "installs": 1100000,
+      "desc_zh": "一键安装 Matt Pocock 的 skill 合集"
+    },
+    {
+      "name": "hyperframes-registry",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-registry",
+      "installs": 1100000,
+      "desc_zh": "HyperFrames 组件注册表"
+    },
+    {
+      "name": "handoff",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/handoff",
+      "installs": 1100000,
+      "desc_zh": "在会话之间交接工作上下文"
+    },
+    {
+      "name": "frontend-design",
+      "repo": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/frontend-design",
+      "installs": 1000000,
+      "desc_zh": "Anthropic 官方前端设计 skill"
+    },
+    {
+      "name": "triage",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/triage",
+      "installs": 1000000,
+      "desc_zh": "问题分类和优先级排序"
+    },
+    {
+      "name": "grilling",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/grilling",
+      "installs": 1000000,
+      "desc_zh": "深入追问式评审"
+    },
+    {
+      "name": "prototype",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/prototype",
+      "installs": 1000000,
+      "desc_zh": "快速做出原型"
+    },
+    {
+      "name": "hyperframes-animation",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-animation",
+      "installs": 1000000,
+      "desc_zh": "HyperFrames 动画制作"
+    },
+    {
+      "name": "hyperframes-core",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-core",
+      "installs": 930600,
+      "desc_zh": "HyperFrames 核心能力"
+    },
+    {
+      "name": "hyperframes-creative",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-creative",
+      "installs": 916700,
+      "desc_zh": "HyperFrames 创意视频"
+    },
+    {
+      "name": "domain-modeling",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/domain-modeling",
+      "installs": 901600,
+      "desc_zh": "领域建模"
+    },
+    {
+      "name": "ai-video-generation",
+      "repo": "101-skills/superpowers",
+      "url": "https://www.skills.sh/101-skills/superpowers/ai-video-generation",
+      "installs": 897700,
+      "desc_zh": "AI 视频生成"
+    },
+    {
+      "name": "teach",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/teach",
+      "installs": 883600,
+      "desc_zh": "以教学方式讲解代码或概念"
+    },
+    {
+      "name": "codebase-design",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/codebase-design",
+      "installs": 874300,
+      "desc_zh": "代码库设计"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "repo": "mattpocock/skills",
+      "url": "https://www.skills.sh/mattpocock/skills/diagnosing-bugs",
+      "installs": 858900,
+      "desc_zh": "系统化定位 bug"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "repo": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-react-best-practices",
+      "installs": 850000,
+      "desc_zh": "Vercel 的 React 最佳实践"
+    },
+    {
+      "name": "lark-doc",
+      "repo": "open.feishu.cn",
+      "url": "https://www.skills.sh/site/open.feishu.cn/lark-doc",
+      "installs": 826300,
+      "desc_zh": "飞书文档读写"
+    }
+  ],
+  "trending": [
+    {
+      "name": "design-mobile-apps",
+      "repo": "designed-by-ai/skills",
+      "url": "https://www.skills.sh/designed-by-ai/skills/design-mobile-apps",
+      "installs": 22300,
+      "desc_zh": "移动应用界面设计"
+    },
+    {
+      "name": "hyperframes-cli",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-cli",
+      "installs": 20600,
+      "desc_zh": "HeyGen HyperFrames 视频制作命令行"
+    },
+    {
+      "name": "hyperframes-registry",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-registry",
+      "installs": 20600,
+      "desc_zh": "HyperFrames 组件注册表"
+    },
+    {
+      "name": "hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes",
+      "installs": 20300,
+      "desc_zh": "用 HyperFrames 生成视频"
+    },
+    {
+      "name": "ui-taste",
+      "repo": "uizze.sh",
+      "url": "https://www.skills.sh/site/uizze.sh/ui-taste",
+      "installs": 20100,
+      "desc_zh": "提升 UI 设计品味"
+    },
+    {
+      "name": "media-use",
+      "repo": "heygen-com/hyperframes",
+      "url": "https://www.skills.sh/heygen-com/hyperframes/media-use",
+      "installs": 20000,
+      "desc_zh": "在视频中使用媒体素材"
+    },
+    {
+      "name": "ai-image-generation",
+      "repo": "skills-shell/superpowers",
+      "url": "https://www.skills.sh/skills-shell/superpowers/ai-image-generation",
+      "installs": 19500,
+      "desc_zh": "AI 图片生成"
+    },
+    {
+      "name": "find-skills",
+      "repo": "vercel-labs/skills",
+      "url": "https://www.skills.sh/vercel-labs/skills/find-skills",
+      "installs": 18600,
+      "desc_zh": "帮你搜索和安装合适的 skill"
+    },
+    {
+      "name": "ai-music",
+      "repo": "gencraft-labs/skills",
+      "url": "https://www.skills.sh/gencraft-labs/skills/ai-music",
+      "installs": 15400,
+      "desc_zh": "AI 音乐生成"
+    },
+    {
+      "name": "ai-video-generation",
+      "repo": "gencraft-labs/skills",
+      "url": "https://www.skills.sh/gencraft-labs/skills/ai-video-generation",
+      "installs": 15300,
+      "desc_zh": "AI 视频生成"
+    }
+  ]
+}
