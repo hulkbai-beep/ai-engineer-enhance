@@ -28,7 +28,9 @@ class RenderTest(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         render.ROOT, render.ITEMS = self.tmp, self.tmp / "data" / "items.json"
         render.SKILLS, render.DIGESTS = self.tmp / "data" / "skills", self.tmp / "digests"
+        render.STATE, render.SOURCES = self.tmp / "data" / "state.json", self.tmp / "sources.json"
         render.SKILLS.mkdir(parents=True)
+        render.SOURCES.write_text(json.dumps([{"name": "OpenAI"}, {"name": "Meta AI"}]))
 
     def run_main(self, items, *argv):
         render.ITEMS.write_text(json.dumps(items))
@@ -70,8 +72,29 @@ class RenderTest(unittest.TestCase):
         digest = (render.DIGESTS / "2026-10-29.md").read_text()
         self.assertIn("本周必读", digest)
         self.assertIn("Hot", digest)
-        self.assertIn("- **[Blurb](https://c.com)**（OpenAI）：摘要（未读到正文）", digest)
+        self.assertIn("- [ ] **[Blurb](https://c.com)**（OpenAI）：摘要（未读到正文）", digest)
         self.assertNotIn("Old", digest)
+        self.assertIn("来源未读取：Meta AI", digest)
+
+    def test_state_records_each_source_last_read(self):
+        self.run_main([], "--date", "2026-10-29", "--unread", "Meta AI")
+        state = json.loads(render.STATE.read_text())
+        self.assertEqual(state, {"OpenAI": "2026-10-29", "skills.sh": "2026-10-29"})
+        self.run_main([], "--date", "2026-11-02")
+        self.assertEqual(json.loads(render.STATE.read_text())["Meta AI"], "2026-11-02")
+        self.run_main([], "--date", "2026-10-29")  # re-rendering an old week never moves a source back
+        self.assertEqual(json.loads(render.STATE.read_text())["OpenAI"], "2026-11-02")
+
+    def test_rejects_unread_name_not_in_sources(self):
+        with self.assertRaises(ValueError):
+            self.run_main([], "--date", "2026-10-29", "--unread", "Meta")
+        self.assertFalse(render.STATE.exists())
+
+    def test_same_day_rerun_does_not_list_a_source_read_earlier_today(self):
+        self.run_main([], "--date", "2026-10-29", "--unread", "Meta AI")
+        self.run_main([], "--date", "2026-10-29", "--unread", "OpenAI", "--unread", "Meta AI")
+        digest = (render.DIGESTS / "2026-10-29.md").read_text()
+        self.assertNotIn("来源未读取：OpenAI", digest)
         self.assertIn("来源未读取：Meta AI", digest)
 
     def test_digest_names_the_snapshot_it_compares_against(self):

@@ -7,9 +7,9 @@ description: Weekly run that collects new LLM / AI Engineer papers, blogs, docs 
 
 在仓库根目录执行。今天的日期记为 `D`（YYYY-MM-DD）。
 
-## 1. 确定时间窗口
+## 1. 确定每个来源的时间窗口
 
-读 `data/items.json`，取所有条目里最大的 `added` 作为上次运行日期；没有数据时取 `D` 前 7 天。只收**发布日期晚于上次运行日期前 1 天**的条目（留 1 天重叠，查重见第 3 步）。
+读 `data/state.json`，它记着每个来源上次成功读取的日期（第 5 步 render.py 自动更新，不要手改）。每个来源只收**发布日期晚于它的上次读取日期前 1 天**的条目（留 1 天重叠，查重见第 3 步）；state.json 里没有的来源（新加的）取 `D` 前 7 天。上次没读到的来源日期停在更早，这次会把漏掉的补上。
 
 ## 2. 逐个读取 sources.json 里的来源
 
@@ -24,7 +24,7 @@ description: Weekly run that collects new LLM / AI Engineer papers, blogs, docs 
 - WebFetch 报 `getaddrinfo ENOTFOUND <域名>`：这个域名不在云环境的网络白名单里。不要重试，也不要换方法绕过；把来源记为未读取，并在第 6 步的汇报里写出需要放行的域名。
 - 遇到验证页或 CAPTCHA 不自己处理：交互时请用户在浏览器面板手动完成，定时任务里跳过并记为未读取。
 - 云端沙箱的 shell 网络走白名单，curl / requests / huggingface_hub 访问这些站点会被拒（403）。不要换命令重试，不写依赖这些站点的下载脚本。
-- 整个来源都读不到时，记下来源名，第 5 步用 `--unread` 传给 render.py。如果 `digests/D.md` 已经存在（同一天重跑），之前已经收录过条目的来源不要再传 `--unread`。
+- 整个来源都读不到时，记下来源名，第 5 步用 `--unread` 传给 render.py。只要来源的列表页或 feed 读到了，就算读取成功，哪怕没有新内容、或者个别文章正文没读到。
 
 已测站点（2026-10-29，需定期复测）：
 - 定时任务里 WebFetch 也受网络白名单限制。当天能读：www.anthropic.com、platform.claude.com、openai.com、research.google、deepmind.google、ai.google.dev、www.microsoft.com、mistral.ai、huggingface.co、www.langchain.com、www.llamaindex.ai、pypi.org、simonwillison.net、eugeneyan.com、hamel.dev、lilianweng.github.io、magazine.sebastianraschka.com、www.deeplearning.ai。当天还没放行：developers.openai.com、latent.space、skills.sh、www.skills.sh、blog.google、research.meta.ai。
@@ -58,8 +58,17 @@ description: Weekly run that collects new LLM / AI Engineer papers, blogs, docs 
 ```
 
 - `tags` 从上面列表里选 1-3 个，确实不够用再加新的。
-- `relevance`（0-5）：对一个搭建 LLM 应用和 agent workflow 的 AI Engineer 有多大用。5 = 必读（新的 agent 搭建方法、重要模型/API 新能力）；3 = 值得一看；1 = 了解即可；0 = 无关（合作、融资、客户案例等商业新闻）。0 分也要写入，用来防止下周重复收录。
+- `relevance`（0-5）：对一个搭建 LLM 应用和 agent workflow 的 AI Engineer 有多大用，按下表打分，拿不准时和例子比一比（都是已收录的真实条目）。4 分及以上进「本周必读」（最多 5 条），1 分及以上进 README 总表；0 分也要写入，用来防止下周重复收录。
 - 不确定的字段宁可保守，不要编造内容；summary 只写读到的信息。
+
+| 分 | 什么样的内容 | 例子 |
+|---|---|---|
+| 5 | 必读：新的 agent 搭建方法、要改代码的 API/SDK 大变化、新一代旗舰模型 | Context Engineering Starts with Retrieval；Memory Tax: Dissecting the Net Value of Agent Memory；Claude API version 2026-10-21 and new major SDK versions |
+| 4 | 很值得读：新模型小版本、新的开发工具、有细节的 agent 实战拆解 | Introducing GPT-6.1 Terra；Gemini API CLI (gemini-api) beta；How We Built Our Design Agent |
+| 3 | 值得一看：相关但不急，如岗位与职业、RAG 周边的新工具 | What FDE means at OpenAI；Introducing OCRia-1 |
+| 2 | 有点关系：离应用层较远的基础设施、带一点技术细节的客户案例 | Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)；Retell uses OpenAI models to help power 100M monthly calls |
+| 1 | 了解即可：和 LLM 应用关系远的模型、管理类 API、别处已有原文的转述 | Genie 4: A new generation of world simulation；Claude Tag API (beta)；Simon Willison 转述的 Donating Agent Skills to the Agentic AI Foundation（Anthropic 原文是 5 分） |
+| 0 | 无关：合作、融资、上市、纯客户宣传 | Anthropic files S-1 with the SEC for proposed initial public offering；OpenAI and ServiceNow expand partnership across enterprise workflows |
 
 ## 4. Skill 排行榜快照
 
@@ -87,7 +96,9 @@ python3 scripts/render.py --date D [--unread "来源名" ...]
 python3 -m unittest discover tests
 ```
 
-render.py 报错（缺字段、取值不对）就修正 `data/items.json` 或 `data/skills/D.json` 后重跑。打开 `digests/D.md` 检查：每条都有链接和中文摘要，「本周必读」合理。
+`--unread` 用 sources.json 里的 name，skill 榜没读到用 `skills.sh`；写错名字 render.py 会报错。同一天重跑时，今天已经读到过的来源即使再传 `--unread` 也不会算成未读取。
+
+render.py 报错（缺字段、取值不对、来源名不对）就修正 `data/items.json`、`data/skills/D.json` 或 `--unread` 参数后重跑。打开 `digests/D.md` 检查：每条都有链接和中文摘要，「本周必读」合理（它是勾选框清单，用户在 Issue 里读完一条勾一条）。
 
 ## 6. 提交与通知
 

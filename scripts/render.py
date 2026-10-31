@@ -1,8 +1,9 @@
-"""Dedupe and validate data/items.json, then write README.md and the weekly digest.
+"""Dedupe and validate data/items.json, then write README.md, the weekly digest and data/state.json.
 
 Usage: python3 scripts/render.py [--date YYYY-MM-DD] [--unread "source A" --unread "source B"]
 
-Reads only files inside the repo; no network access.
+data/state.json records the last date each source was read: every name in sources.json
+(plus skills.sh) that is not passed with --unread. Reads only files inside the repo; no network access.
 """
 import argparse
 import datetime as dt
@@ -11,6 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ITEMS = ROOT / "data" / "items.json"
+STATE = ROOT / "data" / "state.json"
+SOURCES = ROOT / "sources.json"
 SKILLS = ROOT / "data" / "skills"
 DIGESTS = ROOT / "digests"
 
@@ -118,7 +121,7 @@ def render_digest(items, date, unread):
     must = [i for i in week if i["relevance"] >= 4][:5]
     if must:
         lines += ["## 本周必读", ""]
-        lines += [f"- **[{i['title']}]({i['url']})**（{i['source']}）：{summary(i)}" for i in must] + [""]
+        lines += [f"- [ ] **[{i['title']}]({i['url']})**（{i['source']}）：{summary(i)}" for i in must] + [""]
     lines += ["## 本周新增", "", HEADER] + [row(i) for i in week] + [""]
     snap = SKILLS / f"{date.isoformat()}.json"
     if snap.exists():
@@ -153,6 +156,13 @@ def main():
     ap.add_argument("--unread", action="append", default=[], help="source that could not be read")
     args = ap.parse_args()
     date = dt.date.fromisoformat(args.date)
+    names = [s["name"] for s in json.loads(SOURCES.read_text())] + ["skills.sh"]
+    unknown = sorted(set(args.unread) - set(names))
+    if unknown:
+        raise ValueError(f"--unread {unknown}: use a name from sources.json, or skills.sh")
+    state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    # On a same-day rerun, a source read by the earlier run is not unread today.
+    unread = [s for s in args.unread if state.get(s) != date.isoformat()]
 
     items = json.loads(ITEMS.read_text()) if ITEMS.exists() else []
     for item in items:
@@ -161,11 +171,14 @@ def main():
     ITEMS.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n")
 
     DIGESTS.mkdir(exist_ok=True)
-    (DIGESTS / f"{date.isoformat()}.md").write_text(render_digest(items, date, args.unread))
+    (DIGESTS / f"{date.isoformat()}.md").write_text(render_digest(items, date, unread))
     # The last weekly run of a month also writes the monthly skill ranking.
     if (date + dt.timedelta(days=7)).month != date.month and (SKILLS / f"{date.isoformat()}.json").exists():
         (DIGESTS / f"skills-{date:%Y-%m}.md").write_text(render_month(date))
     (ROOT / "README.md").write_text(render_readme(items))
+    # max() so re-rendering an older date never moves a source backwards.
+    state.update({n: max(state.get(n, ""), date.isoformat()) for n in names if n not in args.unread})
+    STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n")
     print(f"{len(items)} items; digest digests/{date.isoformat()}.md")
 
 
