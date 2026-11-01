@@ -4,8 +4,10 @@ job-skill reports (digests/jobs-YYYY-MM.md from data/jobs/) and data/state.json.
 Usage: python3 scripts/render.py [--date YYYY-MM-DD] [--unread "source A" --unread "source B"] [--no-state]
 
 data/state.json records the last date each source was read: every name in sources.json
-(plus skills.sh) that is not passed with --unread. Re-rendering outside the weekly run (an older
-date, or after editing data/jobs/) takes --no-state, which leaves data/state.json as it is.
+(plus skills.sh) that is not passed with --unread. An --unread source that was never read gets the
+date minus 7 days, so its window keeps starting there until a run reads it. Re-rendering outside
+the weekly run (an older date, or after editing data/jobs/) takes --no-state, which leaves
+data/state.json as it is.
 Reads only files inside the repo; no network access.
 """
 import argparse
@@ -313,6 +315,8 @@ def main():
     if not args.no_state:
         # max() so a same-day rerun or an older --date never moves a source backwards.
         state.update({n: max(state.get(n, ""), date.isoformat()) for n in names if n not in args.unread})
+        for n in args.unread:  # never read yet: keep its first window (D-7) until a run reads it
+            state.setdefault(n, (date - dt.timedelta(days=7)).isoformat())
         STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n")
     print(f"{len(items)} items; digest digests/{date.isoformat()}.md")
 

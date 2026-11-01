@@ -102,11 +102,14 @@ class RenderTest(unittest.TestCase):
     def test_state_records_each_source_last_read(self):
         self.run_main([], "--date", "2026-10-29", "--unread", "Meta AI")
         state = json.loads(render.STATE.read_text())
-        self.assertEqual(state, {"OpenAI": "2026-10-29", "skills.sh": "2026-10-29"})
-        self.run_main([], "--date", "2026-11-02")
-        self.assertEqual(json.loads(render.STATE.read_text())["Meta AI"], "2026-11-02")
+        # A source never read yet gets D-7, and keeps it while it stays unread, so no week is skipped.
+        self.assertEqual(state, {"OpenAI": "2026-10-29", "Meta AI": "2026-10-22", "skills.sh": "2026-10-29"})
+        self.run_main([], "--date", "2026-11-02", "--unread", "Meta AI")
+        self.assertEqual(json.loads(render.STATE.read_text())["Meta AI"], "2026-10-22")
+        self.run_main([], "--date", "2026-11-09")
+        self.assertEqual(json.loads(render.STATE.read_text())["Meta AI"], "2026-11-09")
         self.run_main([], "--date", "2026-10-29")  # re-rendering an old week never moves a source back
-        self.assertEqual(json.loads(render.STATE.read_text())["OpenAI"], "2026-11-02")
+        self.assertEqual(json.loads(render.STATE.read_text())["OpenAI"], "2026-11-09")
 
     def test_no_state_rerender_leaves_state_alone(self):
         self.run_main([], "--date", "2026-10-29")
