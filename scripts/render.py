@@ -1,4 +1,5 @@
-"""Dedupe and validate data/items.json, then write README.md, the weekly digest and data/state.json.
+"""Dedupe and validate data/items.json, then write README.md, the weekly digest, the monthly
+job-skill reports (digests/jobs-YYYY-MM.md from data/jobs/) and data/state.json.
 
 Usage: python3 scripts/render.py [--date YYYY-MM-DD] [--unread "source A" --unread "source B"]
 
@@ -8,6 +9,7 @@ data/state.json records the last date each source was read: every name in source
 import argparse
 import datetime as dt
 import json
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,12 +17,33 @@ ITEMS = ROOT / "data" / "items.json"
 STATE = ROOT / "data" / "state.json"
 SOURCES = ROOT / "sources.json"
 SKILLS = ROOT / "data" / "skills"
+JOBS = ROOT / "data" / "jobs"
 DIGESTS = ROOT / "digests"
+REPO_URL = "https://github.com/hulkbai-beep/ai-engineer-enhance/blob/main"
 
 REQUIRED = ["date", "added", "source", "type", "title", "url", "summary_zh",
             "tags", "difficulty", "relevance", "full_text_read"]
 TYPES = {"paper", "blog", "docs", "release"}
 DIFFICULTIES = {"入门", "进阶", "研究"}
+# One shared set for articles (items.json "category") and job-posting skill phrases (data/jobs/*.json).
+CATEGORIES = {
+    "agents": "Agent 架构与编排",
+    "tools-mcp": "工具、MCP 与 Skills",
+    "context-rag": "上下文工程、检索与记忆",
+    "prompting": "提示词与结构化输出",
+    "evals": "评测与可观测性",
+    "models": "模型发布与选型",
+    "api-sdk": "API、SDK 与开发栈",
+    "training": "微调与后训练",
+    "infra": "推理服务与基础设施",
+    "safety": "安全、隐私与治理",
+    "applied": "落地案例与客户方案",
+    "career": "职业与行业动态",
+}
+# In postings these mean languages and general dev, client delivery, years and communication:
+# reading articles can't close them, so job reports list them but never flag them as gaps.
+NOT_COMPARED = {"api-sdk", "applied", "career"}
+MAX_PER_COMPANY = 3
 
 
 def norm_url(url):
@@ -39,6 +62,9 @@ def validate(item):
         raise ValueError(f"{item['url']}: difficulty must be one of {sorted(DIFFICULTIES)}")
     if not (isinstance(item["relevance"], int) and 0 <= item["relevance"] <= 5):
         raise ValueError(f"{item['url']}: relevance must be an int 0-5")
+    # Relevance-0 items are never shown or compared, so they may leave the category out.
+    if (item["relevance"] >= 1 or "category" in item) and item.get("category") not in CATEGORIES:
+        raise ValueError(f"{item['url']}: category must be one of {list(CATEGORIES)}")
 
 
 def dedupe(items):
@@ -70,14 +96,27 @@ HEADER = ("| 日期 | 来源 | 类型 | 标题 | 摘要 | 标签 | 难度 | 相�
           "|---|---|---|---|---|---|---|---|")
 
 
+def by_category(items):
+    """One table per category, in CATEGORIES order; items keep their incoming order."""
+    lines = []
+    for cid, name in CATEGORIES.items():
+        rows = [row(i) for i in items if i["category"] == cid]
+        if rows:
+            lines += ["", f"### {name}（{len(rows)} 条）", "", HEADER] + rows
+    return lines
+
+
 def render_readme(items):
     shown = [i for i in items if i["relevance"] >= 1]
     digests = sorted(DIGESTS.glob("20*.md"), reverse=True)[:8] if DIGESTS.exists() else []
+    jobs = sorted(DIGESTS.glob("jobs-*.md"), reverse=True) if DIGESTS.exists() else []
     lines = ["# AI Engineer 资源追踪", "",
              "每周自动更新的 LLM / AI Engineer 论文、博客、文档和新模型用法，重点关注 agent。", ""]
     if digests:
         lines += ["## 最近周报", ""] + [f"- [{p.stem}](digests/{p.name})" for p in digests] + [""]
-    lines += [f"## 全部资源（{len(shown)} 条）", "", HEADER] + [row(i) for i in shown]
+    if jobs:
+        lines += ["## 岗位技能快照", ""] + [f"- [{p.stem.removeprefix('jobs-')}](digests/{p.name})" for p in jobs] + [""]
+    lines += [f"## 全部资源（{len(shown)} 条）"] + by_category(shown)
     return "\n".join(lines) + "\n"
 
 
@@ -122,7 +161,14 @@ def render_digest(items, date, unread):
     if must:
         lines += ["## 本周必读", ""]
         lines += [f"- [ ] **[{i['title']}]({i['url']})**（{i['source']}）：{summary(i)}" for i in must] + [""]
-    lines += ["## 本周新增", "", HEADER] + [row(i) for i in week] + [""]
+    jobs = JOBS / f"{date:%Y-%m}.json"
+    job_snap = json.loads(jobs.read_text()) if jobs.exists() else None
+    # Only the digest of the week the snapshot was taken shows it, not every digest of the month.
+    if job_snap and date - dt.timedelta(days=7) < dt.date.fromisoformat(job_snap["date"]) <= date:
+        total, month_before, _, gaps = job_stats(job_snap, items)
+        lines += ["## 本月岗位技能", "", gap_text(gaps, total, month_before), "",
+                  f"完整报告：[jobs-{jobs.stem}]({REPO_URL}/digests/jobs-{jobs.stem}.md)", ""]
+    lines += ["## 本周新增"] + by_category(week) + [""]
     snap = SKILLS / f"{date.isoformat()}.json"
     if snap.exists():
         prev = snapshots_before(date)
@@ -150,6 +196,68 @@ def render_month(date):
     return "\n".join([f"# Skill 月榜 {date:%Y-%m}", ""] + lines) + "\n"
 
 
+def job_stats(snap, items):
+    """Per category: postings that mention it, up to 3 phrases (one per company, so one company's
+    template can't fill the column), and must-read articles (relevance >= 4) added the month before."""
+    first = dt.date.fromisoformat(snap["date"]).replace(day=1)
+    prev = f"{first - dt.timedelta(days=1):%Y-%m}"
+    postings = snap["postings"]
+    stats = []
+    for cid, name in CATEGORIES.items():
+        typical = {}
+        for p in postings:
+            for s in p["skills"]:
+                if s["category"] == cid:
+                    typical.setdefault(p["company"], s["phrase"])
+        stats.append({
+            "id": cid, "name": name,
+            "posts": sum(any(s["category"] == cid for s in p["skills"]) for p in postings),
+            "phrases": list(typical.values())[:3],
+            "articles": sum(i["relevance"] >= 4 and i.get("category") == cid and i["added"].startswith(prev)
+                            for i in items),
+        })
+    stats.sort(key=lambda s: -s["posts"])  # stable, so ties keep CATEGORIES order
+    gaps = [s for s in stats if s["id"] not in NOT_COMPARED and postings
+            and s["posts"] * 2 >= len(postings) and s["articles"] < 3]
+    return len(postings), prev, stats, gaps
+
+
+def gap_text(gaps, total, prev):
+    rule = f"至少一半职位提到、但 {prev} 收的 4 分以上文章不到 3 篇"
+    if not gaps:
+        return f"_没有{rule}的类别。_"
+    return f"{rule}：" + "；".join(f"{s['name']}（{s['posts']}/{total} 份职位，{s['articles']} 篇文章）"
+                                 for s in gaps) + "。"
+
+
+def render_jobs(path, snap, items):
+    """Monthly job-skill report: which categories postings ask for vs the must-read articles of the month before."""
+    bad = sorted({s["category"] for p in snap["postings"] for s in p["skills"]} - set(CATEGORIES))
+    if bad:
+        raise ValueError(f"{path}: unknown categories {bad}")
+    companies = Counter(p["company"] for p in snap["postings"])
+    over = sorted(c for c, n in companies.items() if n > MAX_PER_COMPANY)
+    if over:
+        raise ValueError(f"{path}: more than {MAX_PER_COMPANY} postings from {over}")
+    total, prev, stats, gaps = job_stats(snap, items)
+    lines = [f"# 岗位技能快照 {path.stem}", "",
+             f"{snap['date']} 读了 {total} 份 AI Engineer 类职位：" + "、".join(f"{c} {n}" for c, n in companies.items()) + "。",
+             "", "## 各类技能被几份职位提到", "",
+             f"| 类别 | 提到的职位 | 典型原话（每家公司一句） | {prev} 收的 4 分以上文章 |", "|---|---|---|---|"]
+    lines += [f"| {s['name']} | {s['posts']}/{total} | {cell('；'.join(s['phrases']))} "
+              f"| {'不参与对比' if s['id'] in NOT_COMPARED else s['articles']} |" for s in stats]
+    lines += ["", "### 学习缺口", "", gap_text(gaps, total, prev), "",
+              "_" + "".join(f"「{CATEGORIES[c]}」" for c in CATEGORIES if c in NOT_COMPARED)
+              + "在职位里指编程语言和通用开发、客户交付、年限和沟通，读文章补不了，所以只列出来，不参与对比。_"]
+    lines += ["", "## 职位列表", "", "| 公司 | 职位 | 发布日期 | 来源 | 技能类别 |", "|---|---|---|---|---|"]
+    lines += [f"| {cell(p['company'])} | [{cell(p['title'])}]({p['url']}) | {p['posted']} | {p['via']} "
+              f"| {'；'.join(name for c, name in CATEGORIES.items() if any(s['category'] == c for s in p['skills']))} |"
+              for p in snap["postings"]]
+    if snap.get("note"):
+        lines += ["", f"_{snap['note']}_"]
+    return "\n".join(lines) + "\n"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=dt.date.today().isoformat(), help="run date (default: today)")
@@ -171,6 +279,14 @@ def main():
     ITEMS.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n")
 
     DIGESTS.mkdir(exist_ok=True)
+    seen = {}  # each posting is read once: a later snapshot only takes postings no earlier one has
+    for path in sorted(JOBS.glob("*.json")) if JOBS.exists() else []:
+        snap = json.loads(path.read_text())
+        for p in snap["postings"]:
+            if norm_url(p["url"]) in seen:
+                raise ValueError(f"{path}: {p['url']} is already in {seen[norm_url(p['url'])]}")
+            seen[norm_url(p["url"])] = path.name
+        (DIGESTS / f"jobs-{path.stem}.md").write_text(render_jobs(path, snap, items))
     (DIGESTS / f"{date.isoformat()}.md").write_text(render_digest(items, date, unread))
     # The last weekly run of a month also writes the monthly skill ranking.
     if (date + dt.timedelta(days=7)).month != date.month and (SKILLS / f"{date.isoformat()}.json").exists():

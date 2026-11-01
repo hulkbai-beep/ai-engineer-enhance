@@ -23,5 +23,15 @@
   {"name": "Hamel Husain", "group": "实践博客", "url": "https://hamel.dev/index.xml"},
   {"name": "Lilian Weng", "group": "实践博客", "url": "https://lilianweng.github.io/index.xml"},
   {"name": "Sebastian Raschka", "group": "实践博客", "url": "https://magazine.sebastianraschka.com/feed"},
-  {"name": "The Batch", "group": "实践博客", "url": "https://www.deeplearning.ai/the-batch/"}
+  {"name": "The Batch", "group": "实践博客", "url": "https://www.deeplearning.ai/the-batch/"},
+  {"name": "Claude Cookbook", "group": "官方示例与课程", "url": "https://platform.claude.com/cookbook", "note": "日期只到月份：收当月和上个月里 items.json 还没有的条目，date 写那个月的 1 日"},
+  {"name": "OpenAI Cookbook", "group": "官方示例与课程", "url": "https://developers.openai.com/cookbook"},
+  {"name": "Hugging Face Blog", "group": "官方示例与课程", "url": "https://huggingface.co/blog/feed.xml", "note": "只收和 LLM 应用、agent、评测、微调相关的"},
+  {"name": "DeepLearning.AI Short Courses", "group": "官方示例与课程", "url": "https://www.deeplearning.ai/short-courses/", "note": "页面和课程页都没有日期：每次只看列表最上面 5 个，收其中 items.json 里还没有的，date 写运行日期"},
+  {"name": "Google Developers Blog", "group": "官方", "url": "https://developers.googleblog.com/rss/", "note": "RSS 没有日期：只看 AI / agent 相关的，从上往下打开文章页看日期，遇到第一篇早于窗口的就停"},
+  {"name": "Decoding AI", "group": "Newsletter", "url": "https://www.decodingai.com/api/v1/archive?sort=new&search=&offset=0&limit=50"},
+  {"name": "Drew Breunig", "group": "实践博客", "url": "https://www.dbreunig.com/feed.xml"},
+  {"name": "DAIR.AI", "group": "Newsletter", "url": "https://nlp.elvissaravia.com/api/v1/archive?sort=new&search=&offset=0&limit=50", "note": "周日免费的论文精选是重点；付费的 AI Agents Weekly 只记简介"},
+  {"name": "Philipp Schmid", "group": "实践博客", "url": "https://www.philschmid.de/rss"},
+  {"name": "Braintrust", "group": "评测与可观测性", "url": "https://www.braintrust.dev/blog"}
 ]

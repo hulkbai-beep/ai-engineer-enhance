@@ -1,0 +1,683 @@
+{
+  "date": "2026-11-01",
+  "note": "第一次快照，11 月 1 日在交互会话里做的。Greenhouse 的 /jobs 列表按职位名排序，太长被截断：Anthropic 只到 D 开头（Forward Deployed 职位从 Applied AI 部门列表拿），Databricks 到 E，Stripe 到 C，Scale AI 到 S；职位名、链接和日期都以单个职位接口为准。YC 职位页没有发布日期；Wellfound 的日期按页面上的「2 days ago」「1 week ago」从 11 月 1 日倒推，是近似值。LinkedIn 职位页 robots_disallowed，没读。",
+  "postings": [
+    {
+      "company": "Anthropic",
+      "title": "Forward Deployed Engineer",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5302966008",
+      "posted": "2026-08-12",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "applied",
+          "phrase": "Work within customer systems to build production applications"
+        },
+        {
+          "category": "tools-mcp",
+          "phrase": "Deliver technical artifacts for customers like MCP servers"
+        },
+        {
+          "category": "applied",
+          "phrase": "Provide white glove deployment support for Anthropic products"
+        },
+        {
+          "category": "applied",
+          "phrase": "Identify and codify repeatable deployment patterns"
+        },
+        {
+          "category": "models",
+          "phrase": "Maintain strong knowledge of the latest developments in LLM capabilities"
+        },
+        {
+          "category": "career",
+          "phrase": "4+ years of experience in a technical, customer facing role"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Production experience with LLMs"
+        },
+        {
+          "category": "prompting",
+          "phrase": "advanced prompt engineering"
+        },
+        {
+          "category": "agents",
+          "phrase": "agent development"
+        },
+        {
+          "category": "evals",
+          "phrase": "evaluation frameworks"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Strong programming skills with proficiency in Python"
+        },
+        {
+          "category": "career",
+          "phrase": "Strong communication skills to conduct discovery with customers"
+        }
+      ]
+    },
+    {
+      "company": "Anthropic",
+      "title": "Applied AI Engineer, Enterprise Tech",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5057647008",
+      "posted": "2026-01-08",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "applied",
+          "phrase": "Serve as a specialist technical advisor to Anthropic customers"
+        },
+        {
+          "category": "applied",
+          "phrase": "Influence technical architecture decisions and customer product strategy"
+        },
+        {
+          "category": "applied",
+          "phrase": "Lead hands-on technical workshops and code reviews"
+        },
+        {
+          "category": "career",
+          "phrase": "4+ years of experience in technical roles"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Production experience with LLMs"
+        },
+        {
+          "category": "prompting",
+          "phrase": "advanced prompt engineering"
+        },
+        {
+          "category": "evals",
+          "phrase": "evaluation frameworks"
+        },
+        {
+          "category": "evals",
+          "phrase": "transcript analysis"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Strong programming skills with proficiency in Python or TypeScript"
+        },
+        {
+          "category": "career",
+          "phrase": "Exceptional communication skills to convey technical concepts to diverse stakeholders"
+        }
+      ]
+    },
+    {
+      "company": "Anthropic",
+      "title": "Applied AI Engineer, Startups (Physical AI)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5454673008",
+      "posted": "2026-10-15",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "applied",
+          "phrase": "Serve as a deep technical advisor to high-potential startups"
+        },
+        {
+          "category": "applied",
+          "phrase": "Work hands-on with startup software and hardware teams"
+        },
+        {
+          "category": "applied",
+          "phrase": "Develop prototypes and technical documentation"
+        },
+        {
+          "category": "applied",
+          "phrase": "Create reference implementations and sample code"
+        },
+        {
+          "category": "career",
+          "phrase": "Travel to customer sites for workshops"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "production experience building LLM-powered applications"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "context engineering"
+        },
+        {
+          "category": "agents",
+          "phrase": "agent architectures"
+        },
+        {
+          "category": "evals",
+          "phrase": "evaluation frameworks"
+        },
+        {
+          "category": "career",
+          "phrase": "Experience with startups or high-growth companies"
+        },
+        {
+          "category": "career",
+          "phrase": "Strong technical communication skills"
+        }
+      ]
+    },
+    {
+      "company": "Scale AI",
+      "title": "Applied AI Engineer, Global Public Sector",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4413992005",
+      "posted": "2024-05-01",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "api-sdk",
+          "phrase": "Build and deploy end-to-end AI applications into production"
+        },
+        {
+          "category": "applied",
+          "phrase": "Partner with public sector clients"
+        },
+        {
+          "category": "evals",
+          "phrase": "Design and maintain robust evaluation frameworks"
+        },
+        {
+          "category": "applied",
+          "phrase": "Participate in customer engagements"
+        },
+        {
+          "category": "career",
+          "phrase": "Collaborate with cross-functional teams"
+        },
+        {
+          "category": "career",
+          "phrase": "7+ years of post-graduation engineering experience"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "proficiency in languages such as Python"
+        },
+        {
+          "category": "career",
+          "phrase": "2+ years of experience applying AI/ML in production environments"
+        },
+        {
+          "category": "infra",
+          "phrase": "cloud-based machine learning tools and platforms"
+        },
+        {
+          "category": "training",
+          "phrase": "data-driven approach to iterating on machine learning models"
+        },
+        {
+          "category": "career",
+          "phrase": "Excellent written and verbal communication skills"
+        },
+        {
+          "category": "agents",
+          "phrase": "generative/agentic AI applications"
+        }
+      ]
+    },
+    {
+      "company": "Scale AI",
+      "title": "Frontier Agents Engineer (Applied AI)",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4720573005",
+      "posted": "2026-07-31",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "Design and deploy production AI agents"
+        },
+        {
+          "category": "agents",
+          "phrase": "Develop multi-agent systems that coordinate reasoning, planning, tool execution"
+        },
+        {
+          "category": "agents",
+          "phrase": "Build human-in-the-loop workflows"
+        },
+        {
+          "category": "evals",
+          "phrase": "Design rigorous evaluation frameworks"
+        },
+        {
+          "category": "evals",
+          "phrase": "Experience designing or evaluating AI systems using quantitative metrics"
+        },
+        {
+          "category": "applied",
+          "phrase": "Partner directly with enterprise customers"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Strong Python programming skills"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Experience building production AI systems using LLMs"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "modern AI tooling, including OpenAI, Claude, MCP"
+        },
+        {
+          "category": "career",
+          "phrase": "4+ years of software engineering, machine learning"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "cloud platforms such as AWS, Azure, or GCP"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "RAG, semantic search, knowledge graphs"
+        }
+      ]
+    },
+    {
+      "company": "Databricks",
+      "title": "Applied AI Engineer",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8091041002",
+      "posted": "2025-08-15",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "Build agentic end-to-end systems"
+        },
+        {
+          "category": "infra",
+          "phrase": "robust, scalable ML infrastructure"
+        },
+        {
+          "category": "infra",
+          "phrase": "Experience developing AI/ML systems at scale in production"
+        },
+        {
+          "category": "training",
+          "phrase": "novel forecasting techniques"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Strong software engineering skills"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "familiarity with software engineering principles around testing and deployment"
+        },
+        {
+          "category": "career",
+          "phrase": "2-8 years of engineering experience"
+        }
+      ]
+    },
+    {
+      "company": "Databricks",
+      "title": "AI Engineer - FDE (Forward Deployed Engineer)",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
+      "posted": "2026-05-13",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "applied",
+          "phrase": "Serve as a trusted technical advisor to customers"
+        },
+        {
+          "category": "career",
+          "phrase": "Collaborate cross-functionally with the product and engineering teams"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Own production rollouts"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "GenAI applications, including RAG"
+        },
+        {
+          "category": "agents",
+          "phrase": "multi-agent systems"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Expertise in deploying production-grade GenAI applications"
+        },
+        {
+          "category": "infra",
+          "phrase": "production-grade machine learning deployments on AWS"
+        },
+        {
+          "category": "training",
+          "phrase": "leveraging common machine learning and data science tools"
+        },
+        {
+          "category": "career",
+          "phrase": "Extensive years of hands-on industry data science experience"
+        },
+        {
+          "category": "career",
+          "phrase": "Graduate degree in a quantitative discipline"
+        },
+        {
+          "category": "career",
+          "phrase": "communicating and/or teaching technical concepts"
+        }
+      ]
+    },
+    {
+      "company": "Stripe",
+      "title": "AI Engineer",
+      "url": "https://stripe.com/jobs/search?gh_jid=8144196",
+      "posted": "2026-10-07",
+      "via": "Greenhouse",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "Architect and build internal tools, agents, and automated workflows"
+        },
+        {
+          "category": "agents",
+          "phrase": "Experience building and deploying AI agents, LLM-powered tools"
+        },
+        {
+          "category": "applied",
+          "phrase": "Build custom demo environments, PoC applications, and technical assets"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Debug, extend, and maintain backend systems"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Strong backend engineering fundamentals"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Ruby, Node.js, Python, or Next.js"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Hands-on experience using AI/LLM tools in your engineering workflow"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "cloud infrastructure (AWS, GCP)"
+        },
+        {
+          "category": "career",
+          "phrase": "Collaborate with Solutions Architects, SA leadership, Product, and Engineering"
+        },
+        {
+          "category": "career",
+          "phrase": "4+ years of experience as an engineer shipping production systems"
+        },
+        {
+          "category": "career",
+          "phrase": "Experience scoping and delivering work with minimal oversight"
+        }
+      ]
+    },
+    {
+      "company": "Kodo",
+      "title": "Senior AI Engineer",
+      "url": "https://www.ycombinator.com/companies/kodo/jobs/iJfJWnN-senior-ai-engineer",
+      "posted": "",
+      "via": "YC",
+      "skills": [
+        {
+          "category": "api-sdk",
+          "phrase": "Design, develop, and deploy AI models using LLM technologies"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Integrate AI models with our existing systems via API integrations"
+        },
+        {
+          "category": "models",
+          "phrase": "LLMs, GPT-4 or similar models"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Hands-on experience with API integration"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "programming languages such as Python or JavaScript"
+        },
+        {
+          "category": "infra",
+          "phrase": "cloud platforms (Azure) for deploying AI models"
+        },
+        {
+          "category": "agents",
+          "phrase": "e.g. Google ADK, Langgraph"
+        },
+        {
+          "category": "evals",
+          "phrase": "LLM tracing and observability tools"
+        },
+        {
+          "category": "evals",
+          "phrase": "eg langsmith,langfuse"
+        },
+        {
+          "category": "career",
+          "phrase": "Collaborate with cross-functional teams to implement AI solutions"
+        }
+      ]
+    },
+    {
+      "company": "Sully.ai",
+      "title": "Staff Full Stack Engineer",
+      "url": "https://www.ycombinator.com/companies/sully/jobs/DuoVsUf-staff-full-stack-engineer",
+      "posted": "",
+      "via": "YC",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "Hands-on experience working with AI products, AI agents, LLM workflows"
+        },
+        {
+          "category": "prompting",
+          "phrase": "prompt/configuration systems"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "AI-native development tools"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "relational data modeling"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "integrating with 3rd party APIs"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "frontend development"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "infra-as-code and/or CI/CD systems"
+        },
+        {
+          "category": "safety",
+          "phrase": "awareness of HIPAA/PHI handling"
+        },
+        {
+          "category": "applied",
+          "phrase": "Sit in on customer calls"
+        },
+        {
+          "category": "career",
+          "phrase": "written communication and documentation habits"
+        },
+        {
+          "category": "career",
+          "phrase": "Experience in software engineering and technical leadership"
+        },
+        {
+          "category": "career",
+          "phrase": "Startup or founder experience"
+        }
+      ]
+    },
+    {
+      "company": "Coris",
+      "title": "Backend Engineer (AI-Native) — Risk Infrastructure & Integrations",
+      "url": "https://www.ycombinator.com/companies/coris/jobs/h0nDly8-backend-engineer-ai-native-risk-infrastructure-integrations",
+      "posted": "",
+      "via": "YC",
+      "skills": [
+        {
+          "category": "api-sdk",
+          "phrase": "Own processor and platform integrations"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Own the partner API and customer-specific work"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Run it in prod"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Coding agents for first drafts and refactors"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "A few years shipping production Python backends"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "AI review comments as input, not instruction"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "concurrency and locking bugs"
+        },
+        {
+          "category": "applied",
+          "phrase": "Comfortable with customers"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "SFTP and batch-file integrations"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Shipped LLM features in production"
+        }
+      ]
+    },
+    {
+      "company": "Juniper Square",
+      "title": "Senior Applied AI Engineer I",
+      "url": "https://wellfound.com/jobs/4884757-senior-applied-ai-engineer-i",
+      "posted": "2026-10-30",
+      "via": "Wellfound",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "Design and build agentic systems"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "retrieval and context design"
+        },
+        {
+          "category": "tools-mcp",
+          "phrase": "tool and MCP integration"
+        },
+        {
+          "category": "evals",
+          "phrase": "evaluation harnesses"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Design event-driven, scalable systems"
+        },
+        {
+          "category": "career",
+          "phrase": "5+ years of professional experience"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "hands-on experience building AI-native applications or agents"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "deploying and operating applications on a major cloud provider"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Fluency with AI-assisted development"
+        },
+        {
+          "category": "evals",
+          "phrase": "Experience building evaluation and regression testing for non-deterministic systems"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "large-scale document processing"
+        },
+        {
+          "category": "safety",
+          "phrase": "application security and data handling practices"
+        }
+      ]
+    },
+    {
+      "company": "FutureFit AI",
+      "title": "Senior AI Engineer",
+      "url": "https://wellfound.com/jobs/4824217-senior-ai-engineer",
+      "posted": "2026-10-25",
+      "via": "Wellfound",
+      "skills": [
+        {
+          "category": "agents",
+          "phrase": "agentic workflows that carry out real steps"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Design, build, and ship LLM-based product experiences end to end"
+        },
+        {
+          "category": "evals",
+          "phrase": "Build the eval harnesses"
+        },
+        {
+          "category": "prompting",
+          "phrase": "prompt engineering"
+        },
+        {
+          "category": "tools-mcp",
+          "phrase": "tool use and function calling"
+        },
+        {
+          "category": "training",
+          "phrase": "Classical ML depth"
+        },
+        {
+          "category": "training",
+          "phrase": "hands-on experience building and rigorously evaluating predictive or classification models"
+        },
+        {
+          "category": "api-sdk",
+          "phrase": "Fluency in Python and SQL"
+        },
+        {
+          "category": "infra",
+          "phrase": "AWS and SageMaker"
+        },
+        {
+          "category": "context-rag",
+          "phrase": "retrieval-augmented generation at production scale"
+        }
+      ]
+    }
+  ]
+}

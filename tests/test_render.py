@@ -13,8 +13,13 @@ import render  # noqa: E402
 def item(url, **kw):
     base = {"date": "2026-10-28", "added": "2026-10-29", "source": "OpenAI", "type": "blog",
             "title": "T", "url": url, "summary_zh": "摘要", "tags": ["agent"],
-            "difficulty": "进阶", "relevance": 3, "full_text_read": True}
+            "difficulty": "进阶", "relevance": 3, "full_text_read": True, "category": "agents"}
     return {**base, **kw}
+
+
+def posting(company, *cats, n=0):
+    return {"company": company, "title": "AI Engineer", "url": f"https://jobs/{company}/{n}", "posted": "2026-10-20",
+            "via": "Greenhouse", "skills": [{"category": c, "phrase": f"{company}-{c}-{i}"} for i, c in enumerate(cats)]}
 
 
 def snapshot(skills):
@@ -28,6 +33,7 @@ class RenderTest(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         render.ROOT, render.ITEMS = self.tmp, self.tmp / "data" / "items.json"
         render.SKILLS, render.DIGESTS = self.tmp / "data" / "skills", self.tmp / "digests"
+        render.JOBS = self.tmp / "data" / "jobs"
         render.STATE, render.SOURCES = self.tmp / "data" / "state.json", self.tmp / "sources.json"
         render.SKILLS.mkdir(parents=True)
         render.SOURCES.write_text(json.dumps([{"name": "OpenAI"}, {"name": "Meta AI"}]))
@@ -55,6 +61,19 @@ class RenderTest(unittest.TestCase):
             render.validate(bad)
         with self.assertRaises(ValueError):
             render.validate(item("https://a.com", relevance=9))
+        with self.assertRaises(ValueError):
+            render.validate(item("https://a.com", category="rag"))
+        no_category = item("https://a.com", relevance=0)
+        del no_category["category"]
+        render.validate(no_category)  # irrelevant items may skip the category
+
+    def test_readme_groups_by_category_in_fixed_order(self):
+        self.run_main([item("https://a.com", category="evals", title="E"),
+                       item("https://b.com", category="agents", title="A1"),
+                       item("https://c.com", category="agents", title="A2")], "--date", "2026-10-29")
+        readme = (self.tmp / "README.md").read_text()
+        self.assertLess(readme.index("### Agent 架构与编排（2 条）"), readme.index("### 评测与可观测性（1 条）"))
+        self.assertNotIn("提示词与结构化输出", readme)
 
     def test_readme_hides_irrelevant_and_marks_unread(self):
         self.run_main([item("https://a.com", relevance=0, title="Biz"),
@@ -129,6 +148,39 @@ class RenderTest(unittest.TestCase):
     def test_first_snapshot_has_no_comparison(self):
         text = "\n".join(render.skill_section({"r/a": snapshot([("a", 1)])["skills"][0]}, None, "榜"))
         self.assertIn("还没有更早的快照", text)
+
+    def test_job_report_counts_postings_and_flags_gaps(self):
+        render.JOBS.mkdir(parents=True)
+        (render.JOBS / "2026-11.json").write_text(json.dumps(
+            {"date": "2026-11-01", "postings": [posting("A", "evals", "agents", "evals", "career"),
+                                                posting("B", "evals", "career"), posting("C", "agents", "career")]}))
+        articles = [item(f"https://x.com/{n}", category="agents", relevance=4) for n in range(3)]
+        articles.append(item("https://y.com", category="evals", relevance=3))  # below must-read grade
+        articles.append(item("https://z.com", category="evals", relevance=5, added="2026-09-29"))  # not October
+        self.run_main(articles, "--date", "2026-11-02")
+        report = (render.DIGESTS / "jobs-2026-11.md").read_text()
+        self.assertIn("| 评测与可观测性 | 2/3 | A-evals-0；B-evals-0 | 0 |", report)  # one phrase per company
+        self.assertIn("| Agent 架构与编排 | 2/3 | A-agents-1；C-agents-0 | 3 |", report)
+        self.assertIn("| 职业与行业动态 | 3/3 | A-career-3；B-career-1；C-career-1 | 不参与对比 |", report)
+        # Agents has 3 must-read October articles and career is never compared, so only evals is a gap.
+        self.assertIn("2026-10 收的 4 分以上文章不到 3 篇：评测与可观测性（2/3 份职位，0 篇文章）。", report)
+        digest = (render.DIGESTS / "2026-11-02.md").read_text()
+        self.assertIn("## 本月岗位技能", digest)
+        self.assertIn("digests/jobs-2026-11.md", digest)
+        self.assertIn("- [2026-11](digests/jobs-2026-11.md)", (self.tmp / "README.md").read_text())
+        self.run_main(articles, "--date", "2026-11-09")  # later digests of the month leave it out
+        self.assertNotIn("岗位技能", (render.DIGESTS / "2026-11-09.md").read_text())
+
+    def test_job_snapshots_cap_each_company_and_never_repeat_a_posting(self):
+        render.JOBS.mkdir(parents=True)
+        nov = render.JOBS / "2026-11.json"
+        nov.write_text(json.dumps({"date": "2026-11-01", "postings": [posting("A", "agents", n=n) for n in range(4)]}))
+        with self.assertRaisesRegex(ValueError, r"more than 3 postings from \['A'\]"):
+            self.run_main([], "--date", "2026-11-02")
+        (render.JOBS / "2026-10.json").write_text(json.dumps({"date": "2026-10-05", "postings": [posting("A", "agents")]}))
+        nov.write_text(json.dumps({"date": "2026-11-01", "postings": [posting("A", "agents")]}))
+        with self.assertRaisesRegex(ValueError, "already in 2026-10.json"):
+            self.run_main([], "--date", "2026-11-02")
 
     def test_monthly_ranking_written_on_last_run_of_month(self):
         (render.SKILLS / "2026-09-28.json").write_text(json.dumps(snapshot([("a", 10)])))
