@@ -63,6 +63,8 @@ class RenderTest(unittest.TestCase):
             render.validate(item("https://a.com", relevance=9))
         with self.assertRaises(ValueError):
             render.validate(item("https://a.com", category="rag"))
+        with self.assertRaises(ValueError):
+            render.validate(item("https://a.com", category=["agents"]))  # a list, as tags are
         no_category = item("https://a.com", relevance=0)
         del no_category["category"]
         render.validate(no_category)  # irrelevant items may skip the category
@@ -77,10 +79,12 @@ class RenderTest(unittest.TestCase):
 
     def test_readme_hides_irrelevant_and_marks_unread(self):
         self.run_main([item("https://a.com", relevance=0, title="Biz"),
-                       item("https://b.com", full_text_read=False, title="Agent|Post")], "--date", "2026-10-29")
+                       item("https://b.com", full_text_read=False, title="Agent|Post", tags=["a|b"])],
+                      "--date", "2026-10-29")
         readme = (self.tmp / "README.md").read_text()
         self.assertNotIn("Biz", readme)
         self.assertIn("Agent\\|Post", readme)
+        self.assertIn("| a\\|b |", readme)
         self.assertIn("未读到正文", readme)
 
     def test_digest_only_this_week_with_must_read_and_unread_sources(self):
@@ -103,6 +107,13 @@ class RenderTest(unittest.TestCase):
         self.assertEqual(json.loads(render.STATE.read_text())["Meta AI"], "2026-11-02")
         self.run_main([], "--date", "2026-10-29")  # re-rendering an old week never moves a source back
         self.assertEqual(json.loads(render.STATE.read_text())["OpenAI"], "2026-11-02")
+
+    def test_no_state_rerender_leaves_state_alone(self):
+        self.run_main([], "--date", "2026-10-29")
+        before = render.STATE.read_text()
+        render.SOURCES.write_text(json.dumps([{"name": "OpenAI"}, {"name": "Meta AI"}, {"name": "New"}]))
+        self.run_main([], "--date", "2026-10-29", "--no-state")  # "New" was never read
+        self.assertEqual(render.STATE.read_text(), before)
 
     def test_rejects_unread_name_not_in_sources(self):
         with self.assertRaises(ValueError):
@@ -170,6 +181,24 @@ class RenderTest(unittest.TestCase):
         self.assertIn("- [2026-11](digests/jobs-2026-11.md)", (self.tmp / "README.md").read_text())
         self.run_main(articles, "--date", "2026-11-09")  # later digests of the month leave it out
         self.assertNotIn("岗位技能", (render.DIGESTS / "2026-11-09.md").read_text())
+
+    def test_rejects_job_snapshots_the_report_would_get_wrong(self):
+        render.JOBS.mkdir(parents=True)
+        no_date = posting("A", "agents")
+        del no_date["posted"]
+        for snap, message in [({"date": "2026-11-01", "postings": []}, "no postings"),
+                              ({"date": "2026-10-31", "postings": [posting("A", "agents")]}, "is not in 2026-11"),
+                              ({"date": "2026-11-01", "postings": [no_date]}, r"missing \['posted'\]"),
+                              ({"date": "2026-11-01", "postings": [posting("A", "rag")]}, "each skill needs"),
+                              ({"date": "2026-11-01", "postings": [posting("A")]}, "each skill needs"),
+                              ({"date": "2026-11-01", "postings": [{**posting("A"), "skills": [{"category": "agents"}]}]},
+                               "each skill needs"),
+                              ({"date": "2026-11-01", "postings": [
+                                  {**posting("A"), "skills": [{"category": ["agents"], "phrase": "p"}]}]},
+                               "each skill needs")]:
+            (render.JOBS / "2026-11.json").write_text(json.dumps(snap))
+            with self.assertRaisesRegex(ValueError, message):
+                self.run_main([], "--date", "2026-11-02")
 
     def test_job_snapshots_cap_each_company_and_never_repeat_a_posting(self):
         render.JOBS.mkdir(parents=True)

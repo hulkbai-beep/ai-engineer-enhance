@@ -1,10 +1,12 @@
 """Dedupe and validate data/items.json, then write README.md, the weekly digest, the monthly
 job-skill reports (digests/jobs-YYYY-MM.md from data/jobs/) and data/state.json.
 
-Usage: python3 scripts/render.py [--date YYYY-MM-DD] [--unread "source A" --unread "source B"]
+Usage: python3 scripts/render.py [--date YYYY-MM-DD] [--unread "source A" --unread "source B"] [--no-state]
 
 data/state.json records the last date each source was read: every name in sources.json
-(plus skills.sh) that is not passed with --unread. Reads only files inside the repo; no network access.
+(plus skills.sh) that is not passed with --unread. Re-rendering outside the weekly run (an older
+date, or after editing data/jobs/) takes --no-state, which leaves data/state.json as it is.
+Reads only files inside the repo; no network access.
 """
 import argparse
 import datetime as dt
@@ -63,7 +65,8 @@ def validate(item):
     if not (isinstance(item["relevance"], int) and 0 <= item["relevance"] <= 5):
         raise ValueError(f"{item['url']}: relevance must be an int 0-5")
     # Relevance-0 items are never shown or compared, so they may leave the category out.
-    if (item["relevance"] >= 1 or "category" in item) and item.get("category") not in CATEGORIES:
+    category = item.get("category")
+    if (item["relevance"] >= 1 or "category" in item) and not (isinstance(category, str) and category in CATEGORIES):
         raise ValueError(f"{item['url']}: category must be one of {list(CATEGORIES)}")
 
 
@@ -89,7 +92,7 @@ def summary(item):
 def row(item):
     return (f"| {item['date']} | {cell(item['source'])} | {item['type']} "
             f"| [{cell(item['title'])}]({item['url']}) | {cell(summary(item))} "
-            f"| {', '.join(item['tags'])} | {item['difficulty']} | {item['relevance']} |")
+            f"| {cell(', '.join(item['tags']))} | {item['difficulty']} | {item['relevance']} |")
 
 
 HEADER = ("| 日期 | 来源 | 类型 | 标题 | 摘要 | 标签 | 难度 | 相关度 |\n"
@@ -217,7 +220,7 @@ def job_stats(snap, items):
                             for i in items),
         })
     stats.sort(key=lambda s: -s["posts"])  # stable, so ties keep CATEGORIES order
-    gaps = [s for s in stats if s["id"] not in NOT_COMPARED and postings
+    gaps = [s for s in stats if s["id"] not in NOT_COMPARED
             and s["posts"] * 2 >= len(postings) and s["articles"] < 3]
     return len(postings), prev, stats, gaps
 
@@ -230,15 +233,28 @@ def gap_text(gaps, total, prev):
                                  for s in gaps) + "。"
 
 
-def render_jobs(path, snap, items):
-    """Monthly job-skill report: which categories postings ask for vs the must-read articles of the month before."""
-    bad = sorted({s["category"] for p in snap["postings"] for s in p["skills"]} - set(CATEGORIES))
-    if bad:
-        raise ValueError(f"{path}: unknown categories {bad}")
-    companies = Counter(p["company"] for p in snap["postings"])
-    over = sorted(c for c, n in companies.items() if n > MAX_PER_COMPANY)
+def validate_jobs(path, snap):
+    """Like validate() for items: a ValueError naming the file and posting, which the weekly run knows to fix."""
+    if not snap.get("postings"):
+        raise ValueError(f"{path}: no postings; delete the file so next week's run takes the snapshot again")
+    if str(snap.get("date"))[:7] != path.stem:
+        raise ValueError(f"{path}: date {snap.get('date')} is not in {path.stem}; name the file data/jobs/<YYYY-MM of date>.json")
+    dt.date.fromisoformat(snap["date"])
+    for p in snap["postings"]:
+        missing = [k for k in ("company", "title", "url", "posted", "via", "skills") if k not in p]
+        if missing:
+            raise ValueError(f"{path}: {p.get('url', p)}: missing {missing}")
+        for s in p["skills"] or [{}]:
+            if not (isinstance(s.get("category"), str) and s["category"] in CATEGORIES and s.get("phrase")):
+                raise ValueError(f"{path}: {p['url']}: each skill needs a phrase and a category from {list(CATEGORIES)}")
+    over = sorted(c for c, n in Counter(p["company"] for p in snap["postings"]).items() if n > MAX_PER_COMPANY)
     if over:
         raise ValueError(f"{path}: more than {MAX_PER_COMPANY} postings from {over}")
+
+
+def render_jobs(path, snap, items):
+    """Monthly job-skill report: which categories postings ask for vs the must-read articles of the month before."""
+    companies = Counter(p["company"] for p in snap["postings"])
     total, prev, stats, gaps = job_stats(snap, items)
     lines = [f"# 岗位技能快照 {path.stem}", "",
              f"{snap['date']} 读了 {total} 份 AI Engineer 类职位：" + "、".join(f"{c} {n}" for c, n in companies.items()) + "。",
@@ -250,7 +266,7 @@ def render_jobs(path, snap, items):
               "_" + "".join(f"「{CATEGORIES[c]}」" for c in CATEGORIES if c in NOT_COMPARED)
               + "在职位里指编程语言和通用开发、客户交付、年限和沟通，读文章补不了，所以只列出来，不参与对比。_"]
     lines += ["", "## 职位列表", "", "| 公司 | 职位 | 发布日期 | 来源 | 技能类别 |", "|---|---|---|---|---|"]
-    lines += [f"| {cell(p['company'])} | [{cell(p['title'])}]({p['url']}) | {p['posted']} | {p['via']} "
+    lines += [f"| {cell(p['company'])} | [{cell(p['title'])}]({p['url']}) | {cell(p['posted'])} | {cell(p['via'])} "
               f"| {'；'.join(name for c, name in CATEGORIES.items() if any(s['category'] == c for s in p['skills']))} |"
               for p in snap["postings"]]
     if snap.get("note"):
@@ -262,6 +278,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=dt.date.today().isoformat(), help="run date (default: today)")
     ap.add_argument("--unread", action="append", default=[], help="source that could not be read")
+    ap.add_argument("--no-state", action="store_true", help="re-render only: leave data/state.json as it is")
     args = ap.parse_args()
     date = dt.date.fromisoformat(args.date)
     names = [s["name"] for s in json.loads(SOURCES.read_text())] + ["skills.sh"]
@@ -282,6 +299,7 @@ def main():
     seen = {}  # each posting is read once: a later snapshot only takes postings no earlier one has
     for path in sorted(JOBS.glob("*.json")) if JOBS.exists() else []:
         snap = json.loads(path.read_text())
+        validate_jobs(path, snap)
         for p in snap["postings"]:
             if norm_url(p["url"]) in seen:
                 raise ValueError(f"{path}: {p['url']} is already in {seen[norm_url(p['url'])]}")
@@ -292,9 +310,10 @@ def main():
     if (date + dt.timedelta(days=7)).month != date.month and (SKILLS / f"{date.isoformat()}.json").exists():
         (DIGESTS / f"skills-{date:%Y-%m}.md").write_text(render_month(date))
     (ROOT / "README.md").write_text(render_readme(items))
-    # max() so re-rendering an older date never moves a source backwards.
-    state.update({n: max(state.get(n, ""), date.isoformat()) for n in names if n not in args.unread})
-    STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n")
+    if not args.no_state:
+        # max() so a same-day rerun or an older --date never moves a source backwards.
+        state.update({n: max(state.get(n, ""), date.isoformat()) for n in names if n not in args.unread})
+        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n")
     print(f"{len(items)} items; digest digests/{date.isoformat()}.md")
 
 

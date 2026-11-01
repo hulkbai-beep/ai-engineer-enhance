@@ -142,9 +142,9 @@ python3 scripts/render.py --date D [--unread "来源名" ...]
 python3 -m unittest discover tests
 ```
 
-`--unread` 用 sources.json 里的 name，skill 榜没读到用 `skills.sh`；写错名字 render.py 会报错。同一天重跑时，今天已经读到过的来源即使再传 `--unread` 也不会算成未读取。
+`--unread` 用 sources.json 里的 name，skill 榜没读到用 `skills.sh`；写错名字 render.py 会报错。同一天重跑时，今天已经读到过的来源即使再传 `--unread` 也不会算成未读取。不是每周运行、只是重新生成旧日期的周报或岗位报告时（比如改了 `data/jobs/`），用 `--date <那次运行的日期> --no-state`，否则会把没读过的来源记成已读。
 
-render.py 同时生成 `digests/jobs-<年-月>.md`（每份岗位技能快照一份），做快照那一周的周报里会带上学习缺口：至少一半职位提到、但上个月收的 4 分以上文章不到 3 篇的类别。报错（缺字段、取值不对、类别或来源名不对、职位链接重复、同一家超过 3 份）就修正 `data/items.json`、`data/skills/D.json`、`data/jobs/` 或 `--unread` 参数后重跑。打开 `digests/D.md` 检查：每条都有链接和中文摘要，「本周必读」合理（它是勾选框清单，用户在 Issue 里读完一条勾一条）。
+render.py 同时生成 `digests/jobs-<年-月>.md`（每份岗位技能快照一份），做快照那一周的周报里会带上学习缺口：至少一半职位提到、但上个月收的 4 分以上文章不到 3 篇的类别。报错（缺字段、取值不对、类别或来源名不对；岗位快照没有职位、日期和文件名不在同一个月、职位链接重复、同一家超过 3 份）就修正 `data/items.json`、`data/skills/D.json`、`data/jobs/` 或 `--unread` 参数后重跑。打开 `digests/D.md` 检查：每条都有链接和中文摘要，「本周必读」合理（它是勾选框清单，用户在 Issue 里读完一条勾一条）。
 
 ## 7. 提交与通知
 
