@@ -33,5 +33,15 @@
   {"name": "Drew Breunig", "group": "实践博客", "url": "https://www.dbreunig.com/feed.xml"},
   {"name": "DAIR.AI", "group": "Newsletter", "url": "https://nlp.elvissaravia.com/api/v1/archive?sort=new&search=&offset=0&limit=50", "note": "周日免费的论文精选是重点；付费的 AI Agents Weekly 只记简介"},
   {"name": "Philipp Schmid", "group": "实践博客", "url": "https://www.philschmid.de/rss"},
-  {"name": "Braintrust", "group": "评测与可观测性", "url": "https://www.braintrust.dev/blog"}
+  {"name": "Braintrust", "group": "评测与可观测性", "url": "https://www.braintrust.dev/blog"},
+  {"name": "Cursor", "group": "Agent 产品团队", "url": "https://cursor.com/blog", "note": "只收 cursor.com 上的文章，列表里链到别的网站的（比如 x.ai 的模型发布）跳过"},
+  {"name": "Cognition", "group": "Agent 产品团队", "url": "https://cognition.com/blog"},
+  {"name": "Vercel", "group": "Agent 框架", "url": "https://vercel.com/blog", "note": "列表日期没有年份，按离运行日期最近的那一年算；只收和 AI、agent、AI SDK、AI Gateway 相关的"},
+  {"name": "Langfuse", "group": "评测与可观测性", "url": "https://langfuse.com/blog"},
+  {"name": "Martin Fowler", "group": "实践博客", "url": "https://martinfowler.com/articles/exploring-gen-ai.html", "note": "这页是 Exploring Generative AI 系列的目录，每篇有完整日期，链接到单独的文章页"},
+  {"name": "Armin Ronacher", "group": "实践博客", "url": "https://lucumr.pocoo.org/feed.atom", "note": "只收和 AI、agent 相关的"},
+  {"name": "Addy Osmani", "group": "Newsletter", "url": "https://addyo.substack.com/api/v1/archive?sort=new&search=&offset=0&limit=50"},
+  {"name": "ByteByteGo", "group": "Newsletter", "url": "https://blog.bytebytego.com/api/v1/archive?sort=new&search=&offset=0&limit=50", "note": "只收讲 AI、LLM 系统设计的"},
+  {"name": "The Pragmatic Engineer", "group": "Newsletter", "url": "https://newsletter.pragmaticengineer.com/api/v1/archive?sort=new&search=&offset=0&limit=50", "note": "只收讲 AI 的：工程团队怎么用 AI、AI 基础设施、招聘和面试的变化"},
+  {"name": "Interconnects", "group": "Newsletter", "url": "https://www.interconnects.ai/api/v1/archive?sort=new&search=&offset=0&limit=50"}
 ]
