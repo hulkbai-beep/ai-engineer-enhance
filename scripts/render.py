@@ -243,7 +243,7 @@ def validate_jobs(path, snap):
         raise ValueError(f"{path}: date {snap.get('date')} is not in {path.stem}; name the file data/jobs/<YYYY-MM of date>.json")
     dt.date.fromisoformat(snap["date"])
     for p in snap["postings"]:
-        missing = [k for k in ("company", "title", "url", "posted", "via", "skills") if k not in p]
+        missing = [k for k in ("company", "title", "location", "url", "posted", "via", "skills") if k not in p]
         if missing:
             raise ValueError(f"{path}: {p.get('url', p)}: missing {missing}")
         for s in p["skills"] or [{}]:
@@ -267,8 +267,9 @@ def render_jobs(path, snap, items):
     lines += ["", "### 学习缺口", "", gap_text(gaps, total, prev), "",
               "_" + "".join(f"「{CATEGORIES[c]}」" for c in CATEGORIES if c in NOT_COMPARED)
               + "在职位里指编程语言和通用开发、客户交付、年限和沟通，读文章补不了，所以只列出来，不参与对比。_"]
-    lines += ["", "## 职位列表", "", "| 公司 | 职位 | 发布日期 | 来源 | 技能类别 |", "|---|---|---|---|---|"]
-    lines += [f"| {cell(p['company'])} | [{cell(p['title'])}]({p['url']}) | {cell(p['posted'])} | {cell(p['via'])} "
+    lines += ["", "## 职位列表", "", "| 公司 | 职位 | 地点 | 发布日期 | 来源 | 技能类别 |", "|---|---|---|---|---|---|"]
+    lines += [f"| {cell(p['company'])} | [{cell(p['title'])}]({p['url']}) | {cell(p['location'])} "
+              f"| {cell(p['posted'])} | {cell(p['via'])} "
               f"| {'；'.join(name for c, name in CATEGORIES.items() if any(s['category'] == c for s in p['skills']))} |"
               for p in snap["postings"]]
     if snap.get("note"):

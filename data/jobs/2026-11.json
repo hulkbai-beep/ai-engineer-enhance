@@ -1,10 +1,11 @@
 {
   "date": "2026-11-01",
-  "note": "第一次快照，11 月 1 日在交互会话里做的。Greenhouse 的 /jobs 列表按职位名排序，太长被截断：Anthropic 只到 D 开头（Forward Deployed 职位从 Applied AI 部门列表拿），Databricks 到 E，Stripe 到 C，Scale AI 到 S；职位名、链接和日期都以单个职位接口为准。YC 职位页没有发布日期；Wellfound 的日期按页面上的「2 days ago」「1 week ago」从 11 月 1 日倒推，是近似值。LinkedIn 职位页 robots_disallowed，没读。",
+  "note": "第一次快照，11 月 1 日在交互会话里做的。Greenhouse 的 /jobs 列表按职位名排序，太长被截断：Anthropic 只到 D 开头（Forward Deployed 职位从 Applied AI 部门列表拿），Databricks 到 E，Stripe 到 C，Scale AI 到 S；职位名、链接和日期都以单个职位接口为准。YC 职位页没有发布日期；Wellfound 的日期按页面上的「2 days ago」「1 week ago」从 11 月 1 日倒推，是近似值。LinkedIn 职位页 robots_disallowed，没读。只收在美国的职位（含美国远程）：Scale AI 的 Applied AI Engineer, Global Public Sector（多哈、伦敦）、Databricks 的 Applied AI Engineer（贝尔格莱德）和 Kodo 的 Senior AI Engineer（孟买）不在美国，11 月 1 日删掉了。地点取 Greenhouse 接口的 location.name 和职位页上的原文。",
   "postings": [
     {
       "company": "Anthropic",
       "title": "Forward Deployed Engineer",
+      "location": "New York City, NY; San Francisco, CA; Seattle, WA",
       "url": "https://job-boards.greenhouse.io/anthropic/jobs/5302966008",
       "posted": "2026-08-12",
       "via": "Greenhouse",
@@ -62,6 +63,7 @@
     {
       "company": "Anthropic",
       "title": "Applied AI Engineer, Enterprise Tech",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
       "url": "https://job-boards.greenhouse.io/anthropic/jobs/5057647008",
       "posted": "2026-01-08",
       "via": "Greenhouse",
@@ -111,6 +113,7 @@
     {
       "company": "Anthropic",
       "title": "Applied AI Engineer, Startups (Physical AI)",
+      "location": "San Francisco, CA",
       "url": "https://job-boards.greenhouse.io/anthropic/jobs/5454673008",
       "posted": "2026-10-15",
       "via": "Greenhouse",
@@ -163,64 +166,8 @@
     },
     {
       "company": "Scale AI",
-      "title": "Applied AI Engineer, Global Public Sector",
-      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4413992005",
-      "posted": "2024-05-01",
-      "via": "Greenhouse",
-      "skills": [
-        {
-          "category": "api-sdk",
-          "phrase": "Build and deploy end-to-end AI applications into production"
-        },
-        {
-          "category": "applied",
-          "phrase": "Partner with public sector clients"
-        },
-        {
-          "category": "evals",
-          "phrase": "Design and maintain robust evaluation frameworks"
-        },
-        {
-          "category": "applied",
-          "phrase": "Participate in customer engagements"
-        },
-        {
-          "category": "career",
-          "phrase": "Collaborate with cross-functional teams"
-        },
-        {
-          "category": "career",
-          "phrase": "7+ years of post-graduation engineering experience"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "proficiency in languages such as Python"
-        },
-        {
-          "category": "career",
-          "phrase": "2+ years of experience applying AI/ML in production environments"
-        },
-        {
-          "category": "infra",
-          "phrase": "cloud-based machine learning tools and platforms"
-        },
-        {
-          "category": "training",
-          "phrase": "data-driven approach to iterating on machine learning models"
-        },
-        {
-          "category": "career",
-          "phrase": "Excellent written and verbal communication skills"
-        },
-        {
-          "category": "agents",
-          "phrase": "generative/agentic AI applications"
-        }
-      ]
-    },
-    {
-      "company": "Scale AI",
       "title": "Frontier Agents Engineer (Applied AI)",
+      "location": "San Francisco, CA; New York, NY",
       "url": "https://job-boards.greenhouse.io/scaleai/jobs/4720573005",
       "posted": "2026-07-31",
       "via": "Greenhouse",
@@ -277,44 +224,8 @@
     },
     {
       "company": "Databricks",
-      "title": "Applied AI Engineer",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8091041002",
-      "posted": "2025-08-15",
-      "via": "Greenhouse",
-      "skills": [
-        {
-          "category": "agents",
-          "phrase": "Build agentic end-to-end systems"
-        },
-        {
-          "category": "infra",
-          "phrase": "robust, scalable ML infrastructure"
-        },
-        {
-          "category": "infra",
-          "phrase": "Experience developing AI/ML systems at scale in production"
-        },
-        {
-          "category": "training",
-          "phrase": "novel forecasting techniques"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "Strong software engineering skills"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "familiarity with software engineering principles around testing and deployment"
-        },
-        {
-          "category": "career",
-          "phrase": "2-8 years of engineering experience"
-        }
-      ]
-    },
-    {
-      "company": "Databricks",
       "title": "AI Engineer - FDE (Forward Deployed Engineer)",
+      "location": "United States",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
       "posted": "2026-05-13",
       "via": "Greenhouse",
@@ -368,6 +279,7 @@
     {
       "company": "Stripe",
       "title": "AI Engineer",
+      "location": "Chicago",
       "url": "https://stripe.com/jobs/search?gh_jid=8144196",
       "posted": "2026-10-07",
       "via": "Greenhouse",
@@ -419,57 +331,9 @@
       ]
     },
     {
-      "company": "Kodo",
-      "title": "Senior AI Engineer",
-      "url": "https://www.ycombinator.com/companies/kodo/jobs/iJfJWnN-senior-ai-engineer",
-      "posted": "",
-      "via": "YC",
-      "skills": [
-        {
-          "category": "api-sdk",
-          "phrase": "Design, develop, and deploy AI models using LLM technologies"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "Integrate AI models with our existing systems via API integrations"
-        },
-        {
-          "category": "models",
-          "phrase": "LLMs, GPT-4 or similar models"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "Hands-on experience with API integration"
-        },
-        {
-          "category": "api-sdk",
-          "phrase": "programming languages such as Python or JavaScript"
-        },
-        {
-          "category": "infra",
-          "phrase": "cloud platforms (Azure) for deploying AI models"
-        },
-        {
-          "category": "agents",
-          "phrase": "e.g. Google ADK, Langgraph"
-        },
-        {
-          "category": "evals",
-          "phrase": "LLM tracing and observability tools"
-        },
-        {
-          "category": "evals",
-          "phrase": "eg langsmith,langfuse"
-        },
-        {
-          "category": "career",
-          "phrase": "Collaborate with cross-functional teams to implement AI solutions"
-        }
-      ]
-    },
-    {
       "company": "Sully.ai",
       "title": "Staff Full Stack Engineer",
+      "location": "Mountain View, CA, US",
       "url": "https://www.ycombinator.com/companies/sully/jobs/DuoVsUf-staff-full-stack-engineer",
       "posted": "",
       "via": "YC",
@@ -527,6 +391,7 @@
     {
       "company": "Coris",
       "title": "Backend Engineer (AI-Native) — Risk Infrastructure & Integrations",
+      "location": "Palo Alto, CA, US",
       "url": "https://www.ycombinator.com/companies/coris/jobs/h0nDly8-backend-engineer-ai-native-risk-infrastructure-integrations",
       "posted": "",
       "via": "YC",
@@ -576,6 +441,7 @@
     {
       "company": "Juniper Square",
       "title": "Senior Applied AI Engineer I",
+      "location": "Remote, United States",
       "url": "https://wellfound.com/jobs/4884757-senior-applied-ai-engineer-i",
       "posted": "2026-10-30",
       "via": "Wellfound",
@@ -633,6 +499,7 @@
     {
       "company": "FutureFit AI",
       "title": "Senior AI Engineer",
+      "location": "Remote across the US and Canada",
       "url": "https://wellfound.com/jobs/4824217-senior-ai-engineer",
       "posted": "2026-10-25",
       "via": "Wellfound",

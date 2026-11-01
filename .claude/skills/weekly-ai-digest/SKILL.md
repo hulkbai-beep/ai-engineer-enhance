@@ -116,10 +116,10 @@ description: Weekly run that collects new LLM / AI Engineer papers, blogs, docs 
 
 ## 5. 岗位技能快照（每月一次）
 
-`data/jobs/<D 的年-月>.json` 已经存在就跳过这一步。否则按下面读，WebFetch 合计不超过 25 次：列表 7 次，职位 18 份以内，每份 1 次。报 ENOTFOUND 的跳过，域名写进第 7 步的「运行情况」。只挑英文职位；`data/jobs/` 里已经有链接的职位不再收（render.py 遇到重复链接会报错）。LinkedIn 职位页是 robots_disallowed，不要读。
+`data/jobs/<D 的年-月>.json` 已经存在就跳过这一步。否则按下面读，WebFetch 合计不超过 25 次：列表 7 次，职位 18 份以内，每份 1 次。报 ENOTFOUND 的跳过，域名写进第 7 步的「运行情况」。只挑在美国的职位（地点是美国城市，或写明可以在美国远程：Tianyang 在美国）；`data/jobs/` 里已经有链接的职位不再收（render.py 遇到重复链接会报错）。LinkedIn 职位页是 robots_disallowed，不要读。
 
-1. Greenhouse：读 anthropic、scaleai、databricks、stripe 的 `https://boards-api.greenhouse.io/v1/boards/<公司>/jobs`。列表按职位名字母排序，太长会被截断，只看得到前面一段（2026-11 时 anthropic 只到 D 开头），所以 anthropic 另读 Applied AI 部门 `https://boards-api.greenhouse.io/v1/boards/anthropic/departments/4079949008`。按职位名挑 AI Engineer、Applied AI Engineer、Forward Deployed Engineer、Agent Engineer、LLM / GenAI Engineer（不要经理、架构师、研究员、销售），每家最多 3 个（render.py 会检查），同一职位不同城市只算一个。每个读 `https://boards-api.greenhouse.io/v1/boards/<公司>/jobs/<id>`：列表里的职位名、id 和日期会对错行，所以职位名、`posted`（取 `first_published`，没有就用 `updated_at`）和链接（`absolute_url`）都以这个接口为准。列表被截断时在 `note` 里写截到哪个职位名。
-2. YC 和 Wellfound：在 `https://www.ycombinator.com/jobs/role/software-engineer` 挑 3 个做 LLM / agent 的职位，在 `https://wellfound.com/role/ai-engineer` 挑 2–3 个近 60 天发布的，读职位页。YC 职位页没有日期，`posted` 写 `""`；Wellfound 只写「x days ago」，按 `D` 倒推，并在 `note` 里注明是近似日期。
+1. Greenhouse：读 anthropic、scaleai、databricks、stripe 的 `https://boards-api.greenhouse.io/v1/boards/<公司>/jobs`。列表按职位名字母排序，太长会被截断，只看得到前面一段（2026-11 时 anthropic 只到 D 开头），所以 anthropic 另读 Applied AI 部门 `https://boards-api.greenhouse.io/v1/boards/anthropic/departments/4079949008`。按职位名挑 AI Engineer、Applied AI Engineer、Forward Deployed Engineer、Agent Engineer、LLM / GenAI Engineer（不要经理、架构师、研究员、销售），每家最多 3 个（render.py 会检查），同一职位不同城市只算一个。每个读 `https://boards-api.greenhouse.io/v1/boards/<公司>/jobs/<id>`：列表里的职位名、id 和日期会对错行，所以职位名、`location`（取 `location.name`，不在美国的不收）、`posted`（取 `first_published`，没有就用 `updated_at`）和链接（`absolute_url`）都以这个接口为准。列表被截断时在 `note` 里写截到哪个职位名。
+2. YC 和 Wellfound：在 `https://www.ycombinator.com/jobs/role/software-engineer` 挑 3 个做 LLM / agent 的职位，在 `https://wellfound.com/role/ai-engineer` 挑 2–3 个近 60 天发布的，读职位页。`location` 照职位页上的地点原文写。YC 职位页没有日期，`posted` 写 `""`；Wellfound 只写「x days ago」，按 `D` 倒推，并在 `note` 里注明是近似日期。
 3. 摘技能短语：WebFetch 不会整段照抄原文（一次最多引用约 125 个字符），所以读职位页时直接让它从职责和要求里摘 2–10 个词的英文原话，原样返回，不要先要全文。每份职位留 4–12 个，不改写、不翻译、不合并；公司介绍、使命和福利不摘。每个短语按第 3 步的类别表归一类，职位侧另按这几条：
    - 编程语言、前后端开发、通用云平台（AWS / GCP / Azure）、CI/CD、上线运维、用 AI 编程工具 → api-sdk
    - 只有模型本身的部署和 ML 平台（如 ML infrastructure、SageMaker、deploying AI models）→ infra
@@ -132,7 +132,7 @@ description: Weekly run that collects new LLM / AI Engineer papers, blogs, docs 
 
 ```json
 {"date": "D", "note": "列表截到哪里、哪些日期是近似值、没读到什么", "postings": [
-  {"company": "Anthropic", "title": "职位原名", "url": "职位页链接", "posted": "YYYY-MM-DD", "via": "Greenhouse | YC | Wellfound",
+  {"company": "Anthropic", "title": "职位原名", "location": "地点原文", "url": "职位页链接", "posted": "YYYY-MM-DD", "via": "Greenhouse | YC | Wellfound",
    "skills": [{"category": "agents", "phrase": "agent development"}]}
 ]}
 ```

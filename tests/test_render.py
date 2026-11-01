@@ -18,8 +18,8 @@ def item(url, **kw):
 
 
 def posting(company, *cats, n=0):
-    return {"company": company, "title": "AI Engineer", "url": f"https://jobs/{company}/{n}", "posted": "2026-10-20",
-            "via": "Greenhouse", "skills": [{"category": c, "phrase": f"{company}-{c}-{i}"} for i, c in enumerate(cats)]}
+    return {"company": company, "title": "AI Engineer", "location": "San Francisco, CA | Remote (US)",
+            "url": f"https://jobs/{company}/{n}", "posted": "2026-10-20", "via": "Greenhouse", "skills": [{"category": c, "phrase": f"{company}-{c}-{i}"} for i, c in enumerate(cats)]}
 
 
 def snapshot(skills):
@@ -178,6 +178,8 @@ class RenderTest(unittest.TestCase):
         self.assertIn("| 职业与行业动态 | 3/3 | A-career-3；B-career-1；C-career-1 | 不参与对比 |", report)
         # Agents has 3 must-read October articles and career is never compared, so only evals is a gap.
         self.assertIn("2026-10 收的 4 分以上文章不到 3 篇：评测与可观测性（2/3 份职位，0 篇文章）。", report)
+        self.assertIn("| A | [AI Engineer](https://jobs/A/0) | San Francisco, CA \\| Remote (US) | 2026-10-20 | Greenhouse |",
+                      report)
         digest = (render.DIGESTS / "2026-11-02.md").read_text()
         self.assertIn("## 本月岗位技能", digest)
         self.assertIn("digests/jobs-2026-11.md", digest)
@@ -187,11 +189,12 @@ class RenderTest(unittest.TestCase):
 
     def test_rejects_job_snapshots_the_report_would_get_wrong(self):
         render.JOBS.mkdir(parents=True)
-        no_date = posting("A", "agents")
-        del no_date["posted"]
+        no_date, no_place = posting("A", "agents"), posting("A", "agents")
+        del no_date["posted"], no_place["location"]
         for snap, message in [({"date": "2026-11-01", "postings": []}, "no postings"),
                               ({"date": "2026-10-31", "postings": [posting("A", "agents")]}, "is not in 2026-11"),
                               ({"date": "2026-11-01", "postings": [no_date]}, r"missing \['posted'\]"),
+                              ({"date": "2026-11-01", "postings": [no_place]}, r"missing \['location'\]"),
                               ({"date": "2026-11-01", "postings": [posting("A", "rag")]}, "each skill needs"),
                               ({"date": "2026-11-01", "postings": [posting("A")]}, "each skill needs"),
                               ({"date": "2026-11-01", "postings": [{**posting("A"), "skills": [{"category": "agents"}]}]},
