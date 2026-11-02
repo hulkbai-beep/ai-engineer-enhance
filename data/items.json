@@ -1,5 +1,735 @@
 [
   {
+    "date": "2026-11-02",
+    "added": "2026-11-02",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "AI Prompting for Everyone",
+    "url": "https://www.deeplearning.ai/courses/ai-prompting-for-everyone",
+    "summary_zh": "Andrew Ng 讲的提示词课程，教用当下主流模型查找信息和搭建应用的提示技巧，面向所有人。",
+    "tags": [
+      "prompting"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "prompting"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-02",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Build with Andrew",
+    "url": "https://www.deeplearning.ai/courses/build-with-andrew",
+    "summary_zh": "用文字描述一个想法，让 AI 把它做成应用，不需要编程经验。",
+    "tags": [
+      "prompting"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-02",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Agentic AI",
+    "url": "https://www.deeplearning.ai/courses/agentic-ai",
+    "summary_zh": "Andrew Ng 讲的 agentic AI 课程，教搭建通过迭代、多步工作流来执行任务的 agent 系统。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": false,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-02",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Advanced Retrieval for AI with Chroma",
+    "url": "https://www.deeplearning.ai/courses/advanced-retrieval-for-ai",
+    "summary_zh": "Chroma 讲的检索进阶课，教提高检索结果相关性的技巧，包括用 LLM 改写查询。",
+    "tags": [
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": false,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-02",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Claude Code: A Highly Agentic Coding Assistant",
+    "url": "https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant",
+    "summary_zh": "Anthropic 讲的 Claude Code 课程，教用 Claude Code 探索、构建和改进代码库。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": false,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-01",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "If in doubt, delete the uv.lock file",
+    "url": "https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/",
+    "summary_zh": "Simon 在 Python 3.15 上遇到依赖构建报错，原因是 uv.lock 锁定的包版本没有 3.15 的 wheel；删掉 lock 文件重跑通常就好。和 LLM 无关的 Python 打包技巧。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-01",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quoting Kyle Kingsbury",
+    "url": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/",
+    "summary_zh": "引用 Kyle Kingsbury 在 Jepsen 的 ParticleDB 1.1.4 测试报告里的话：LLM 的使用在侵蚀人们对文档、软件和背后组织的信任，成熟度信号更容易伪造，工程师会对新项目更警惕；维护者需要想办法保证软件和文档的正确并让用户看到。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "How We Took Over ChatGPT Accounts",
+    "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+    "summary_zh": "Parameter Labs 披露的 ChatGPT HTML 预览漏洞：预览在沙箱 iframe 里跑交互应用，攻击者把 MathLive 虚拟键盘里用 innerHTML 的消息处理函数，和 OpenAI CSP 放行的 YouTube oEmbed 端点串起来执行 JavaScript，一个精心构造的分享链接就能拿到其他已登录用户的私有数据。OpenAI 已修复并付了 5000 美元赏金，Simon 认为对这么严重的漏洞偏低。在产品里渲染模型生成的 HTML 时，沙箱、postMessage 处理和 CSP 白名单都要逐项审。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette-llm 0.1a9",
+    "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/",
+    "summary_zh": "datasette-llm 插件改为使用 LLM 工具里配置的默认模型，Datasette Agent 不用再单独配置模型就能用，一条 uvx 命令即可启动；Simon 说更大的 Datasette Agent 升级还在路上。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training",
+    "url": "https://huggingface.co/papers/2610.37161",
+    "summary_zh": "训练能干实际工作的 agent 需要大量多样、能产出可靠专家示范的职业任务，任务信息缺失或前后矛盾时教师 agent 就做不好。WorkFactory 从职业意图出发做信息层规划，建一张信息支撑图，记下每个产出依赖哪些信息、这些信息该放在哪，再用试跑找出缺口并修复；作者造了覆盖 612 个职业的 112,686 个任务，用教师轨迹微调 Qwen 4B、27B、35B-A3B 得到 WorkPilot 系列，在 4 个职业工作 benchmark 上都超过底座，35B-A3B 在 GDPval-AA v2.1 上从 879 升到 1565 Elo。数据和模型已开源，适合做 agent 训练数据合成的人参考。",
+    "tags": [
+      "agent",
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "A Broader Look into MLLM's Retrieval Heads",
+    "url": "https://huggingface.co/papers/2610.32411",
+    "summary_zh": "多模态大模型靠一小撮检索头把长输入里的证据搬到输出。作者构造同一答案分别以语音或画面出现的音视频输入，在 18 个语言、视觉语言和全模态 checkpoint 上发现：检索头在新模态里依然稀疏、跨模态大体共享，全模态模型基本沿用底座的检索头；消融这些头后音视频检索几乎完全失效，只占不到 2% 的共享头被消融还会拖累文档理解、空间感知和视觉数学。再用排序目标优化检索头的注意力，Qwen3-VL-8B 在 MMDocIR 上的页面 Recall@1 提高 6.03 个点。偏研究，有助于理解多模态长上下文检索。",
+    "tags": [
+      "multimodal",
+      "RAG"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "VibeGame: Prompt-to-Game Development with AI-Native Engine and Self-Evolving Adversarial Agent Team",
+    "url": "https://huggingface.co/papers/2610.33106",
+    "summary_zh": "从文字提示（可加参考图）生成完整可玩的 2D 游戏项目：AI 原生引擎把项目状态存成按 schema 校验的结构化文本，并让 agent 逐帧控制运行时去检查状态、执行操作、验证行为；8 个专职 agent 组成对抗团队，实现和评审分开，多轮发现并修复问题；每个通过的项目会被提炼成可复用的骨架、模块和协作约定，不用训练模型就能越做越好。在 GameCraft-Bench 子集上，同一底座模型下胜过其他 agent harness（作者评论称 30 个任务上比最强基线高 4.19 到 11.70 分）。多 agent 分工、实现与评审分离、用运行时反馈做验证的 harness 设计值得参考。",
+    "tags": [
+      "multi-agent",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+    "url": "https://huggingface.co/papers/2610.35138",
+    "summary_zh": "从 26,314 个真实用户编码会话（37,463 条去重查询）里整理出 273 个任务，测编码 agent 能否把带图片、音频、视频或文档的需求变成 Web 应用的可用修改，分局部编辑和跨仓库编辑两个赛道，每个任务配一个可运行的修改前应用和隐藏的专家验收标准（共 2,331 条）。评分采用先判后驳：评审先按源码和浏览器证据逐条打分，再由另一个 LLM 验证者质疑判为通过的项，视觉和交互类结论必须有截图或录下的浏览器操作作证。最强模型平均通过 69.9% 的验收标准，但完整做完的任务只有 26.4%；这种先判后驳、要求证据的 LLM-as-judge 做法可以直接借鉴。",
+    "tags": [
+      "eval",
+      "agent",
+      "multimodal"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Your Benchmark Is an Empirical Measure Over Difficulty",
+    "url": "https://huggingface.co/papers/2610.29927",
+    "summary_zh": "把 benchmark 看成题目难度上的一个经验分布，定义两种失效：难度分布和想反映的分布对不上（measure mismatch），以及某些难度区间没有题、测不出局部进步（coverage gap），并给出两个有理论保证的诊断指标。作者估计了 7 个领域 25 个常用 benchmark 的题目难度，发现不少 benchmark 偏重某些难度区间，排行榜结论要谨慎看，另一些留有大片空白，不适合用来监控模型进步；还提出 BenchFill，把题目改写到指定难度来补空白。自建 eval 集时可以用这套思路检查难度覆盖。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Fast mode for Claude Opus 4.8 deprecated, removal on November 30, 2026",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+    "summary_zh": "Claude Opus 4.8 的 fast mode 已弃用，2026 年 11 月 30 日移除；之后对 claude-opus-4-8 带 speed: \"fast\" 的请求会直接报错。还要用 fast mode 的，需要按迁移指南换到 Claude Opus 5.5。用到这个参数的服务要在月底前改代码。",
+    "tags": [
+      "model-release",
+      "migration"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Making it easier for websites to express AI training preferences",
+    "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+    "summary_zh": "OpenAI 表示会遵守一个共享的 robots.txt 信号，方便网站运营者向参与的模型提供方表达是否允许用于 AI 训练。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Community safety report and new protections for teens",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+    "summary_zh": "OpenAI 加强 ChatGPT 的暴力预防：扩大防护、更早介入，并承诺定期发布公共安全报告。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Fair use benefits everyone",
+    "url": "https://openai.com/index/fair-use-benefits-everyone",
+    "summary_zh": "OpenAI 摘录创作者、学者、无障碍倡导者和法律专家等提交的法庭意见，说明合理使用如何支持 AI 训练和创新。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "Gemini API changelog",
+    "type": "docs",
+    "title": "Computer Use generally available in the Interactions and GenerateContent APIs",
+    "url": "https://ai.google.dev/gemini-api/docs/computer-use",
+    "summary_zh": "Gemini API 的 Computer Use 在 Interactions API 和 GenerateContent API 上正式 GA。做浏览器、桌面操作类 agent 的可以按正式功能接入。",
+    "tags": [
+      "tool-use",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+    "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+    "summary_zh": "真实企业数据敏感、不能拿来做评测，微软为 Copilot 搭了行业评测数据生成平台：参照 O*NET 职业数据、招聘信息和 SEC 文件，合成随时间演化的模拟租户（数百个用户及其邮件、会议、文档和组织结构，覆盖制药、资本市场和 IT 三个行业），用六阶段流水线把通用办公任务改写成贴合这些数据的行业查询并校验，再检查结构保真、上下文相关、行为真实和内容安全。数据用来测 Copilot 能不能检索到对的信息、综合正确、呈现有用，支持实验、基准和回归测试；综合质量指标比最初方案高 39%，制作从数天人工变成自动运行。平台只在微软内部共享，但用合成环境给企业 RAG / copilot 做评测的思路可以借鉴。",
+    "tags": [
+      "eval",
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Building a Haunted House with NVIDIA Nemotron Open Models",
+    "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+    "summary_zh": "NVIDIA 员工用开源 Nemotron 模型搭了一个万圣节会说话的车库门角色：Nemotron Speech ASR 听、Nemotron 3.5 Bolt E4B（4-bit，用 5000 多段多轮对话训的 LoRA 定性格）对话、Magpie TTS 用一小段参考音色发声、Audio2Face-3D 在 Unreal Engine 5 里驱动嘴型，Nemotron 3 Nano Omni 看服装、YOLO 和 ByteTrack 数人。从说完话到出声中位数 1.70 秒，命中缓存 0.72 秒，整套跑在一台双 GPU 工作站上。代码没开源，但文中有用公开模型搭类似语音角色的步骤。",
+    "tags": [
+      "agent",
+      "multimodal",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "dbreunig/nesformer",
+    "url": "https://simonwillison.net/2026/Oct/30/nesformer/",
+    "summary_zh": "Drew Breunig 把 NES 的 6502 CPU 模拟器直接做进了 Qwen3.5-4B 的权重里，模型能（很慢地）运行超级马里奥等 ROM；他公开了用 Opus 5.5 完成这件事的提示词，agent 靠一套 NES CPU 一致性测试来验证。好玩的个人项目。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "The Batch",
+    "type": "blog",
+    "title": "Zombie Agents, Vampire Models, Witch Hunts, and the Mummy's Curse: AI Fears for Halloween 2026",
+    "url": "https://www.deeplearning.ai/the-batch/issue-377",
+    "summary_zh": "The Batch 第 377 期万圣节特刊，逐条拆解 AI 恐惧：agent 在测试中越权（互相协作、访问不该访问的系统），建议用隔离测试环境、短期且范围窄的凭据和监控；担心交给 AI 工具的代码和文件被拿去训练或泄露，建议关闭训练选项、用零保留方案、限制 agent 权限、对外发布或发送数据前要人工批准；另有 AI 检测器误判和呼吁放慢前沿模型的讨论。",
+    "tags": [
+      "safety",
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-02",
+    "source": "langgraph",
+    "type": "release",
+    "title": "langgraph 1.2.19",
+    "url": "https://pypi.org/project/langgraph/1.2.19/",
+    "summary_zh": "补丁版，主要修流式输出：trace policy 不再改动流式节点输出、messages 和 tools 事件带上所属图的命名空间、暂停的工具不再在 tools 流里报失败等；唯一的新功能是 ToolNode 的工具名会列在图的节点元数据里。用流式和子图的项目可以升级。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+    "url": "https://huggingface.co/papers/2610.22507",
+    "summary_zh": "现有 CLI agent benchmark 要么假设用户指令全程不变，要么只看最终结果；RealCLI 在真实 CLI 任务上同时给执行和协作打分，协作分 5 个维度、22 个子维度、51 种交互场景模板，协作模式里由脚本化用户逐步透露信息，并在中途纠正、改约束、做授权决定。最好的配置平均只有 49.2%，联合协作分最高 37.6%，任务成功和协作质量并不一致，模型最弱在可引导性、信任校准和安全边界。做 coding / CLI agent 评测时，可以借鉴它把中途改需求、要授权写进测试场景的做法。",
+    "tags": [
+      "agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "PersonaCUABench: Benchmarking Computer-Use Agents Serving Diverse Personas",
+    "url": "https://huggingface.co/papers/2610.22990",
+    "summary_zh": "计算机使用 agent 通常按固定的任务说明评测，但真实用户会漏说需求、临时加约束或要求先确认再动手。PersonaCUABench 固定 74 个任务（11 个领域），只换提需求的人：由扮演 44 种用户的 persona agent 用自己的话转述需求并回答追问，被测 agent 看不到原始指令。9 个底座模型共 3330 次运行，完成率比原始指令平均下降 36%；即使完全完成，用户打满分的比例也只有 62.7%（原始指令是 84.1%）。提醒做 agent 评测时按用户表达的需求和约束打分，而不只看任务完成。",
+    "tags": [
+      "agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents",
+    "url": "https://huggingface.co/papers/2610.30161",
+    "summary_zh": "面向印度零售银行场景的工具调用对话 agent 评测，共 1000 个模拟任务；除了检查对话结束时的最终记录，还检查 agent 有没有完成每个必需步骤（比如销户前先取结清报价）、有没有做用户没要求的改动。所有被测模型都有 6.5%–12.0% 的会话按最终记录算成功，实际却跳过了必需步骤或做了多余改动。对搭 agent eval 的启发：只看终态会高估成功率，流程是否合规也要写进检查。",
+    "tags": [
+      "agent",
+      "eval",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Amortizing Sequential Experimental Design in Reasoning LLMs",
+    "url": "https://huggingface.co/papers/2610.20832",
+    "summary_zh": "LLM 在任务信息不全时不擅长主动、按需地收集信息。作者用信息增益奖励训练推理过程，把序贯贝叶斯实验设计摊销进模型，期望信息增益在作者指定的生成模型下计算，而不是依赖 LLM 自己的信念；在二十问游戏上比训练时或推理时做设计的基线问得更准、解题更多、计算成本低得多，能泛化到没见过的类别，还能迁移到临床对话 benchmark Medi-Q。说明会提问、会收集信息可以作为可泛化的推理技能训练出来。",
+    "tags": [
+      "reasoning",
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Usage and Cost Analytics API (beta); Usage and Cost API becomes legacy",
+    "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api",
+    "summary_zh": "新的 Usage and Cost Analytics API 进入 beta（beta header analytics-usage-cost-2026-08-24），/v1/organizations/analytics/usage 和 /cost 两个端点报告 Claude Console 和 Claude Enterprise 组织的 token 用量和费用，可按模型、workspace、API key、发起请求的用户或服务账号筛选分组。原来的 Usage and Cost API 和 Enterprise Analytics API 的用量、费用报表端点改为 legacy，仍然支持，文档里有迁移说明。",
+    "tags": [
+      "admin",
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "An updated Model Spec for more capable and beneficial AI",
+    "url": "https://openai.com/index/updated-model-spec",
+    "summary_zh": "OpenAI 更新 Model Spec，用五条核心价值引导能力更强的模型做出合理判断、尊重人的自主、忠于人的意图。基于 OpenAI 模型做应用的可以留意这份行为准则的变化。",
+    "tags": [
+      "safety",
+      "prompting"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "safety"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How we detect frontier model misalignment",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "summary_zh": "OpenAI 介绍用分层监控发现前沿模型的失准行为和未经授权的 agent 行为，让响应人员在事件升级前介入。对给 agent 做运行监控的团队有参考意义。",
+    "tags": [
+      "safety",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "safety"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How Ropes & Gray is developing AI for transactional diligence",
+    "url": "https://openai.com/index/ropes-gray-ai-diligence",
+    "summary_zh": "律所 Ropes & Gray 和 OpenAI 一起开发交易尽调用的 AI：系统把文件分组并生成摘要和报告，律师审阅后再给客户建议。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+    "url": "https://openai.com/index/credit-saison",
+    "summary_zh": "Credit Saison 的 ChatGPT Enterprise 试点取得 954% 的投资回报，随后推广到全公司。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "Microsoft Research Focus – Edition #97",
+    "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
+    "summary_zh": "Microsoft Research 播客，本期介绍近期研究，包括编码 agent 面临的挑战、人们在工作中怎么用 AI，以及延伸期天气预报。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Mistral",
+    "type": "blog",
+    "title": "Le Chonk: Built for Coders, Trusted by Defenders",
+    "url": "https://mistral.ai/news/mistral-large-4-oss/",
+    "summary_zh": "Mistral 把 Mistral Large 4（Le Chonk，Hugging Face 上是 Mistral-Large-4-1T-A52B，原生多模态的指令与推理混合 MoE，三档推理强度）以修改版 MIT 许可开放权重，主打 agentic 编程和防御性网络安全：Artificial Analysis Coding Agent Index 48%，与 GLM-5.3 持平但每个任务平均少用 47% 的 token，Terminal-Bench 4.0 41%（比预览版高 13 个点），恶意网络请求拒答率 96.6%。可以通过 Mistral API（mistral-large-4-0）、OpenRouter、Hugging Face 自部署（vLLM、SGLang）以及 NVIDIA 和 Microsoft Foundry 使用，每百万 token 输入 0.70 美元、输出 2.10 美元；做模型即服务的企业要另买商用许可。需要可自托管的强编程、agent 模型时值得评估。",
+    "tags": [
+      "model-release",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Managed Deep Agents v0.10: Browser use and asynchronous subagents",
+    "url": "https://www.langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents",
+    "summary_zh": "Managed Deep Agents v0.10（公开测试）新增两项：浏览器使用，浏览器跑在独立的 LangSmith 沙箱里，agent 多了 browser_snapshot、browser_run、browser_screenshot、browser_handoff 四个工具，登录状态按 thread 或 user 隔离，遇到登录或二次验证就把窗口交给人，密码不进模型消息和 trace；异步子 agent，在子 agent 定义里加 \"async\": True 就能在后台跑长任务，主 agent 可以启动、查看、更新、取消它，完成后不用轮询就会收到通知。另有 Slack 停止按钮、resolveUser 映射用户权限等；破坏性变更是 connectors.mcp() 被移除，MCP server 改在 tools/mcp.py 或 tools/mcp.ts 里声明。",
+    "tags": [
+      "agent",
+      "multi-agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Browser Use in Managed Deep Agents",
+    "url": "https://www.langchain.com/blog/browser-use-in-managed-deep-agents",
+    "summary_zh": "讲 Managed Deep Agents 的浏览器能力是怎么设计的：浏览器跑在和 agent 分开的 LangSmith 沙箱里，四个工具基于 Browserbase 开源的 Stagehand；browser_run 接受批量动作或 Playwright 风格代码，一次调用串起多步、只返回需要的结果，页面内容不进 agent 上下文；需要登录时用 handoff 交给人，密码不经过模型；做端到端测试时通过 localhost 桥接访问 agent 沙箱里的应用，跑通的步骤存成 Playwright 测试文件，之后不调模型直接回放。在 100 个 WebVoyager 任务上通过 90%、总成本 1.98 美元，是测试的 7 套工具里最高的（Browserbase MCP server 89%，成本是它的 9 倍）。",
+    "tags": [
+      "tool-use",
+      "agent",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "LlamaIndex Blog",
+    "type": "blog",
+    "title": "Extract V2.6: Max Effort",
+    "url": "https://www.llamaindex.ai/blog/introducing-max-effort-for-extract-agentic-plus",
+    "summary_zh": "LlamaIndex Extract 的 agentic_plus 档新增 max effort（beta）：标准档按固定分辨率把页面渲染成图片、价格固定，max effort 会按需放大查看相关区域、换用更复杂的抽取方法，按实际计算量计费。在 ExtractBench Pro 的 100 份文档上 Value F1 从 77.7 升到 94.3，其中长而密的页面从 12.7 升到 95.0，但每份文档的成本也从 0.075 美元涨到 4.19 美元；计数类几乎没有提升。官方建议先拿自己的样本和 schema 对比质量和成本再迁移。",
+    "tags": [
+      "RAG",
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Granite Switch 4.1.1 — Update models like you update software",
+    "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+    "summary_zh": "IBM Granite Switch 是在一个端点上给语言模型挂多个专用、缓存友好的 adapter 的模块化架构，4.1.1 是向后兼容的补丁版：只重训了新的语音识别模型（10 种语言，自带标点和大小写）和 Decision adapter，底座模型不动、其他都不重算。IBM 计划推出 Adapter SDK，让开发者和第三方自己做 adapter、迭代版本、发布更新。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+    "url": "https://huggingface.co/blog/anydecisionmodel",
+    "summary_zh": "两个 Swift 包：AnySpeechRecognizer 沿用 Apple SpeechAnalyzer 的 API，只改一行就能把识别引擎换成 Parakeet 或 Qwen3-ASR，还带说话人分离；AnyDecisionModel 不生成文本，而是让本地模型（MLX、Core AI、llama.cpp、Ollama 等后端）直接回答是非、多选和打分题，返回带概率的类型化结果，可做温度和选项顺序校准。在 Apple 设备上做端侧语音和分类判断的应用可以直接用。",
+    "tags": [
+      "multimodal",
+      "structured-output"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+    "url": "https://huggingface.co/blog/mistral-large4",
+    "summary_zh": "Hugging Face 对 Mistral Large 4 的技术说明，补了官方公告没有的部署细节：约 1T 总参数的 MoE（每 token 从 128 个专家选 4 个加 1 个共享专家），Multi-head Latent Attention 加 DeepSeek Sparse Attention 索引器，1M 上下文，另有 1.6B 的 Pixtral 视觉编码器；有 FP8、NVFP4 和 GGUF 量化版。给出了 transformers、vLLM（NVFP4 需要 Blackwell GPU，自带 DSpark 推测解码 drafter）、llama.cpp（2-bit 量化可在 512 GB 内存的 Mac 上跑）的启动方式，以及用 TRL 做 LoRA 微调和 Inference Endpoints 部署的示例。想自托管这个模型时先看这篇估算硬件。",
+    "tags": [
+      "model-release",
+      "inference",
+      "fine-tuning"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "API credits benefit for eligible ChatGPT subscriptions",
+    "url": "https://simonwillison.net/2026/Oct/29/api-credits/",
+    "summary_zh": "OpenAI 给每月 100、200、500 美元档的 ChatGPT 订阅用户发等额 API 额度（限一个组织），和 Anthropic 早先给 Max、Team 的福利类似；Simon 说这样他可以放心发布公开 demo。OpenAI 的原始通知上周已收录。",
+    "tags": [
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Building a multiplayer game world with autonomous Fable-class models",
+    "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+    "summary_zh": "介绍 Jacob Sansbury 的多人游戏 Spawn：玩家通过游戏内 agent 改造世界，自主运行的 Fable agent 每小时往生产环境发布改动，一小时没发版就算严重事故。Simon 觉得这种做法放在游戏里行得通，也提到 GPT-6 Astra 做安全修复时是把功能关掉而不是真修好。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-02",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quoting Ben Hylak",
+    "url": "https://simonwillison.net/2026/Oct/29/ben-hylak/",
+    "summary_zh": "引用 Ben Hylak：希望自己用的每个产品都是给 agent 用的无头 MCP server，这样就不用再操心底层；但他自家产品的客户偏偏喜欢它的界面。",
+    "tags": [
+      "MCP"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
     "date": "2026-10-28",
     "added": "2026-10-29",
     "source": "Anthropic News",
@@ -257,6 +987,56 @@
     "relevance": 1,
     "full_text_read": false,
     "category": "applied"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+    "url": "https://huggingface.co/papers/2610.33624",
+    "summary_zh": "让 10 个前沿模型当训练 agent，各有 1000 GPU 小时和 300 美元 API 额度，从 Nemotron 3.5 Lightning 30B-A3B Base 起自主选数据、写训练代码、挑 checkpoint；最强的一个（GPT-6 Astra 训练）在 12 项能力 benchmark 上中位数补上了 base 到官方 Instruct 差距的 76%。第二阶段把人类盲评的对比和投票交还给各 agent 再训 3 天，8 个模型的风格校正后评分上升，但 benchmark 增益和偏好增益不挂钩，有的 agent 把回答越训越长，一个模型在 StrongREJECT 上有害顺从变多。可以据此了解让 agent 自主做后训练现在能做到哪一步、要防哪些坑。",
+    "tags": [
+      "agent",
+      "fine-tuning",
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-02",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction",
+    "url": "https://huggingface.co/papers/2610.22543",
+    "summary_zh": "扩散语言模型做推测解码的难点是既要猜写什么、又要猜写在哪；作者发现目标模型上一轮的预测在 92–100% 的位置已经是对的，缺的只是提交顺序，于是用一个 0.62M 参数的小 drafter 只读目标模型的输出分布来预测提交顺序，生成候选树后由目标模型一次验证，并用共享 Gumbel 噪声的验证方式支持任意温度。目标模型前向次数最多减少 6.8 倍、吞吐最高提升 3.2 倍，drafter 不重训就能用在 6 个扩散语言模型上。离应用层较远，适合关注推理加速的人。",
+    "tags": [
+      "inference"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-02",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Maximum request size raised to 128 MB for the Messages API and Token Counting API",
+    "url": "https://platform.claude.com/docs/en/api/overview#request-size-limits",
+    "summary_zh": "第一方 Claude API 上 Messages API 和 Token Counting API 的单个请求大小上限从 32 MB 提高到 128 MB。一次要塞进大 PDF、多张图片或很长上下文的应用不用再自己拆请求。",
+    "tags": [
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
   },
   {
     "date": "2026-10-27",
@@ -558,6 +1338,40 @@
     "relevance": 1,
     "full_text_read": true,
     "category": "training"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Can we trust LLMs to judge whether a research idea is novel?",
+    "url": "https://huggingface.co/blog/allenai/novelty-bench",
+    "summary_zh": "Ai2 用 ICLR 2026 审稿意见里关于原创性的评论构建新颖性评测集（154 个被称赞新颖的想法、145 个被质疑原创性的想法，另配 154 个 LLM 生成的想法），测了 6 个 LLM 评审在不同提示、推理预算、检索和打分格式下的表现。结果很脆弱：提示措辞一简化，GPT-5.4 在人写对生成想法上的准确率从 93.5% 掉到 40.9%，对一个评审有用的提示可能害了另一个；加 agentic 搜索成本高约 10 倍也不更好，一个简单的 Claude Opus 4.6 提示（三次多数投票）0.854 macro-F1、总成本 2.59 美元，好过专门的评估器。做 LLM-as-judge 时要对提示变体做敏感性测试；数据和代码已开源。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-02",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Build specialized multimodal models with LFM3",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm3",
+    "summary_zh": "Liquid AI 发布 LFM3：文本、视觉、音频、全模态和 decision 模型共用一个约 2B 参数的底座（LFM3-1.7B-Base 预训练 22T token，上下文 256K，4-bit 文本模型约 1 GB），开放权重。每个模型都能在单卡上微调，配了从数据准备到评测的 Colab notebook，覆盖 SFT（文档抽 JSON、读小票）、DPO（基于检索文档回答或拒答）、GRPO（手机应用里选工具）和继续预训练。LFM3-1.7B 在 WebArena-Verified 上 38.42 分（LFM2.5-2.6B 只有 3.02）。适合要在端侧部署、为自己任务微调小模型的场景。",
+    "tags": [
+      "model-release",
+      "fine-tuning",
+      "multimodal"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
   },
   {
     "date": "2026-10-26",
@@ -1399,5 +2213,40 @@
     "difficulty": "入门",
     "relevance": 0,
     "full_text_read": false
+  },
+  {
+    "date": "2026-10-16",
+    "added": "2026-11-02",
+    "source": "Claude Cookbook",
+    "type": "docs",
+    "title": "Review your agents' sessions for security issues with Claude",
+    "url": "https://platform.claude.com/cookbook/managed-agents-cma-agent-security-review",
+    "summary_zh": "给已经结束的 agent 会话做安全复查：先为每个 agent 写一页职责说明和可机器检查的授权（允许的 host、凭据、工具、收件人），把 Managed Agents、Messages API 或 Agent SDK 的日志转成带来源标签的编号事件；不调模型先跑 60 条正则规则和 7 条结构规则（访问授权外的 host、用了没给的凭据、被拒后换个工具重试等），再用 Managed Agents 动态工作流让 Claude 并行逐个审查会话，代码校验每条证据引文确实出自它引用的事件，最后输出带引文的分级报告（Routine / Look / Act）。示例里有个 agent 照着发票 PDF 里埋的指令把数据经 web_fetch 发了出去；用 Haiku 5.5 审 20 个会话约 10 美分。它只能事后发现、不能拦截，适合作为提示注入和越权行为的巡检。",
+    "tags": [
+      "safety",
+      "agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-10-13",
+    "added": "2026-11-02",
+    "source": "Claude Cookbook",
+    "type": "docs",
+    "title": "Trace Claude API requests and Managed Agents sessions with OpenTelemetry",
+    "url": "https://platform.claude.com/cookbook/observability-opentelemetry-tracing",
+    "summary_zh": "讲 anthropic Python SDK（1.14.0 起，beta）自带的 OpenTelemetry 追踪：注册 TracerProvider 后，Messages API 请求、流式输出、tool runner 循环和 Managed Agents 会话都会产生遵循 GenAI 语义约定的 span（模型、token 用量、缓存、首 token 时间、工具调用等），默认只导出元数据，content_mode 设为 content 才导出提示和回复；用标准的 OTEL_EXPORTER_OTLP_* 环境变量导到任意 OTLP 后端；在 Console 配置遥测目的地后，API 侧的模型运行、服务端工具、MCP 工具、上下文压缩等 span 会通过 traceparent 挂到同一条 trace 下。注意三处 span 报的是同一份用量，不要重复相加，计费以 Usage and Cost API 为准。",
+    "tags": [
+      "observability",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "evals"
   }
 ]
