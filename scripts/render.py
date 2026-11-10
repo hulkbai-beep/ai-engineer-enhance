@@ -48,6 +48,7 @@ CATEGORIES = {
 # reading articles can't close them, so job reports list them but never flag them as gaps.
 NOT_COMPARED = {"api-sdk", "applied", "career"}
 MAX_PER_COMPANY = 3
+DIGEST_MIN = 3  # the weekly digest (and its Issue) lists items from this score; README lists everything from 1
 
 
 def norm_url(url):
@@ -161,7 +162,12 @@ def snapshots_before(date):
 def render_digest(items, date, unread):
     week = sorted((i for i in items if i["added"] == date.isoformat() and i["relevance"] >= 1),
                   key=lambda i: (-i["relevance"], i["date"]))
-    lines = [f"# AI Engineer 周报 {date.isoformat()}", "", f"本周新增 {len(week)} 条。", ""]
+    shown = [i for i in week if i["relevance"] >= DIGEST_MIN]
+    intro = f"本周新增 {len(week)} 条。"
+    if len(shown) < len(week):
+        intro += (f"下面只列 {DIGEST_MIN} 分以上的 {len(shown)} 条，其余 {len(week) - len(shown)} 条"
+                  f"在 [README 总表]({REPO_URL}/README.md)里。")
+    lines = [f"# AI Engineer 周报 {date.isoformat()}", "", intro, ""]
     must = [i for i in week if i["relevance"] >= 4][:5]
     if must:
         lines += ["## 本周必读", ""]
@@ -173,7 +179,7 @@ def render_digest(items, date, unread):
         total, month_before, _, gaps = job_stats(job_snap, items)
         lines += ["## 本月岗位技能", "", gap_text(gaps, total, month_before), "",
                   f"完整报告：[jobs-{jobs.stem}]({REPO_URL}/digests/jobs-{jobs.stem}.md)", ""]
-    lines += ["## 本周新增"] + by_category(week) + [""]
+    lines += ["## 本周新增"] + (by_category(shown) or ["", f"_没有 {DIGEST_MIN} 分以上的新条目。_"]) + [""]
     snap = SKILLS / f"{date.isoformat()}.json"
     if snap.exists():
         prev = snapshots_before(date)
@@ -183,7 +189,7 @@ def render_digest(items, date, unread):
         if trending:
             lines += ["### 近期热门（skills.sh Trending 榜）", "", "| Skill | 仓库 | 榜上安装量 | 说明 |", "|---|---|---|---|"]
             lines += [skill_line(s) for s in trending] + [""]
-    unread_items = [i for i in week if not i["full_text_read"]]
+    unread_items = [i for i in shown if not i["full_text_read"]]
     if unread or unread_items:
         lines += ["## 没读到的内容", ""]
         lines += [f"- 来源未读取：{s}" for s in unread]
