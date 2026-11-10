@@ -99,6 +99,19 @@ class RenderTest(unittest.TestCase):
         self.assertNotIn("Old", digest)
         self.assertIn("来源未读取：Meta AI", digest)
 
+    def test_digest_lists_only_items_scoring_3_or_more(self):
+        self.run_main([item("https://a.com", relevance=3, title="Keep"),
+                       item("https://b.com", relevance=2, title="Minor", full_text_read=False),
+                       item("https://c.com", relevance=0, title="Biz")], "--date", "2026-10-29")
+        digest = (render.DIGESTS / "2026-10-29.md").read_text()
+        self.assertIn("本周新增 2 条。下面只列 3 分以上的 1 条，其余 1 条在 [README 总表]", digest)
+        self.assertIn("Keep", digest)
+        self.assertNotIn("Minor", digest)  # not in the tables, nor under 没读到的内容
+        self.assertNotIn("没读到的内容", digest)
+        self.assertIn("Minor", (self.tmp / "README.md").read_text())
+        self.run_main([item("https://b.com", relevance=2, title="Minor")], "--date", "2026-10-29")
+        self.assertIn("_没有 3 分以上的新条目。_", (render.DIGESTS / "2026-10-29.md").read_text())
+
     def test_state_records_each_source_last_read(self):
         self.run_main([], "--date", "2026-10-29", "--unread", "Meta AI")
         state = json.loads(render.STATE.read_text())
