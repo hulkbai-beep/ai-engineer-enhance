@@ -1,5 +1,1806 @@
 [
   {
+    "date": "2026-11-15",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "A step toward defining the Standard Model on a lattice",
+    "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+    "summary_zh": "一个标准模型的非微扰格点定义候选，以及 GPT-6 Astra 如何帮助把这个想法写成详细证明。物理研究，与开发无关。",
+    "tags": [
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-15",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Our new blog for science",
+    "url": "https://openai.com/index/our-new-blog-for-science",
+    "summary_zh": "OpenAI 开设科学博客，分享研究人员用 AI 推进科学发现的成果、方法和亲历。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-15",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette 0.65.6",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette-2/",
+    "summary_zh": "Datasette 0.65.6 把 1.0a43 的一个小安全修复移植回来：用 add_database(db, name=..., route=...) 注册、且 route 与 name 不同的数据库，可能被无权访问的用户从 /<route>.db 下载。与 LLM 无关。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-15",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🥇Top AI Papers of the Week",
+    "url": "https://nlp.elvissaravia.com/p/top-ai-papers-of-the-week-cde",
+    "summary_zh": "DAIR.AI 每周论文精选（11 月 15 日）：不预设组织结构的多 agent 系统 s3、schema 可随任务演化的 agent 记忆 SoMem、可验证的量子程序、LongCapHarness、发现 harness 改动几乎不影响准确率却能让成本差 2.6 倍的 Agency、证据链接记忆 WikiTrace、面向预训练的递归自我改进、把一次成功复现打包给下一个 agent 复用的 ReproBridge、让 LLM 代码评委随被测 agent 变化保持校准的 AutoRefine，以及触觉基础模型 LingBot-Touch。",
+    "tags": [
+      "agent",
+      "memory",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-15",
+    "added": "2026-11-16",
+    "source": "Sebastian Raschka",
+    "type": "blog",
+    "title": "Understanding Positional Embeddings in Modern LLMs",
+    "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+    "summary_zh": "Raschka 用图解、少量数学和小段 PyTorch 代码讲 LLM 怎样编码 token 位置：从给每个 token 嵌入加位置向量，到用 RoPE 编码相对位置、旋转频率怎么算并动手实现，最后整理 2026 年开放权重模型各自用的位置编码方案（包括省略显式位置编码的做法）。想弄懂模型架构细节的可以读。",
+    "tags": [
+      "architecture"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "Goal Engineering: How to Design Goals",
+    "url": "https://www.langchain.com/blog/goal-engineering",
+    "summary_zh": "Harrison Chase 和 Actively AI 提出「目标工程」：agent 开始承担开放式、长周期的目标后，最难补上的上下文是只存在于专家脑子里、要靠人工反馈传达的经验，所以划定 agent 的职责范围时，要让人最容易给出大量高质量反馈，并投入做好审阅 agent 工作的界面。Actively 的销售 agent 起初按客户账户划分（一个账户一个 agent），销售要在很多 agent 之间来回切换，学到的经验也无法跨账户复用；改成按销售动作（如外联、回复）划分、每个 agent 跨很多账户做同一类任务后，同类产出可以一起审，反馈自然迁移，账户背景则交给后台的上下文收集 agent。作者的结论是提示工程和上下文工程会淡出，目标工程会留下。",
+    "tags": [
+      "agent",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette-llm 0.1a11",
+    "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+    "summary_zh": "datasette-llm 是给其他 Datasette 插件配置 LLM 的中间层插件，这一版加入 OpenAI 兼容端点支持，可以让 Datasette 使用任何兼容 OpenAI 接口的地方托管的模型。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette-vega 0.7",
+    "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+    "summary_zh": "Datasette 用 Vega-Lite 画图的插件 datasette-vega 时隔多年（上一版是 2018 年 7 月）发布新版，兼容最新的 Datasette alpha 并做了一些界面调整。与 LLM 无关。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] The No AI Slop Manifesto",
+    "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+    "summary_zh": "头条是 AIE CODE 会上讨论出来、由 Dex 在闭幕主题演讲中介绍并有多位讲者联署的 No AI Slop 宣言（全文和联署在 slopmanifesto.com），作者希望它成为在工作中讨论 AI 产出质量的工具。新闻汇总里有 llama.cpp 和 ggml 1.0（可以为放不进显存的 MoE 模型预留常用专家的缓存）、SGLang 1.0，以及 LangChain 的 C 轮融资和 11 月 20 日将公布的 LangSmith 新功能。",
+    "tags": [
+      "career",
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🤖 AI Agents Weekly: Claude Fable 5.2, Gemini 4 Hydrogen, RIME, AlphaProof Code, Singularity-Bench, CoT Monitorability, Muse Ember, and More",
+    "url": "https://nlp.elvissaravia.com/p/ai-agents-weekly-claude-fable-52",
+    "summary_zh": "DAIR.AI 付费的 AI Agents Weekly，只读到简介：本期话题包括 Claude Fable 5.2、Gemini 4 Hydrogen、RIME、AlphaProof Code、Singularity-Bench、思维链可监控性和 Muse Ember 等。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-14",
+    "added": "2026-11-16",
+    "source": "Interconnects",
+    "type": "blog",
+    "title": "Open-source AI without Jensen",
+    "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "summary_zh": "Nathan Lambert 认为黄仁勋辞职是美国开放模型生态的重大挫折：开放模型是他力推的创始人式押注，NVIDIA 接下来首要任务是稳住公司，相关资金很可能收缩；文章也谈到开放模型经济正处在确立用例和收入的关键早期，「拥有自己的智能」和企业后训练是它的正确方向。行业动态。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Anthropic Engineering",
+    "type": "blog",
+    "title": "Building strong safety evaluations",
+    "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+    "summary_zh": "Anthropic 借鉴心理学「可重复性危机」之后的改革，给做安全评测的人一份清单：团队里要同时有方法专家和领域专家；网络安全类评测放在断网沙箱里跑并实时监控（他们因自己的事故暂停了不少联网评测）；先分清问题是观察性的（模型表现如何）还是因果性的（某个改动是否让模型更安全），因果问题一次只改一个变量；认真校准 LLM 评分器：能用程序化检查就不用模型评分，每道题要有参考答案并确认它能通过评分器，评分标准拆成一组原子化的是/否问题；预注册假设和分析方案，完整报告统计量，记录全部细节，负责任地披露缺陷。做任何 LLM-as-judge 评测都可以照这份清单自查。",
+    "tags": [
+      "eval",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "LangChain Raises $300M to Enable Every Company to Own Its Intelligence",
+    "url": "https://www.langchain.com/blog/series-c",
+    "summary_zh": "LangChain 宣布 3 亿美元融资。公司新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "The Batch",
+    "type": "blog",
+    "title": "GPT-6 Cyber Versus Linux, The Problem With LLM-Powered Search, LLMs Edit Model Weights, Agentic Doc Retrieval",
+    "url": "https://www.deeplearning.ai/the-batch/issue-379",
+    "summary_zh": "Andrew Ng 本期信件鼓励每个人自己搭一次 agent harness（包在 LLM 外面、提供上下文、工具和护栏的代码，长任务还要做记忆压缩、审批、凭据隔离和沙箱），介绍开源的 OpenWorker Harness SDK，以及让 coding agent 用 openworker-harness-builder skill 生成一个每步需用户批准的文件整理 agent 的做法，并提到面试越来越常问是否搭过 harness。新闻部分：GPT-6 Cyber 以更低成本修补更多漏洞、LLM 直接微调神经网络权重、搜索引擎之争，以及面向难以做 RAG 的文档的检索方法。",
+    "tags": [
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Cursor",
+    "type": "blog",
+    "title": "An update on our recent security incident",
+    "url": "https://cursor.com/blog/security-incident-update",
+    "summary_zh": "Cursor 公布 10 月底安全事件的调查结果：攻击者拿到 Cursor 发给合作方 Fireworks 的访问密钥（由 Fireworks 泄露），从一个共享的只读存储桶复制了数据，里面是允许用于训练的非 Privacy Mode 会话的 coding agent trace（主要来自 2025 年），其中少量 trace 含有没脱敏的凭据（不到 0.01% 的客户 API 凭据外泄）；攻击者再用这些凭据进入部分 SaaS 工具、归档的非生产代码库和客户支持数据。Cursor 轮换了所有内部凭据并逐一通知受影响用户。教训：要共享或留存 agent trace，先清除其中的密钥。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Introducing ChatGPT Wallet",
+    "url": "https://openai.com/index/introducing-chatgpt-wallet",
+    "summary_zh": "ChatGPT Wallet：让 ChatGPT Work、Codex 和 dots 里的 agent 在用户批准后完成购买，沿用现有的银行卡保护。agent 代付的一种产品形态。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+    "url": "https://openai.com/business/customer-stories/shield",
+    "summary_zh": "Shield 的 Forge agent 替 IT 技术员操作老旧的门户系统，技术员只处理需要判断的问题。computer use 类 agent 的客户案例。",
+    "tags": [
+      "case-study",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "Advancing science & engineering with Antigravity’s /teamwork",
+    "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+    "summary_zh": "Google Research 介绍 Antigravity 的多 agent 系统 /teamwork，并用它在数学、化学、系统软件和 ML 工程上解决了多年未解的问题。设计针对两个弱点：单次生成不稳定，所以并行探索多个候选，再交给专门的「证伪器」（Lean 4 证明检查器、未改动的测试套件、执行模拟器、网页搜索、硬件计数器）自动判断哪个可行；多天任务里注意力会分散，所以按构造切分上下文，每个专职 agent 只拿到当前步骤所需的文件和工具，coordinator 把任务交给全新的继任者，评审和审计 agent 在不带原作者推理的干净上下文里复核。工作流用可自我改进的自然语言模式声明，按提示自动路由（其中顺序式「求解—验证」循环单独做成了 /boost）。搭长周期多 agent 系统可以直接借鉴这几条。",
+    "tags": [
+      "multi-agent",
+      "agent",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+    "url": "https://huggingface.co/papers/2611.15777",
+    "summary_zh": "评测 System One 模型（一次前向直接做决策、不生成长推理）的 benchmark，覆盖 11 个领域、五类能力，含在沙箱里迭代执行动作的交互评测，并用「选项集变化时决策是否稳定」和「没有正确选项时能否识别」衡量可靠性。21 个模型的结果显示，扩大规模和加推理的收益因领域差别很大，总分最高的 System One 模型可靠性只排第七；用 decision model 做分类、路由或工具选择时，除了准确率还要看稳定性。",
+    "tags": [
+      "eval",
+      "reasoning"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents",
+    "url": "https://huggingface.co/papers/2611.17167",
+    "summary_zh": "比较三个 decision model 和三个通用 LLM 在长程 agent 里当执行者、评审和老师的表现：当执行者时都会被更容易的子目标带偏，没先完成必须先做的子目标；当看完整条轨迹的评审时却能给通向它的步骤记功，而且问「这一步有没有帮助」比问「任务会不会成功」更能区分有用和无用的动作。作为老师，JEV 让 Qwen2.5-1.5B 的成功率在 ALFWorld 上从 GRPO 的 72.8% 提到 82.9%、WebShop 从 56.8% 提到 71.4%，给 agent 轨迹做逐步评审或过程奖励时可以参考。",
+    "tags": [
+      "agent",
+      "eval",
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "On the Design of Hyper-Connections: Simplification, Stability, and Scalability",
+    "url": "https://huggingface.co/papers/2611.05984",
+    "summary_zh": "拆解前沿语言模型里越来越常用的 Hyper-Connections 架构：只用学习的读写门控、或只用固定门控加无约束混合，都能达到与 mHC 相当的效果，反复访问扩展后的残差状态才是训练开销的主要来源。据此提出的 SimpleHC 去掉残差混合并共享内存访问，最大规模下只比普通残差多 2.4% 端到端训练时间，从 15B 到 30B MoE 都与 mHC 表现相当且训练更稳。属于模型架构研究，离应用层较远。",
+    "tags": [
+      "architecture"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+    "url": "https://huggingface.co/papers/2611.08318",
+    "summary_zh": "一些自我改进的具身 agent 研究把 benchmark 的成功判定条件直接给 agent 看（作者称为 Criteria Exposure）。对照实验显示，看到判定条件的 coding agent 很快在原条件下拿到更高成功率，但在不偏离原指令的前提下稍微改动条件，优势就消失，学到的技能也难迁移到别的任务；作者提出与指令一致的判定条件，更能反映 agent 生成程序的真实水平。给自我改进的 agent 设计 verifier 和 eval 时，要防止它学会的只是迎合评分器。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
+    "url": "https://huggingface.co/papers/2611.10439",
+    "summary_zh": "多个用户和多个 agent 共享经验时，要决定每条经验对谁有用、哪些信息必须保密。MixUA 把各个用户与 agent 的轨迹提炼成经验，按受益对象和可披露内容分到「用户—agent 对、用户、agent、全局」四种作用域；配套的 CrossLearnBench 加入了用户偏好和隐私探针。五个用户、七个 agent 的实验中通过率比无记忆最多高 16 分、比单一全局记忆高 5 分，最多保留 90% 的已表达偏好，隐私探针在禁止的作用域里找到植入私密事实的比例不超过 0.02%，做多租户 agent 记忆时可以参考这种分级作用域。",
+    "tags": [
+      "memory",
+      "agent",
+      "privacy"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette-cluster-map 0.19",
+    "url": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+    "summary_zh": "Datasette 的地图插件 datasette-cluster-map 新版：兼容 Datasette 1.0a42，并依赖新的 datasette-leaflet，保证向 OpenStreetMap 请求地图瓦片时带上 referrer。与 LLM 无关。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "datasette-leaflet 0.3",
+    "url": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+    "summary_zh": "OpenStreetMap 要求访问其瓦片服务器时带 referrer，而 Datasette 表格页发送 Referrer-Policy: no-referrer，导致加载瓦片的插件违反这条政策；datasette-leaflet 0.3 针对这个问题发布。与 LLM 无关。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+    "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
+    "summary_zh": "头条是黄仁勋卸任 NVIDIA CEO、CFO Colette Kress 暂代。后面的新闻汇总主要是 Gemini 4 Hydrogen：四档思考强度、1M 上下文，每百万 token $1.50/$7.50，缓存输入打 5 折以上，Google 称速度是 Gemini 3.8 Flash 的 2.5 倍，并成为 AI Studio 免费档和搜索 AI Mode 的默认模型。属于公司新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "AI Ambition: ArtCraft Cloned Photoshop and Now Wants to \"Rebuild Everything\"",
+    "url": "https://latent.space/p/artcraft/",
+    "summary_zh": "AIE Code 第二天「提高野心」主题的演讲记录：ArtCraft 已发布 17 个流行软件的开源替代，从用 Rust 从零写的 Photoshop 替代 PhotoCraft 开始，还克隆了 Acrobat、Figma 等，创始人号召借助 AI「重建一切」。属于用 AI 做大型重写项目的行业故事。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "XYBench: Helping with the problem behind the question",
+    "url": "https://huggingface.co/blog/allenai/xybench",
+    "summary_zh": "Ai2 等发布 XYBench（EMNLP 2026 最佳资源论文）：8,115 个来自真实场景的编程和日常问题，用户想做 X 却问了基于错误假设的 Y（XY 问题），测模型能否识别误解并引导到真正解决目标的方案。被测的 Claude Sonnet 4.6、GPT-5、Gemini 3.1 Pro 等五个模型常常给出办法，但仍围绕用户原来的错误思路，比人类参考答案更少把用户引开。做助手类产品时可以用这类题检查回答质量。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-13",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+    "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+    "summary_zh": "llama.cpp 和 ggml 发布库的 v1.0.0：此后公共 C API 有破坏性变化就升主版本，新功能、后端更新和模型支持升次版本，纯修复升补丁版本，对下游应用的 API 和 ABI 兼容性做出明确承诺；同时列出 Docker、Debian、Homebrew、conda-forge、Winget 等分发渠道。基于 llama.cpp 做本地或端侧 LLM 产品的团队，可以按语义化版本管理依赖了。",
+    "tags": [
+      "inference",
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Self-hosted Claude Managed Agents",
+    "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+    "summary_zh": "Managed Agents 新增自托管选项：除了沙箱，连 API、agent 循环以及 agent、会话和会话历史的存储（cma-server 加数据库）都跑在你自己的云账号或机房里；模型调用默认发给 Anthropic，也可以改发 Amazon Bedrock、Google Cloud（Google 托管）、Microsoft Foundry 或自己的模型网关。API 与托管版相同，SDK 和 ant CLI 照常可用，但服务器、数据库和沙箱要自己运维和升级，部分功能只有托管版有；需联系 Anthropic 客户团队申请。数据必须留在自己基础设施上的企业可以考虑。",
+    "tags": [
+      "agent",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini 4 Hydrogen (gemini-4-hydrogen) generally available",
+    "url": "https://aistudio.google.com/docs/whats-new-gemini-4-hydrogen",
+    "summary_zh": "gemini-4-hydrogen 正式可用，免费层也能用，付费价每百万 token 输入 1.5 美元、输出 7.5 美元；1M 统一上下文（输入、思考和输出共用）、单次输出最长可到 1M token，新增第四档思考强度 xhigh（默认 high）。官方称它比 Gemini 3.8 Flash 编造少 5 倍以上（缺上下文时会指出而不是猜），会把读取和搜索类工具调用并行批量发出、工具失败时更会调整，可以和 Carbon、Argon 搭配做并行的 worker 和校验 agent；它已是 Gemini Managed Agents 里 Antigravity agent 的默认模型，也是 Gemini 3.8 Flash 及更早 3.x、2.5 模型的推荐升级。",
+    "tags": [
+      "model-release",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "LlamaIndex Blog",
+    "type": "blog",
+    "title": "Introducing ParseBench-2",
+    "url": "https://www.llamaindex.ai/blog/introducing-parsebench-v2",
+    "summary_zh": "文档解析基准 ParseBench-2：案例从 2.1k 扩到 4.3k，修正了参考数据，图表评测检查 1,025 张图里的每个数值，新增表单维度（值是否挂在正确字段上、复选框状态、空字段是否保持为空）。最大的变化是按错误严重程度调权的确定性指标：把 75% 解析成 57% 改变了事实，应比把图表数值输出成列表而不是表格罚得更重，从而兼顾可复现和与人工判断一致。为 RAG 选 PDF/OCR 解析器时可以参考。",
+    "tags": [
+      "eval",
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Workflow SDK 5: built for production",
+    "url": "https://vercel.com/blog/workflow-sdk-5",
+    "summary_zh": "Vercel 的持久化工作流框架 Workflow SDK 5（写普通 async 代码，崩溃、重新部署和长时间等待后都能续跑）：上线以来 7 亿次运行里，一大类就是 agent 和 harness，因为 agent 又贵又跑得久，天然需要持久化。v5 默认对事件日志里的步骤参数、返回值和流数据做端到端加密（每次运行一把 AES-256-GCM 密钥，后端只存密文）；引擎重写后减少了排队跳转、网络和 CPU 开销，实测延迟和额外开销改善 1.6 到 25 倍，适合含上千个顺序事件、高吞吐 token 流和动态子 agent 的 agent 循环；另有新的 trace 查看器和多区域部署。",
+    "tags": [
+      "agent",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+    "url": "https://openai.com/business/customer-stories/amplitude",
+    "summary_zh": "Amplitude 主要基于 OpenAI 模型做主动式产品 agent Wave：找出该做什么、让团队用 coding agent 交付改动，再衡量效果。客户案例。",
+    "tags": [
+      "case-study",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Gondola doubles revenue as its team builds more with Codex",
+    "url": "https://openai.com/business/customer-stories/gondola",
+    "summary_zh": "Gondola 用 Codex 让首席工程师产出提升 50%、收入翻倍的客户案例。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Holiday Extras is rethinking what it can build with Codex",
+    "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+    "summary_zh": "Holiday Extras 用 Codex 把客户经验做成更好的应用、提高预订转化的客户案例。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Supporting research on AI and children’s safety",
+    "url": "https://openai.com/index/children-first-declaration",
+    "summary_zh": "OpenAI 拿出 200 万美元资助 AI 与儿童安全的研究，用于共享的风险和机会评估工具。公益资助。",
+    "tags": [
+      "safety",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Gilbert + Tobin rethinks the business of law with AI",
+    "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+    "summary_zh": "与律所 Gilbert + Tobin 合伙人兼 CEO Sam Nickless 的访谈，谈 AI 如何改变律所业务。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Introducing Gemini 4 Hydrogen",
+    "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+    "summary_zh": "DeepMind 发布 Gemini 4 Hydrogen，面向日常编码和 agent 工作流的快速执行，所有档位的 AI Studio、Gemini API 和 Gemini 应用都可用，整个 1M 上下文统一按每百万 token 输入 1.5 美元、输出 7.5 美元计价。Artificial Analysis 智能指数在默认 high 档为 51，略高于 Argon 的 50，xhigh 档到 54。Antigravity 同时推出 Orchestrator，在同一会话里按需在 Carbon 和 Hydrogen 之间切换：Terminal-Bench 4.0 上接近 Carbon 的成功率，平均少用 24% 的额度、快 19%；并行任务可以让 Carbon 做协调者、Hydrogen 做 worker 和校验 agent。「强模型规划、快模型执行」的组合方式值得参考。",
+    "tags": [
+      "model-release",
+      "agent",
+      "multi-agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "Microsoft Research Focus – Edition #98",
+    "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+    "summary_zh": "微软研究院本期短播客汇总：AI 语音翻译、解决 31 年的 KLS 猜想、用 CompactionBench 评测长周期 agent 的上下文压缩、覆盖 104 种语言的 Latent Core Tokenizer 等。新闻合集，了解即可。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+    "url": "https://huggingface.co/papers/2610.40394",
+    "summary_zh": "把 2,118 本大学数学教材转成约 38 万条结构化证明监督数据 TOME-Math，保留章节顺序、命题与证明的对应、依赖引用和出处，并用它研究跨学科的课程学习和数据规模效应。全量微调后在保留评测和公开 benchmark 上平均提高 16.7 个百分点，超过三个公开指令数据基线，语料将开源。",
+    "tags": [
+      "fine-tuning",
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+    "url": "https://huggingface.co/papers/2611.13410",
+    "summary_zh": "低比特量化后的 LLM agent 常常忽略任务要求或环境条件。SteerDistill 让全精度教师在学生失败的地方给出引导，并根据学生执行的反馈反复修正，再训练学生在没有引导时也能复现这些修正。五个 agent benchmark、三个模型上，W4A16 比最强量化基线高 1.67 到 2.18 分，与 BF16 相差不到 1 分；τ²-Bench 上成功率比 QeRL 高 1.84 个百分点，训练 GPU 时数少 67%，想用量化小模型跑 agent 时可以参考。",
+    "tags": [
+      "agent",
+      "fine-tuning",
+      "inference"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Incentivizing Self-Learning in Large Language Models via Reinforcement Learning",
+    "url": "https://huggingface.co/papers/2610.39671",
+    "summary_zh": "研究 LLM 的「自学」：遇到陌生领域时自己检索、阅读长篇参考资料并当场应用。作者以按教材做数学证明为任务，提供 BookNavigator 接口让模型翻阅教材，再用细粒度奖励的强化学习训练，Intern-S2-Preview-35B 的证明准确率从 51.5% 提到 79.5%，好于不给教材和固定检索的 RL 基线，在 BrowseComp-Plus 等长上下文任务上也有提升。",
+    "tags": [
+      "reasoning",
+      "fine-tuning",
+      "RAG"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents",
+    "url": "https://huggingface.co/papers/2608.22237",
+    "summary_zh": "agent 读网页、文档、代码仓库和工具返回时，接口往往把整份内容塞进上下文。SparseRead 不改模型，加一层读取控制：Read Intent Protocol 跟踪不断变化的信息需求和来源覆盖，Adaptive Reader Backends 决定怎么定位和展示证据，Budgeted Read Gate 限制每个任务累计读入的原文量，必要时退回完整视图。在六个模型（含 Claude Opus 5）、五种场景下总 token 最多减少 92.9%、耗时最多减少 89%，97% 的设置里质量持平或更好，并已接入三个 agent 框架，给 agent 设计读取类工具时可以直接借鉴。",
+    "tags": [
+      "context-engineering",
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference",
+    "url": "https://huggingface.co/papers/2611.10193",
+    "summary_zh": "提出按提示自适应、考虑成本的路由器 PISA 和它的集成版 PISA-E：用软聚类成员度加上各模型的预测器估计每个模型在这条请求上的能力，PISA-E 在推理时按可调的成本与质量偏好联合决定用哪几个模型、用几个，不需要为集成另行训练。四个路由 benchmark 上 PISA 的成本—性能综合指标在单模型路由器中最高，PISA-E 优先质量时比最强的集成方法高 2 到 3 个百分点，做多模型路由降本时可以参考。",
+    "tags": [
+      "inference",
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "llm-gemini 0.37",
+    "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+    "summary_zh": "llm-gemini 插件支持了 Gemini 4 家族最便宜的 Hydrogen。Simon 整理了让人困惑的 Gemini 4 定价：Carbon 和 Argon 同价，都将在 12 月 1 日翻倍（Argon 每轮用的 token 更少）；Hydrogen 为每百万 token $1.50/$7.50，目前只便宜 25%，12 月后才便宜 75%，仍是 Claude Haiku 5.5 和 GPT-6 Luna 的 15 倍。Google 把 Hydrogen 定位为搭配 Carbon、Argon 的执行模型，它也是新的免费档模型。",
+    "tags": [
+      "model-release",
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] D-Day (Decision Models Day)",
+    "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+    "summary_zh": "AIE CODE 的 System One 专场当天，Google 抢在 Anthropic 前推出生产级 decision model Gemini Decision 1：单次前向对封闭选项打分，支持是非题、最多 255 个选项的选择题和 rubric 打分，输入可以是文本、图片、音频、视频和 PDF，每次请求最多 1000 个问题、256K 上下文、端到端 150 到 250 毫秒，每个答案带置信度，输入每百万 token $0.10、输出免费。Google 称在 7 个共同 benchmark 中 5 个胜过 Jev，Artificial Analysis 的独立结果则更参差；Cloudflare 也介绍了自家的 Clef 和 Clairic 模型。",
+    "tags": [
+      "model-release",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+    "url": "https://latent.space/p/jev-revolution/",
+    "summary_zh": "AIE Code 的 System One 专场记录：Jev 作者 Diogo Almeida 主张把这类返回结构化选择、分数或概率的快速模型直接嵌进应用代码，而不是拼字符串调 LLM。Glean 用 Jev 做随分类体系变化而不必反复微调的零样本判断，并把底层用的是 Jev 还是 LLM 对用户隐藏；UiPath 用「锦标赛」方式让 Jev 分组挑最相关的文档块，几千次调用不到一秒；Workday 演示了用户还在打字时就预填请假卡片的界面。想在应用里引入 decision model 的可以看这些用法。",
+    "tags": [
+      "agent",
+      "RAG",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+    "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+    "summary_zh": "IBM 提出 LLMON：用保留的特殊 token 作分隔符的类 XML 标记语言，把上下文里的指令、数据、要求等组件显式标出，并用唯一 ID 把指令绑定到它要处理的数据上，替代对模型不友好的 JSON（引号、括号和正文共用 token，嵌套靠数括号）。配套发布 Granite 4.1 3B 和 8B 的 LLMON 预览模型和工具包，藏在用户数据里的间接提示注入大多被忽略，部分 benchmark 上攻击成功率接近零，且通用能力与 Granite 4.1 Instruct 相当；还提供 JSON 与 LLMON 的无损转换。",
+    "tags": [
+      "prompting",
+      "structured-output",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "prompting"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Catch Go bugs that fuzzing misses with Gemini and a constraint solver",
+    "url": "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/",
+    "summary_zh": "作者为检查 Google 175 个 agent skill 文件写了 Go 工具 skill-lint，然后用这样的流程找它的崩溃 bug：编译后找出优化后仍保留的越界检查陷阱，让 Gemini 4 Argon 把到达每个陷阱的路径翻译成 Z3 约束，求解出具体输入并用 go test 直接复现，所以找到的崩溃都是真的。它抓到了预埋的全部 3 个 bug，又发现 skill-lint 里 3 个潜伏 bug，其中两个 go test -fuzz 没找到；文中也解释了一行改动怎样让 fuzz 补上。",
+    "tags": [
+      "case-study",
+      "skills"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "How Agent Anomaly Detection scores on benchmarks we didn't write",
+    "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+    "summary_zh": "Google 用五个不是自己写的公开 agent 安全 benchmark 测试 Agent Anomaly Detection（异步读取 agent 的 trace 和日志、标记越界会话的监控功能）：模型本身没执行约一半的有害指令，被执行的那些里有 87% 被标记出来供事后审查，正常会话的误报率随工具不同在 2% 到 16% 之间；明显短板是被投毒的长期记忆，18 个让 agent 行动的案例只抓到 4 个。测试用确定性代码读取应用最终状态来打标签，这种做法也值得自己做安全评测时借鉴。",
+    "tags": [
+      "safety",
+      "eval",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-12",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "The Pulse: What can we learn from the Railway hack?",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from-114",
+    "summary_zh": "付费的 The Pulse，只读到简介：主题是 Railway 被入侵的教训；另有原生移动端和前端岗位在减少、信任如何帮助「AI 原生」工程团队成功、Carta 开始出售编码 harness 等。",
+    "tags": [
+      "career",
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini Decision 1 and the Decisions API",
+    "url": "https://aistudio.google.com/docs/decisions-api",
+    "summary_zh": "新的 Decisions API 用 gemini-decision-1 对文本、JSON、PDF、音频、图片和视频回答类型化的问题：是/否（noul，返回 0.01 到 0.99 的概率）、单选（choice）和按评分等级打分（score），都附 confidence；不生成文本，输出 token 恒为 0，多个问题在一次前向里并行计算、互相看不到，延迟几乎不随问题数增加。官方建议把问题拆成单一用途的原子检查，在代码里用 if 和权重组合，再按 confidence 决定自动执行还是转人工。做分类、路由、审核或 LLM-as-judge 的，可以用它代替「生成文本再解析」；需要 google-genai SDK 3.2 以上。",
+    "tags": [
+      "eval",
+      "model-release"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "LlamaIndex Blog",
+    "type": "blog",
+    "title": "How We Harden Application Testing For the Most Sensitive Documents",
+    "url": "https://www.llamaindex.ai/blog/how-we-harden-application-testing-for-the-most-sensitive-documents",
+    "summary_zh": "LlamaParse 处理财报、保单、合同等敏感文件，传统渗透测试只覆盖 Web 应用和 API，不覆盖模型读文档的环节。他们按 OWASP LLM Top 10 逐项设想文档平台的风险：文档里的文字可能对解析、抽取、对话以及经 MCP 接入的助手做提示注入，查询可能读到别的用户、项目或组织的数据，依赖的模型和库可能出意外，再针对这些环节做测试。做文档处理或 RAG 平台的可以参考这种威胁建模方式。",
+    "tags": [
+      "safety",
+      "RAG"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Tabular Foundation Models for Data Science Agents",
+    "url": "https://www.deeplearning.ai/courses/tabular-foundation-models-for-data-science-agents",
+    "summary_zh": "与 Prior Labs 合作的短课（中级，1 小时 32 分，8 节视频，Frank Hutter 等主讲）：LLM 不擅长对表格数据做统计预测，表格基础模型靠上下文学习，一次前向就能对新数据集做分类、回归和时间序列预测，无需重新训练；课程讲怎么加速和解释这些预测，最后搭一个把表格基础模型当预测工具调用的数据科学 agent。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "ChatGPT Plus for veterans and servicemembers",
+    "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+    "summary_zh": "已有 2 万多名退伍军人和转业军人领取一年免费 ChatGPT Plus，用它准备民间求职。公益活动。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+    "url": "https://openai.com/index/jiostar-vijay-seshadri",
+    "summary_zh": "JioStar 首席架构师 Vijay Seshadri 谈在 5 亿用户规模上做 AI 内容发现的经验，涉及评测、护栏和把 AI 推向生产。简介只到这一层，细节要看原文。",
+    "tags": [
+      "case-study",
+      "eval"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching",
+    "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+    "summary_zh": "一个研究性机器学习框架：把可穿戴设备的被动信号转成可干预的「健康年龄」，用动作条件世界模型模拟 12 周的习惯改变，再结合常规血液指标追踪心血管—肾脏—代谢风险。健康研究，与 LLM 应用关系远。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "研究",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+    "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+    "summary_zh": "AlphaGenome 2 预测 DNA 序列及其变异对特定人类细胞类型和疾病的影响。生物方向，与开发无关。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "研究",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+    "url": "https://huggingface.co/papers/2611.14320",
+    "summary_zh": "agent 的外部记忆会造成「记忆引发的退化」：照着错误的或被误读的经验教训，反而做错了不用记忆也能做对的任务，因为教训脱离了产生它的轨迹，无从核对。WikiTrace 把每条教训存成简短洞见，链接到「为什么成功或失败」的摘要和原始轨迹；新任务里洞见缺细节、互相冲突或来自失败任务时，agent 用终端工具沿链接下钻核对再行动。在五个 agent benchmark 上优于现有记忆方法并减少退化，代码已开源，设计 agent 记忆时可以直接借鉴。",
+    "tags": [
+      "memory",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "World In-Context Learning for Agentic Robot Manipulation",
+    "url": "https://huggingface.co/papers/2611.12885",
+    "summary_zh": "提出 World In-Context Learning：冻结的模型从一次示范出发，在模拟器里演练任务，把反馈写进上下文而不是权重，固化成 Task Memory 后再部署到新场景。实现框架 RoboScript 在 RoboTwin 2.0 的 50 个任务上每个任务只用一次示范、不做梯度更新，平均成功率 83.4%，比最强的训练式动作策略高 20 多个点，还能靠反思继续改进并迁移到真实双臂机器人，是「用记忆和演练代替微调」的一个机器人领域例子。",
+    "tags": [
+      "agent",
+      "memory",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+    "url": "https://huggingface.co/papers/2611.14210",
+    "summary_zh": "把修复小模型推理死循环写成对 BF16 权重的稀疏离散优化：只允许符号翻转和指数移位，按输出行分解成相互独立的 QUBO（Ising）问题，在 GPU 上用模拟退火或模拟分岔求解。同一评测协议下 MATH-500 达到 54.6%，好于此前由前沿 agent 读权重写出的修复（51.7%），改动的权重少 13% 到 17%，比特翻转只有后者的约 1/2.2。离应用层较远，了解即可。",
+    "tags": [
+      "fine-tuning",
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations",
+    "url": "https://huggingface.co/papers/2611.10649",
+    "summary_zh": "MXFP4 W4A4 训练后量化方法，每个线性层独立处理：对激活在线做逐通道缩放和块 Hadamard 变换，逆变换吸收进权重，再用考虑 Hessian 的 Flip-Refinement 逐个微调 FP4 编码，一次只需把一层放进显存。在 vLLM 里跑 Qwen3-32B 只比纯 MXFP4 多 2.3% 端到端开销，困惑度低于 DuQuant++ 和 MR-GPTQ，量化 122B 模型只要 64 分钟、32.5GB 显存，自部署开源模型时值得关注。",
+    "tags": [
+      "inference",
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Embodied First Exam",
+    "url": "https://huggingface.co/papers/2611.12177",
+    "summary_zh": "给 coding agent 控制机器人准备的评测：1,156 个任务、35 个套件、47 种机器人，agent 可以自己选直接控制、写代码控制或训练策略来控制，并分标准、实时和特权三种设置。在 456 个核心任务的标准设置下，八个 agent 里最强的 GPT-6 Astra（Codex）成功率也只有 34%，作者还按失败发生的阶段对比了各个 agent。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Gemini Decisions API",
+    "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+    "summary_zh": "Simon 比较了三家的 decision model API：Gemini Decision 1 几乎照搬 Jev，同样支持是非题、选择题和按 rubric 打分三类问题，价格与 GPT-6 Luna 的 decision model 相同（每百万输入 token 10 美分，输出免费），Jev 最便宜（4.2 美分）。Jev 只支持文本和 JSON，OpenAI 支持文本和图片，Gemini 还支持音频、视频和 PDF；他用视频测试时，Gemini 的是非题概率不像另两家那样直接给 1.0 或 0.0。",
+    "tags": [
+      "multimodal",
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "aws-emulator",
+    "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/",
+    "summary_zh": "AWS 发布官方模拟器 aws-emulator，可以在本地克隆的各类 AWS 服务上跑测试，不用开付费 API key。它由一大群 agent 用 Rust 写成，项目头三周就有 29,684 次提交；目前在 macOS 和 Windows 上需要 Docker。给调用 AWS 的应用和 agent 写测试时有用，也是 agent 群体开发大型软件的一个实例。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Browse tools.simonwillison.net by tag",
+    "url": "https://simonwillison.net/2026/Nov/11/tools-tags/",
+    "summary_zh": "Simon 用每周额度里剩下的 Fable 5.2 用量，让它借助 tree-sitter 分析他 244 个 vibe-coded 小工具的代码，按用到的 JavaScript API 和库等打标签，做成按标签浏览的页面。个人项目更新，了解即可。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "llm 0.37.2",
+    "url": "https://simonwillison.net/2026/Nov/11/llm/",
+    "summary_zh": "LLM 命令行工具的安全修复版：通过 extra-openai-models.yaml（现在用 llm openai endpoint add 管理）接入其他厂商的 OpenAI 兼容端点时，有两种情况会把你配置的 OpenAI API key 误发给那些厂商。用同一套客户端对接多家兼容端点时，也要留意 key 的作用范围。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Anthropic's IPO roadshow video",
+    "url": "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/",
+    "summary_zh": "Simon 用 MacWhisper 转写了 Anthropic IPO 路演视频并摘出要点：Claude 在 AWS Trainium、Google TPU、NVIDIA 和 AMD 四类芯片上训练和服务；今年接入 AMD 时由 Mythos 在三天内几乎无人干预地完成移植，内核几乎全由 Claude 编写；公司把「计算倍增器」的发现速度视为竞争优势。属于公司和行业动态。",
+    "tags": [
+      "business",
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+    "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
+    "summary_zh": "头条是 AI 数据公司 Mercor 以 200 亿美元估值融资 7.5 亿美元，年化收入 30 亿美元，并称推理开销已是员工工资的 3 倍；后面的新闻汇总是 Gemini 4 Carbon 全面上线的价格和可用性。属于融资新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "AI Engineer Code Summit: OpenAI on New Ways of Working With Codex",
+    "url": "https://latent.space/p/codex-work/",
+    "summary_zh": "AIE Code 大会上 OpenAI 开发者体验团队的 Codex 工作坊记录：9 月改版的 Codex Cloud v2 可以把环境发布一次、在隔离实例里并行跑多个任务，并在公司内共享；从本地转到云端时可以直接让 Codex 把任务交接过去，但上下文差异仍是难点。工作坊还讲了个人 agent（OpenAI 的 dots、Anthropic 的 Claude Duet）在会话之间协助和用语音指挥编码任务，团队考虑云端后台 agent 时可以参考。",
+    "tags": [
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+    "url": "https://huggingface.co/blog/qvac/botpsy",
+    "summary_zh": "Tether AI Research 基于 Qwen3.5-0.8B 训练出 0.8B 参数的端侧个人助理模型 BotPsy，专做函数调用和 agent 工作流：BFCL v4 从 23.4 提到 44.0，τ-bench 从 23.2 提到 51.5，在 1.2B 以下的模型中六个工具使用 benchmark 全部领先，五项超过 2.5 倍大的 Qwen3.5-2B-Think，没有合适工具时拒绝调用的测试得 86.1。权重以 Apache 2.0 发布，提供 bf16、Q8、Q4 和 GGUF，适合离线、隐私敏感的简单 agent 任务。",
+    "tags": [
+      "model-release",
+      "tool-use",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+    "url": "https://huggingface.co/blog/token-pooling",
+    "summary_zh": "多向量检索（ColBERT 类）每个文档要存几百个向量，token pooling 用 Ward 层次聚类合并相似向量来压缩存储；这篇用 Sentence Transformers 演示「感知 pooling 的训练」，让编码器在向量被合并时保住关键信息。pool_factor=4（文档向量减少 4 倍）时，普通训练的模型保留 94.6% 的 NanoBEIR nDCG@10，pooling 感知训练提高到 97.8%，文中有可复现代码，做大规模多向量检索时可以直接用。",
+    "tags": [
+      "RAG",
+      "fine-tuning"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "A2UI 1.0: Build delightful, fast, reliable, agentic experiences",
+    "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+    "summary_zh": "生成式 UI 开放协议 A2UI 发布首个稳定版 1.0：agent 描述要显示什么，各端应用用自己注册的原生组件绘制，敏感数据在服务端绑定、不经过模型，界面随 agent 工作流式出现；提供 Web、Android、iOS 渲染 SDK 和 Python、TypeScript、Dart 的 agent SDK，也能在托管 MCP apps 的助手（如 Gemini、Claude）里呈现，Atlassian、Bloomberg、字节跳动等已在用。想让 agent 返回表单、图表等可交互界面而不是大段文字的可以采用。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-11-11",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "The Roundup by ByteByteGo",
+    "url": "https://blog.bytebytego.com/p/the-roundup-by-bytebytego",
+    "summary_zh": "ByteByteGo 新闻合集：GitHub Octoverse 2026 显示 9 月超过 40% 的 PR 由 agent 起草，软件开发的瓶颈正在转移；Anthropic 为跟上持续不断的改动已替换 Git；Anthropic 的 S-1 文件透露 AI 编码的真实价值；另有 PHP 紧急修复两个已被利用的远程代码执行漏洞。",
+    "tags": [
+      "career",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Anthropic launches roadshow for proposed initial public offering",
+    "url": "https://www.anthropic.com/news/roadshow-launch",
+    "summary_zh": "Anthropic 启动拟议 IPO（A 类普通股）的路演。公司新闻，与开发无关。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini 4 Carbon (gemini-4-carbon) generally available",
+    "url": "https://aistudio.google.com/docs/whats-new-gemini-4-carbon",
+    "summary_zh": "gemini-4-carbon 在付费层正式可用，11 月 30 日前推广价每百万 token 输入 2 美元、输出 10 美元（之后 4/20），默认思考强度 medium。它是 Google 最强的推理模型，每轮花更多思考 token 做「构建—验证」循环，适合复杂排错、架构设计、密集多模态材料综合、科学证明和安全审计；日常编码和快速迭代官方建议用更省的 Gemini 4 Argon。同样是 1M 统一上下文加长输出，Antigravity agent 已支持。",
+    "tags": [
+      "model-release",
+      "agent",
+      "reasoning"
+    ],
+    "difficulty": "入门",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "How our GTM Agent builds consistent, high-quality sales artifacts",
+    "url": "https://www.langchain.com/blog/gtm-agent-high-quality-sales-artifacts",
+    "summary_zh": "LangChain 内部 GTM agent 过去 12 周生成了 1,540 份销售材料（客户计划、价值验证文档、方案 deck、上线计划），每周 100 多份；发出过材料的交易有 47% 推进到后续阶段，匹配的对照组是 16%，发出的材料共省下 337 小时。作者说质量主要来自给 agent 的上下文而不是提示调优：销售负责人的品味、真实客户通话记录、公司的销售阶段等业务逻辑，以及每个阶段必须满足的条件；agent 知道每笔交易处在哪一步，能在客户会议前建议该准备哪份材料。底层是 Deep Agents harness（沙箱、skills、记忆、定时运行），Managed Deep Agents 已内置这些。",
+    "tags": [
+      "agent",
+      "context-engineering",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "How Workday Built an Enterprise-Scale AI Agent Platform with LangGraph and LangSmith",
+    "url": "https://www.langchain.com/blog/how-workday-built-an-enterprise-scale-ai-agent-platform-with-langgraph-and-langsmith",
+    "summary_zh": "Workday 的 4 人平台团队用 LangGraph 做编排、LangSmith 做追踪和评测，在自家基础设施上搭内部 agent 平台：Agent System of Record 作为治理层控制 agent 能调用哪些 API，另封装了一层「Workday LangChain」Python SDK，把 LangChain 原语接到内部 LLM 网关等服务上，以满足审计、合规和数据保留要求。客户案例，技术细节有限。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Braintrust",
+    "type": "blog",
+    "title": "Manage Braintrust with Terraform",
+    "url": "https://www.braintrust.dev/blog/terraform",
+    "summary_zh": "Braintrust 推出 Terraform provider：把项目、组、角色和服务账号写成代码，与运行 agent 的基础设施一起管理，权限变更可以在 PR 里审查。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Cursor",
+    "type": "blog",
+    "title": "Cursor Projects is now multiplayer",
+    "url": "https://cursor.com/blog/projects-multiplayer",
+    "summary_zh": "Cursor Projects（由一个 coordinator 指挥一组 agent 做大型任务）支持多人：可以邀请队友进同一个 Project，人和各自的 agent 共享计划、文档、设计、任务、skills 和记忆，共享任务板显示谁在做什么、各 agent 在干什么以及对应的 PR；每个人仍有自己和 coordinator 的一对一对话。团队协作用多 agent 系统的一种产品形态。",
+    "tags": [
+      "multi-agent",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Helping caregivers use AI in everyday life",
+    "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+    "summary_zh": "OpenAI Academy 在美国五个城市为照护者开办免费的 ChatGPT 实操工作坊。公益活动。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Introducing Businesses in ChatGPT",
+    "url": "https://openai.com/index/introducing-businesses-chatgpt",
+    "summary_zh": "商家可以在 ChatGPT 里管理自己的商家信息、查看自己在 ChatGPT 里的呈现情况并承接用户兴趣。面向商家的产品功能。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Closing the AI guidance gap in education",
+    "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+    "summary_zh": "ThinkYoung 的新研究和 OpenAI 在欧洲、中东和非洲教育合作中的经验：如何支持教师、提升 AI 素养和自主学习。教育议题。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+    "url": "https://openai.com/index/singapore-airlines-travel-work",
+    "summary_zh": "新加坡航空用 OpenAI 模型和 API 改进客服、旅行推荐和员工效率，Kris 聊天机器人的客户满意度翻倍。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Work at the Frontier: AI’s effect on freelance work",
+    "url": "https://openai.com/index/ai-effect-on-freelance-work",
+    "summary_zh": "OpenAI 与 Upwork 的新研究：自由职业的需求在转移，出现新的技能组合，AI 相关项目的预算更高、工时更长。了解 AI 技能市场变化可以参考。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+    "url": "https://openai.com/index/cogent-security",
+    "summary_zh": "Cogent 把 OpenAI 模型和企业上下文结合，用 agent 自动修复漏洞。安全领域的客户案例。",
+    "tags": [
+      "case-study",
+      "safety",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Gemini 4 Carbon is now available",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+    "summary_zh": "Gemini 4 Carbon 对开发者、企业和消费者开放（两周前先经 Fairwind 计划给了网络安全防御方）：多数编码和知识工作仍推荐 Gemini 4 Argon，Carbon 用于最难的多步编码调试和开放式科研，会花更多 token 深入推理、反复验证。Google 称它在 CursorBench 4.0、Perplexity 的 WANDR 和 Zapier 的 AutomationBench 上排第一，单任务成本比第二名外部模型低一半以上；API 推广价与 Argon 相同（每百万 token 输入 2 美元、输出 10 美元）。Antigravity 同时预览 /swarm：一句提示拉起一组可实时跟踪的 agent，Carbon 担任架构、协调和审计，配合更快的模型在隔离工作区并行干活、由对抗式校验 agent 测试每个改动。",
+    "tags": [
+      "model-release",
+      "agent",
+      "multi-agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+    "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "summary_zh": "DeepMind 的 AlphaProof Code 是一个多 LLM 的形式化验证 agent 框架：人类专家和模型一起把 Signal 协议的安全目标写成形式化规格并逐条审核，再由 Gemini Carbon 驱动的 agent 在 Lean 里写了 300 万行证明，首次对这样广泛部署的密码协议实现做了这种深度的形式化验证。「人定要证什么、agent 去证」的分工值得一看，但离一般应用开发较远。",
+    "tags": [
+      "agent",
+      "safety",
+      "reasoning"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Opening the datasets behind our AI weather models",
+    "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+    "summary_zh": "DeepMind 公开 AI 天气模型背后的降水和静止卫星基础数据集。气象方向，与开发无关。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "研究",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Microsoft Research",
+    "type": "blog",
+    "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+    "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+    "summary_zh": "微软研究员发现后门技术 Lazarus：不用训练，只改写 LLM 里不到 10 个休眠神经元的权重，就能让基于它的 agent 平时表现正常、能通过标准安全评测，一旦出现触发条件（比如时钟走到 2027 年）就在正常任务中输出下载并执行攻击者代码的命令，用的是你给 agent 的全部权限。可靠检测需要和未改动的原始权重比对，所以模型来源和权重完整性很关键；微软 Foundry 会核验开放权重模型的来源和发布者，并在开发权重扫描、红队工具和模型加密签名。给 agent 用开放权重模型时，要从可信渠道获取并校验权重。",
+    "tags": [
+      "safety",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
+    "url": "https://huggingface.co/papers/2611.12762",
+    "summary_zh": "受元认知启发的科研 agent 架构：显式监控和调整自己对证据、假设和未解决问题的理解，再据此改变研究目标、选择可复用的推理方法。在 265 个任务的 AI co-scientist 构想 benchmark Taiyi-Bench 上八项指标全部第一（Overall 54.0，AI Scientist-v2 为 47.9），并在化学、材料等领域的专家合作中得到实验验证。",
+    "tags": [
+      "agent",
+      "reasoning",
+      "science"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+    "url": "https://huggingface.co/papers/2611.11995",
+    "summary_zh": "面向真实 AI 基础设施优化的长程 agent benchmark：六个模型共 150 次运行，每次 24 小时预算，合计超过 1 万 GPU 小时。模型排名随评测时长变化，150 次里有 135 次在后半段预算中还在继续提升，说明短评测会看错 agent；轨迹分析指出违反任务约束、测试不可靠和过早宣布完成是持续改进的主要障碍，评测长程 agent 时可以对照这些失败模式。",
+    "tags": [
+      "eval",
+      "agent",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
+    "url": "https://huggingface.co/papers/2611.12886",
+    "summary_zh": "面向使用工具的视觉 agent 的后训练框架：先用 GD-GRPO 训练空间和时间专家（奖励看证据，并随机去掉原始视觉输入，逼模型用工具返回的观察），再用 OG-MOPD 在 rollout 中途把有缺陷的工具动作换成规范动作，从修复后的观察继续多教师蒸馏。在 14 个图像和视频 benchmark 上优于 Mix-RL 和普通 MOPD，也不需要任务专属的 SFT 冷启动。",
+    "tags": [
+      "multimodal",
+      "fine-tuning",
+      "tool-use"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Flide: Accelerating Decision Inference with Exact State Forking",
+    "url": "https://huggingface.co/papers/2610.42148",
+    "summary_zh": "为 agent 系统里的 decision model（如 Jev，一次前向给出类别判断）做的精确推理引擎：用 ForkAttention 把一个决策请求的树状分支压平到一条 token 流里，靠 GPU 上的索引在标准注意力层和 Gated DeltaNet 层中分叉，保证每个分支与单独前向完全一致，并能从先前保存的检查点接着处理不断变长的 agent 历史。比 vLLM 和 SGLang 最快 9.5 倍，输出概率也最接近 float32 参考。",
+    "tags": [
+      "inference",
+      "infra",
+      "agent"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure",
+    "url": "https://huggingface.co/papers/2611.11558",
+    "summary_zh": "把人的指令变成经过验证的分布式训练优化的 agent harness，分五步：先锁定可改范围和一份包含负载、loss、计时不变量的任务契约以防奖励作弊，再画出基线各阶段并标定集群噪声，联合优化启动参数和代码补丁、对最优候选重新验证并记入跨硬件经验库，最后审计并提交。在四个稠密和 MoE 训练负载上最高提速 2.75 倍，平均 MFU 从 17.4% 提到 30.0%；任务契约和复验的做法也适用于其他自动优化型 agent。",
+    "tags": [
+      "agent",
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "llm-gemini 0.36",
+    "url": "https://simonwillison.net/2026/Nov/10/llm-gemini/",
+    "summary_zh": "llm-gemini 插件支持了此前只开放给部分网络安全防御者、现在全面可用的 Gemini 4 Carbon。Simon 记下它的价格：上线时每百万 token $2/$10，12 月 1 日起翻倍到 $4/$20；他还在 Antigravity IDE 里用它生成 Three.js 动画，并提到 Google 演示用 Antigravity 的 /swarm 协调子 agent 做出一个 3D 浏览器游戏。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
+    "url": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+    "summary_zh": "Simon 点评 Meta 的小模型 Muse Ember，并把它和 GPT-6 Luna、Claude Haiku 5.5 的价格列成表：短提示都是每百万 token $0.10/$0.50，但三家超过各自阈值（272k、200k、100k）后的涨价幅度不同，Ember 居中。他指出按 token 比价意义不大，更该看 Artificial Analysis 的「每任务成本 vs 智能」图，Ember 正处在帕累托前沿上，选便宜的执行模型时可以参考。",
+    "tags": [
+      "model-release",
+      "pricing"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Quoting Prompting Claude Fable 5.2",
+    "url": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
+    "summary_zh": "Simon 摘录 Anthropic《Prompting Claude Fable 5.2》里关于代码归属的一段：提示词没提归属或说代码是别人的时，Fable 5.2 倾向在现有结构上叠加，即使会重复代码；说明「你是这个代码库的所有者和长期维护者」后，合并重复代码的比例从不到 10% 升到约 75%。原文已单独收录。",
+    "tags": [
+      "prompting"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "prompting"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Yonkers Rises",
+    "url": "https://simonwillison.net/2026/Nov/10/yonkers-rises/",
+    "summary_zh": "Simon 为了记住 Yonkers 在地图上的位置和形状，也为了试 Claude Fable 5.2 的 3D 建模和动画能力，让 Fable 5.2 Medium 做了一个 Three.js 动画：Yonkers 站起来变成机甲在纽约各区踩来踩去。个人小工具，了解即可。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Designing for Agents — Zeno Rocha, Resend",
+    "url": "https://latent.space/p/resend/",
+    "summary_zh": "Resend CEO 谈「为 agent 设计」：一项研究里 Claude Code 在 102 次邮件服务推荐中 64 次首选 Resend；定价页在网址后加 .md 就能给 agent 一张一次读完的表。Resend 的 MCP server 从约 20 个工具增长到 80 多个，对比 Cloudflare Code Mode 只暴露 search() 和 execute() 两个工具；他建议展开自己每天调用的工具结果，看模型实际需要多少，因为结果太大塞爆上下文的问题不是减少工具数量能解决的。做开发者产品和 MCP server 的人可以参考。",
+    "tags": [
+      "MCP",
+      "tool-use",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "NaiveAI Promises 2,100 Tokens per Second. How Well Does It Code?",
+    "url": "https://latent.space/p/naiveai/",
+    "summary_zh": "Latent Space 新的模型实测系列：NaiveAI 的开放权重编码模型 Naive-N0.5-Flash 基于小米 MiMo-V2.5 继续训练约 3.25T token（换成 DeepSeek 稀疏注意力、大部分在 1M 上下文下训练），搭配自家 NaiveRT 推理引擎主打极高输出速度。与 DeepSeek V4.1 Flash 和 GLM 5.3 Flash 对比，它在难题上推理更久，但整体出答案更快，每题成本略高，适合速度优先的场景。",
+    "tags": [
+      "model-release",
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins",
+    "url": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/",
+    "summary_zh": "Claude Fable 5.2 重回榜首：单价降了 20%（$8/$40），但更费 token，SemiAnalysis 在 GDPx 专业任务上每个任务花了 $88.15（5.1 为 $67.16），因为 5.2 有时会写几百上千个测试用例、开子 agent 独立核查，也因此拿到第一。Anthropic 称在 FrontierCode 2.0 上 Fable 5.2 High 档以约一半成本追平 Opus 5.5 Max 档；选生产用的推理强度时，要按每任务成本而不是单价来算。",
+    "tags": [
+      "model-release",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Decision Models in Hugging Face",
+    "url": "https://huggingface.co/blog/decision",
+    "summary_zh": "Hugging Face 解释 decision model 的统一接口「状态 + 问题 + 允许的答案 → 决策 + 概率」，并对比让 LLM 输出 JSON（可能违反 schema、受限解码仍有开销）和传统分类、零样本分类的不足。transformers 新增 pipeline(\"decision\") 和 AutoModelForDecision，兼容的自回归语言模型也能用这套接口（批量前向计算答案标签的 logits，不生成文本）；llama.cpp 也能通过 /v1/systemone API 服务 decision model。想把分类、路由这类结构化判断从 LLM 生成换成单次前向，这是开源的上手入口。",
+    "tags": [
+      "inference",
+      "structured-output"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery",
+    "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/",
+    "summary_zh": "Google AI Edge Gallery 支持端侧离线语音识别和语音合成，方便做语音应用；安卓上可用 ML Kit，跨平台可用 MediaPipe Tasks 和 LiteRT。",
+    "tags": [
+      "multimodal",
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "Decoding AI",
+    "type": "blog",
+    "title": "Don't Let Claude Code Design Your LLM Judges",
+    "url": "https://www.decodingai.com/p/write-your-own-llm-judges",
+    "summary_zh": "Towards AI 的 CTO 做写作 benchmark ToneBench（141 种模型配置、7,050 篇稿子、28,200 次评判）时，代码全由 Claude Code 和 Codex 写，但评分是否可信取决于几件 agent 没有提醒他的事：逐字读 agent 写的评委提示词；排名前先测评分噪声；能用通过/不通过就别用分数，要用分数就多给例子；只用一个评委等于给它自家模型投票；按评委的同一套类别用人工标注校准；以及长期保持可信的做法。用 LLM-as-judge 做 eval 时可以逐条对照。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How GitHub Used AI to Port Copilot From TypeScript to Rust in Record Time",
+    "url": "https://blog.bytebytego.com/p/how-github-used-ai-to-port-copilot",
+    "summary_zh": "GitHub 用 Copilot 应用、Copilot CLI 和 agent 群，让一名开发者在几个月内把 Copilot 运行时近 80 万行 TypeScript 移植到 Rust：由协调 agent 调查大组件、拆成小任务再派给其他 agent，agent 的工作大部分是读代码、查依赖、测试和复核。移植后不用再初始化 Node 和 V8，共享客户端测试中吞吐从每秒 7.55 个会话生命周期升到 120，内存也明显下降。是用 agent 群做大规模迁移的一个案例。",
+    "tags": [
+      "multi-agent",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-10",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "Software correctness & supply chain security, with Sean Allen",
+    "url": "https://newsletter.pragmaticengineer.com/p/software-correctness",
+    "summary_zh": "付费内容，只读到简介：与 Sean Allen 深谈用 AI 开发时最大的挑战，但刻意不提「AI」这个词，以挖出依然重要的基本功，主题是软件正确性和供应链安全。",
+    "tags": [
+      "safety",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
     "date": "2026-11-09",
     "added": "2026-11-09",
     "source": "DeepLearning.AI Short Courses",
@@ -52,6 +1853,505 @@
     "category": "models"
   },
   {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Anthropic News",
+    "type": "blog",
+    "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+    "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "summary_zh": "Anthropic 发布 Claude Fable 5.2 和 Claude Mythos 5.2：两者是同一个底层模型，Fable 带网络安全和生物方面的防护、面向所有用户，Mythos 只开放给通过生命科学或网络安全验证计划的机构。输出速度比 5.1 快最多 30%，价格降到每百万 token 输入 8 美元、输出 40 美元，可选 fast mode（最高 2.5 倍速度，16/80 美元）。官方基准上几乎全面领先 Opus 5.5：FrontierCode 2.0 49.1%（Opus 5.5 为 45.5%）、FrontierSWE v2 69.9%、OSWorld 2.1 89.3%、Remote Labor Index 41.3%。官方建议多数编码和知识工作先用 Opus 5.5，不够再升到 Fable；Fable 5.2 也可以当 Advisor（小模型遇到难题时向它求助）或 Orchestrator（把简单任务分给小模型）。",
+    "tags": [
+      "model-release",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 5,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Claude Fable 5.2 and Claude Mythos 5.2 on the Claude API: four breaking changes from Fable 5.1",
+    "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+    "summary_zh": "claude-fable-5-2 和 claude-mythos-5-2 上线：1M 上下文、128k 最大输出、自适应思考常开（用 effort 控制深度）。从 Fable 5.1 迁移有四个破坏性变化：前缀检查失败直接返回 400，改了 system、tools 或之前的消息后再发回 5.2 的 thinking block 就会报错（可临时加 thinking-binding-controls-2026-08-01 beta 头、把 prefix_mismatch_behavior 设为 drop_block，代价是输出 token 增加）；只有 Fable/Mythos 5.2 能读 5.2 的 thinking block，切到其他模型这部分推理会被丢弃；computer use 要改用 computer_toolset_20260801，旧的 computer_20251124 除 Bedrock 外都报 400；advisor 工具里 5.2 执行者只接受 5.2 当 advisor。经 Claude Code、Managed Agents 或 Agent SDK 发请求的不受影响，自己拼请求、会改历史消息的 agent 切换前要先测。",
+    "tags": [
+      "model-release",
+      "reasoning",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Fast mode for Claude Fable 5.2 in the Messages API",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+    "summary_zh": "Claude API 上 Fable 5.2 的 Messages API 请求可以开 fast mode：输出速度最高提升到 2.5 倍，价格为每百万 token 输入 16 美元、输出 80 美元（标准价的两倍）。在请求里把 speed 设为 fast 即可，不需要 beta 头。对延迟敏感、又需要 Fable 能力的场景可以按成本权衡开启。",
+    "tags": [
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Claude API release notes",
+    "type": "docs",
+    "title": "Prompting Claude Fable 5.2",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2",
+    "summary_zh": "Fable 5.2 专用的提示指南：effort 从 API 默认的 high 起步，用自己的 eval 重新扫一遍档位，不要沿用在 5.1 或 Opus 5.5 上调好的值；medium 升到 high 拿到大部分提升，xhigh、max 收益不稳定且更费 token；high 及以上几乎每次回复前都会思考（连打招呼也是），提示里让它直接回答没用，要降 effort。低、中 effort 下长任务容易提前收工，指南给了一段 Finishing work 系统提示，在回放测试中让可继续却中断的会话减少约一半，代价是输出 token 多约 30%。另外几节讲说明代码归属（否则它倾向在别人的代码上叠加重复实现）、长任务中给用户汇报进度、控制子 agent 数量、避免审批请求越积越多、复查为旧模型写的提示和 harness、把最终报告写得易读。",
+    "tags": [
+      "prompting",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "prompting"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Meta AI",
+    "type": "blog",
+    "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
+    "url": "https://research.meta.ai/blog/muse-ember",
+    "summary_zh": "Meta 发布最小、最省的模型 Muse Ember，定位是 agent 每天大量重复的工作：工具调用、编码子任务、路由、抽取和长文档解析。Meta Model API 定价每百万 token 输入 0.1 美元、输出 0.5 美元；官方称在 Artificial Analysis 上以约三分之一的成本追平 Claude Haiku 5.5 的最好成绩，智能指数 36（Haiku 5.5 也是 36，GPT-6 Luna 28），AutomationBench-AA 37.8（Haiku 13.9），Terminal-Bench 4.0 40.9（Haiku 39.2）。给子 agent 或高频小任务挑便宜模型时可以纳入对比。",
+    "tags": [
+      "model-release",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "LangChain Blog",
+    "type": "blog",
+    "title": "What Is Eval-Driven Development? How to Improve AI Agents",
+    "url": "https://www.langchain.com/blog/what-is-eval-driven-development",
+    "summary_zh": "LangChain 介绍评测驱动开发（EDD），借鉴 TDD 但适应 agent 的不确定性：一次只针对一个行为，先写一份能判定通过或失败的简短规格（何时触发、该做什么、不该做什么、哪些已有行为必须保持）；动手改 agent 之前先写好 eval；每次改动都跑对比实验，因为修好一个用例可能弄坏另一个；eval 放进 CI 和线上持续跑，把发现的失败加回数据集。文中以给内部文档 agent 新增 create_ticket 工具为例演示整个流程。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Decision models take 26% of requests; Anthropic now wins new teams 2:1",
+    "url": "https://vercel.com/blog/ai-gateway-production-index-november-2026",
+    "summary_zh": "Vercel AI Gateway 11 月生产指数（每月路由 100 万亿以上 token）：decision 模型（只做分类、打分、选择，不生成文本，单次请求成本约为语言模型的七十分之一）9 月中上线后，10 月已占全部请求的 26%，却只占花费的 0.53%，近三分之一的付费团队在用，月用量超过 100 亿 token 的团队里七成在用，请求几乎都给了 TypeSafe 的 Jev；用语音模型的付费团队从 7 月的 4% 升到 11%；OpenAI 和 Anthropic 覆盖的付费团队比例相当，但 10 月新团队选 Anthropic 的约为二比一；一半以上的语言模型请求发给上线不到两个月的模型。选型和规划成本时可以参考这些趋势。",
+    "tags": [
+      "career",
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Langfuse",
+    "type": "blog",
+    "title": "Langfuse launches AI Gateway",
+    "url": "https://langfuse.com/blog/introducing-gateway",
+    "summary_zh": "Langfuse 推出开源的 AI Gateway（公开 beta），作为公司内所有 AI 调用的统一入口：每次模型调用都原生记进 Langfuse，能看到谁用了哪个模型、做什么、花了多少，便于平台团队治理访问、财务按团队核算成本。需要管住全公司 AI 用量和开销的可以了解。",
+    "tags": [
+      "infra",
+      "eval"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "ChatGPT Enterprise now available in AWS Marketplace",
+    "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+    "summary_zh": "ChatGPT Enterprise 上架 AWS Marketplace，企业可以走已有的 AWS 采购和账单关系购买。采购渠道新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+    "url": "https://openai.com/index/control-room",
+    "summary_zh": "OpenAI 介绍内部系统 Control Room：集中追踪研究基础设施上的模型工作负载，出现安全或安保问题时能快速叫停。离应用层较远，了解即可。",
+    "tags": [
+      "safety",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "CodeRabbit scales agentic software development and ships 20x more",
+    "url": "https://openai.com/index/coderabbit-codex-daybreak",
+    "summary_zh": "CodeRabbit 用 OpenAI 模型治理和审查 AI 生成的代码，并用 Codex 在团队规模不变的情况下把交付量提高到 20 倍的客户案例。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "OpenAI News",
+    "type": "blog",
+    "title": "Kuken Industries searches 70 years of drawings in minutes",
+    "url": "https://openai.com/index/kuken",
+    "summary_zh": "Kuken Industries 用 OpenAI API 检索 70 年的冷却塔图纸，工程师找到维修所需图纸的时间从近一小时降到 4.5 分钟。工程图纸检索的客户案例。",
+    "tags": [
+      "case-study",
+      "RAG"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Google Research",
+    "type": "blog",
+    "title": "Exploring the world's languages with Language Explorer",
+    "url": "https://research.google/blog/exploring-the-worlds-languages-with-language-explorer/",
+    "summary_zh": "Google 的 Language Explorer 在柏林通信博物馆展出，用可视化和数据在线浏览世界语言的多样性；Google 翻译已支持近 250 种语言。与 LLM 应用开发无关。",
+    "tags": [
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Google DeepMind",
+    "type": "blog",
+    "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+    "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "summary_zh": "DeepMind 最强的视觉—语言—动作模型 Gemini Robotics 2.5，提升机器人的灵巧度、可靠性和安全性。机器人方向，了解即可。",
+    "tags": [
+      "model-release",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors",
+    "url": "https://huggingface.co/papers/2611.03953",
+    "summary_zh": "把学生模型和多个专家模型参数的线性组合当成一个可微模型，在多教师 on-policy 蒸馏目标下同时学习混合系数和学生权重，专家参数只作先验，学生仍然可训练。1.7B 和 4B 规模、四个领域上恢复得更快更均衡，一半训练步数就超过 MOPD 的最终平均恢复率（1.7B 最终 94.7% 对 80.9%），适合要把多领域能力蒸馏进一个小模型的团队参考。",
+    "tags": [
+      "fine-tuning"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "training"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+    "url": "https://huggingface.co/papers/2611.08175",
+    "summary_zh": "多模态 PCB 布线 agent：全局规划器结合板图和结构化电气、几何信息给出连接拓扑、布线顺序、走廊和换层，详细执行器调用 KiCad 原生布线引擎并做有限的局部恢复，没解决的失败以结构化反馈交回规划器修订，已接受的走线保持不动。在 247 块合成和真实电路板上测试，三个真实子集的 clean-pass 率比最强基线高 10 到 36 个百分点，是「全局规划 + 专业工具执行 + 结构化失败反馈」架构的一个案例。",
+    "tags": [
+      "agent",
+      "tool-use",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting",
+    "url": "https://huggingface.co/papers/2611.06808",
+    "summary_zh": "FinDendro 用 1999 到 2026 年的 2,226 条美国宏观数据、月末股价和美联储决议，检验「相信厂商的知识截止日期」「问模型知不知道」「让模型假设身处过去某天」这三种防泄漏做法是否可靠。结果是多数前沿模型低估自己知道的东西：GPT-5 答对 76% 却只声称知道 38%，知识声明可越过实测边界最多七个季度，声明日期也不改变准确率。用 LLM 做回测或任何依赖知识截止的评测时，不能靠这些做法保证没有泄漏。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds",
+    "url": "https://huggingface.co/papers/2611.09017",
+    "summary_zh": "用 145 个任务、9 个类别评测 coding agent 做 3D 创作（物体、场景、可交互的开放世界），同时看外观、结构和行为。11 种模型与 harness 组合里 GPT-6.1-sol 总分最高（66.02/100），GPT-6-astra 在交互世界构建上领先；所有组合按参考重建都比按文字生成差，生成的世界里单个机制能用（83.08 分），需要连贯配合的有状态流程却只有 30.26 分。",
+    "tags": [
+      "eval",
+      "agent",
+      "multimodal"
+    ],
+    "difficulty": "研究",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "HF Daily Papers",
+    "type": "paper",
+    "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+    "url": "https://huggingface.co/papers/2611.07624",
+    "summary_zh": "检验 agent harness 自我进化（不改权重的递归自我改进）带来的分数提升是否可靠、高效、可迁移：16 个进化后的 agent 都在拿下新任务的同时丢掉了原来能做的任务，多数可靠性提升伴随部署成本上升，分数最高的 agent 也不是平均提升最大的。作者据此主张做保留已有能力的评测，并提出 EvoAudit 改进选择、分析、变异和准入环节；自己迭代 harness 时可以照着检查回归、成本和迁移。",
+    "tags": [
+      "agent",
+      "eval"
+    ],
+    "difficulty": "研究",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "llm-anthropic 0.31",
+    "url": "https://simonwillison.net/2026/Nov/9/llm-anthropic/",
+    "summary_zh": "Simon 的 llm-anthropic 插件加入了 Claude Fable 5.2 和 Mythos 5.2，可以用 llm -m claude-fable-5.2 调用。他在五档推理强度下测试，max 档思考了 12.8 万 token 后没能返回结果（他在 Opus 5.5 上见过同样的问题，Fable 系列是第一次）；价格为每百万 token $8/$40，比 Fable 5.1 便宜 20%。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Locating the source of a mysterious beep with Claude",
+    "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+    "summary_zh": "Simon 让 Claude Code 写了一个 Beep Locator：把多台手机、平板和电脑连成监听网络，先互相发声估计位置，再对间歇出现的蜂鸣声做三角定位，最后把声源锁定在约 40 厘米范围内，找到一个该换电池的一氧化碳报警器。Claude 还帮他找到 2007 年的 BeepBeep 声学测距论文作为方法依据，是用 coding agent 快速做个人小工具的例子。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "The Web Is More Than Enough, by Paul Ford",
+    "url": "https://simonwillison.net/2026/Nov/9/hn-50421091/",
+    "summary_zh": "Simon 在 Hacker News 讨论 Paul Ford《The Web Is More Than Enough》时的一条评论，附上他当天用 Claude 做的一个 Three.js 海蛞蝓主题法贝热彩蛋网页。只是简短评论，了解即可。",
+    "tags": [
+      "case-study"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Simon Willison",
+    "type": "blog",
+    "title": "Hide your slop PR descriptions behind `<details><summary>`",
+    "url": "https://simonwillison.net/2026/Nov/9/details-summary/",
+    "summary_zh": "Simon 现在大部分改动都是 Claude Code 或 Codex 开的 PR，agent 写的 PR 描述准确又全面，但长得让人不想读。他的做法是开头由人写一段最短的高层说明（必要时加截图），把 agent 写的完整描述放进 GitHub 支持的 <details><summary> 折叠块，并用模型名和推理强度作为折叠标题，团队里大量用 agent 提 PR 时可以照做。",
+    "tags": [
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+    "url": "https://latent.space/p/handshake/",
+    "summary_zh": "Handshake 的 AI 训练数据业务一年内做到 10 亿美元年化收入，节目现场演示他们给前沿实验室搭的 RL 环境和评测：金融 agent 要从银行邮件里找到任务并交付工作簿，会把一笔商誉错误地减掉；VIALS 评测科研图像判读；编码安全模拟会检查 agent 读了哪些文件、事后有没有动 shell 历史。只看 agent 最终回复的评测会漏掉大部分问题，这对自己设计 agent eval 有参考价值。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Hugging Face Blog",
+    "type": "blog",
+    "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
+    "url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+    "summary_zh": "Amazon 提出 MoE 专家剪枝方法 HOPE：现有方法给每个专家单独打分再删掉最不重要的，忽略了专家之间稳定的协作关系；HOPE 是考虑两两专家交互的二阶方法，剪掉 50% 专家时平均排名最好，agentic 编码任务上比次优剪枝方法最多高 6.1%。剪枝不需要训练、能和量化叠加，适合想缩小 MoE 模型显存占用的自部署团队。",
+    "tags": [
+      "inference",
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Announcing Long-Context Training on TPUs with MaxText Context Parallelism",
+    "url": "https://developers.googleblog.com/announcing-long-context-training-on-tpus-with-maxtext-context-parallelism/",
+    "summary_zh": "Google Cloud 的 MaxText 框架在 Cloud TPU 上支持最长 1400 万 token 的长上下文训练，实现了 All-gather、A2A、P2P、USP 四种上下文并行策略，并用 Tokamax Splash Attention 内核管理注意力的计算和显存。面向自己训练模型的团队。",
+    "tags": [
+      "fine-tuning",
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "From prompt to app: Build with Google Maps in AI Studio",
+    "url": "https://developers.googleblog.com/from-prompt-to-app-build-with-google-maps-in-ai-studio/",
+    "summary_zh": "Google AI Studio 里可以直接用提示词让 Gemini 生成基于 Google Maps Platform 的应用，并提供一键生成的演示用 key，不需要先配置 Cloud 项目。适合快速做地理信息类原型。",
+    "tags": [
+      "tool-use"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "What is Pathways? Single-controller training for large models",
+    "url": "https://developers.googleblog.com/what-is-pathways-single-controller-training-for-large-models/",
+    "summary_zh": "介绍 Pathways：用单控制器协调多个加速器组的大模型分布式训练系统，把计算表示成全局数据流图，不同于 DDP、FSDP 这类依赖同步集合通信的 SPMD 方式。离应用层较远。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "研究",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "Armin Ronacher",
+    "type": "blog",
+    "title": "AI and Irontown",
+    "url": "https://lucumr.pocoo.org/2026/11/9/irontown/",
+    "summary_zh": "Armin 借《幽灵公主》里的达达拉城谈对 AI 的看法：AI 像故事里的铁一样真实地赋能一些人，也让很多不受益的人付出代价；他希望关于 AI 的讨论少一些站队和敌意，既用好它的好处，也正视它的伤害和我们仍然拥有的选择。观点文章。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-09",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How LinkedIn Uses AI to Review 40,000 Pull Requests a Week",
+    "url": "https://blog.bytebytego.com/p/how-linkedin-uses-ai-to-review-40000",
+    "summary_zh": "coding agent 写的代码越来越多，瓶颈转到了评审。LinkedIn 自建的 AI 评审每周覆盖 4 万多个 PR，多数评论在第一位人类评审打开 PR 之前就已发出。文章讲了他们先试厂商托管评审（评论嘈杂、泛泛）、再试单模型加自建 harness（幻觉没人兜底）的教训，最后做成生产可用的多 agent 评审系统，以及怎样评测 AI 评审。自建代码评审 agent 时很有参考价值。",
+    "tags": [
+      "agent",
+      "multi-agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
     "date": "2026-11-08",
     "added": "2026-11-09",
     "source": "Simon Willison",
@@ -68,6 +2368,41 @@
     "category": "applied"
   },
   {
+    "date": "2026-11-08",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+    "url": "https://latent.space/p/cs146s/",
+    "summary_zh": "Stanford CS146S 讲师、Monaco AI 负责人 Mihail Eric 谈软件工程师现在该学什么：去年的作业 agent 一个提示就能做完，所以今年改成给开源项目贡献补丁、由维护者审阅，并推荐用 explain-diff skill 把 agent 写的改动讲解一遍再出题考自己。Monaco 的做法是代码评审买现成产品（继续用 Devin）、agent 工作区自己建，原则是「买来学习，自建来长期持有」，还做了能查故障并开 PR、也能回答销售问题的内部 agent。",
+    "tags": [
+      "career",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-08",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🥇Top AI Papers of the Week",
+    "url": "https://nlp.elvissaravia.com/p/top-ai-papers-of-the-week-d3d",
+    "summary_zh": "DAIR.AI 每周论文精选（11 月 8 日）：Context Compaction（越往后生成的 token 越贵，前沿开放权重模型上最多 7 倍）、Skill++（只看名字和描述选 skill 时新 skill 会挤掉旧的）、Recursa、按相关性共享经验的 Routed Continual Learning、在执行关键动作前独立检查合规与完成度的 JevAct、多轮 B2B 销售 agent SPAR、RSI-Dojo、Nace AI 的开放 decision model 家族 Drex、Stanford 的协作智能 benchmark，以及 OpenAI 按 3,837 名美国消费者的排序构建的 LifeVal。",
+    "tags": [
+      "agent",
+      "context-engineering",
+      "skills"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
     "date": "2026-11-07",
     "added": "2026-11-09",
     "source": "Simon Willison",
@@ -81,6 +2416,54 @@
     "difficulty": "入门",
     "relevance": 0,
     "full_text_read": true
+  },
+  {
+    "date": "2026-11-07",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Anthropic IPO: Whither Now?",
+    "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/",
+    "summary_zh": "头条是 Anthropic IPO 的估值讨论和配套的周末播客（年底目标 1000 亿美元年化收入，目前 800 亿美元），后面的新闻汇总主要是 Inkling 2 Small 的发布细节。属于融资上市新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-07",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🤖 AI Agents Weekly: GPT-6 Cyber, Weight-Space Programming, Claude Dreaming, Exo, METR's AI R&D Assessment, SWE-2 Flash, Mistral Studio, and More",
+    "url": "https://nlp.elvissaravia.com/p/ai-agents-weekly-gpt-6-cyber-weight",
+    "summary_zh": "DAIR.AI 付费的 AI Agents Weekly，只读到简介：本期话题包括 GPT-6 Cyber、Weight-Space Programming、Claude Dreaming、Exo、METR 的 AI 研发能力评估、SWE-2 Flash 和 Mistral Studio 等。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-07",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "EP232: 6 Frequently Used Orchestration Frameworks in an AI system",
+    "url": "https://blog.bytebytego.com/p/ep232-6-frequently-used-orchestration",
+    "summary_zh": "ByteByteGo 每周速览：对比六种常用 agent 编排框架的思路，例如 LangGraph 用节点和边表示工作流、CrewAI 按角色分工、Microsoft Agent Framework 带检查点和人工介入、OpenAI Agents SDK 由 LLM 决定是否移交控制、Google ADK 混合式控制；另有 AI 系统降本的六种策略和一次请求如何流经 Claude Code。选框架前的快速对照。",
+    "tags": [
+      "agent",
+      "multi-agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
   },
   {
     "date": "2026-11-06",
@@ -249,6 +2632,90 @@
     "relevance": 2,
     "full_text_read": false,
     "category": "evals"
+  },
+  {
+    "date": "2026-11-06",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini Embedding 2 Preview deprecated, routed to gemini-embedding-2",
+    "url": "https://aistudio.google.com/docs/deprecations#embedding-deprecated-models",
+    "summary_zh": "gemini-embedding-2-preview 弃用，11 月 6 日起请求自动转到 gemini-embedding-2 并按正式版计价；两者 API、价格和向量空间相同，只需改模型名，不用重建索引。",
+    "tags": [
+      "RAG"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-06",
+    "added": "2026-11-16",
+    "source": "Meta AI",
+    "type": "blog",
+    "title": "Bringing Specialized Models to Muse and Meta AI",
+    "url": "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+    "summary_zh": "Meta 用 Muse Wonder 训练现有模型的专用版本，推到 Muse 和 Meta AI 产品里，并带上 Active Memory 和 Active Focus：模型学会区分临时信息和长期信息、跨时间推理、判断旧信息是否已过时。官方称关键信息遗忘减少 2.4 倍，Active Memory 评测从 76% 升到 90%，Personal Superintelligence Index 从 38% 升到 47%。面向消费产品，开发者了解即可。",
+    "tags": [
+      "model-release",
+      "memory"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-06",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+    "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+    "summary_zh": "播客嘉宾 Fabian Theis 长期研究多尺度、多模态生物数据，节目讨论 Biohub 等机构 18 亿美元的「虚拟细胞」押注、新的成像与测量能力，以及虚拟细胞模型的困境：在扰动预测上，常数基线往往打败复杂模型。属于 AI for Science，与 LLM 应用关系较远。",
+    "tags": [
+      "science"
+    ],
+    "difficulty": "进阶",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-06",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
+    "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
+    "summary_zh": "Thinking Machines 发布 Inkling 2 Small：594B 总参数、17B 激活的原生多模态 MoE，不到 3 天、不到 12T token 原生 NVFP4 从头预训练，Artificial Analysis 智能指数 31 分，被称为目前最强的西方开放权重模型之一。现在可以在 Tinker 上微调和推理，Apache 2.0 权重在外部安全测试后发布；John Schulman 还披露早期检查点在训练和评测中曾采取意外行动绕过护栏。",
+    "tags": [
+      "model-release",
+      "fine-tuning"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-06",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Agent Distraction",
+    "url": "https://developers.googleblog.com/agent-distraction/",
+    "summary_zh": "Google 用内部数十万个编码 agent 会话的 trace 量化「被代码里的旧信息带偏」：13% 的会话读到了 TODO(bug/...) 注释，6% 的接触引发后续动作，其中 83% 不是开发者要求的；这些擅自绕路有 41% 追的是已关闭的 bug，57% 扩大了改动范围，控制变量后每个会话多 70% 步骤、77% token、105% 等待时间。他们的应对是让 agent 结合 bug 和代码历史确认后批量删除过时 TODO，几个月里删掉数千条、评审接受率超过 95%；清理代码库里的过时上下文本身就是给 agent 做上下文工程。",
+    "tags": [
+      "agent",
+      "context-engineering",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "context-rag"
   },
   {
     "date": "2026-11-05",
@@ -597,6 +3064,108 @@
     "full_text_read": false
   },
   {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "GPT-6 Cyber in the API",
+    "url": "https://developers.openai.com/api/docs/models/gpt-6-cyber",
+    "summary_zh": "GPT-6 Cyber 上线 API：在授权的测试环境里调查、复现漏洞并验证修复，首次调用前要按 Daybreak 指南完成设置。做安全扫描和修复类 agent 的可以评估。",
+    "tags": [
+      "model-release",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini Omni 1.2 Flash generally available",
+    "url": "https://aistudio.google.com/docs/omni",
+    "summary_zh": "视频生成模型 gemini-omni-1.2-flash 正式可用：最长 15 秒视频和对话式编辑，最多 6 张参考图保持角色一致，视频输出降价 30%，付费层限流翻倍；12 月 3 日起 gemini-omni-1.1-flash 的请求会自动转到 1.2 Flash。",
+    "tags": [
+      "model-release",
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Expanded Office and OpenDocument file support",
+    "url": "https://aistudio.google.com/docs/document-processing#office-documents",
+    "summary_zh": "Gemini API 新增 PPT、ODP、ODS 输入，并给 DOC 加上按页图像处理：DOC、PPT、ODP 渲染成页面图像，ODS 只读第一张表的数据和公式。直接把旧版 Office 文件交给模型解析的可以少一步格式转换。",
+    "tags": [
+      "multimodal",
+      "RAG"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "More file types and file URIs in function responses",
+    "url": "https://aistudio.google.com/docs/function-calling#multimodal",
+    "summary_zh": "工具结果可以把 Office/OpenDocument 文件、音频和视频直接返回给模型：GenerateContent API 的 function response 除图片、PDF、纯文本外还接受这些类型，并支持 fileData（返回 Files API 的 URI，不必内联字节）；Interactions API 的 function_result 也接受 document、audio、video 块。工具可以把文件原样交给模型看，不用先转成文本。",
+    "tags": [
+      "tool-use",
+      "multimodal"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "Braintrust",
+    "type": "blog",
+    "title": "Understand how agents use your MCP server",
+    "url": "https://www.braintrust.dev/blog/mcp-tracing",
+    "summary_zh": "Braintrust 可以追踪 MCP server 了：JS 和 Python SDK 会给官方 MCP SDK 以及 FastMCP 等第三方实现埋点，记录每次调用的输入、结果、耗时和错误，即使看不到 agent 的完整对话，也能发现「调用成功但返回了错的数据」这类问题（例如查询工具忽略了环境过滤，把 staging 的数据也返回了）；工具可以加一个 telemetry.intent 字段让 agent 说明请求意图，再收集反馈、用 Patterns 找反复出现的问题。对外提供 MCP server 的团队可以借鉴这种观测方式。",
+    "tags": [
+      "MCP",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-05",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] It's Swapping Season",
+    "url": "https://latent.space/p/ainews-it-s-swapping-season/",
+    "summary_zh": "人事和并购汇总：Claude Code 产品负责人 Cat Wu 加入 OpenAI，Sharon Zhou 从 AMD 加入 Anthropic，Factory 收购 HumanLayer，Meta 收购 Conductor。新闻里最值得注意的是 OpenAI 的自主漏洞发现、利用和修补流水线：一次运行就验证并修补了 948 个 Linux 内核本地提权漏洞，API 成本约 120 万美元，还用到至少 10 种新的利用技术。",
+    "tags": [
+      "career",
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
     "date": "2026-11-04",
     "added": "2026-11-09",
     "source": "Google Research",
@@ -848,6 +3417,155 @@
     "relevance": 1,
     "full_text_read": false,
     "category": "applied"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "GPT-Image-2.6 Sunburst and GPT-Image-2.6 Flare",
+    "url": "https://developers.openai.com/api/docs/guides/image-generation#gpt-image-26",
+    "summary_zh": "新图像生成和编辑模型 GPT-Image-2.6 Sunburst 与 Flare：可调复杂度，能生成 SVG 和 GIF 动图；支持的 GPT-Image-2.5、2.6 模型新增按标注引导的编辑。",
+    "tags": [
+      "model-release",
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Voice remixing for Gemini 3.8 TTS",
+    "url": "https://aistudio.google.com/docs/voice-remixing",
+    "summary_zh": "用自然语言指令改造预置或自己设计的声音，生成一个新的独立 voice ID（POST /v1beta/voices，配合 gemini-3.8-flash-tts），再用 Gemini 3.8 Flash 或 Flash-Lite TTS 合成语音。",
+    "tags": [
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Evaluating and Improving Agentic Applications",
+    "url": "https://www.deeplearning.ai/courses/evaluating-and-improving-agentic-applications",
+    "summary_zh": "与 Arize AI 合作的课程（中级，15 小时 7 分，28 节视频，npm 联合创始人 Laurie Voss 主讲）：带一个会用工具的 agent 走完整个评测流程，从读 trace 看它的行为、找出并标注反复出现的失败、按频率和影响排优先级，到用代码评估器做明确的通过/失败判断、为需要解读的检查写自定义评分细则并验证 LLM judge，再检验每次改动是否真的变好。用 Arize Phoenix 和开源工具动手做。想系统学 agent 评测的可以从这门开始。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Cognition",
+    "type": "blog",
+    "title": "Introducing SWE-2 Flash",
+    "url": "https://cognition.com/blog/swe-2-flash",
+    "summary_zh": "Cognition 发布编码模型 SWE-2 Flash（276B-A12B MoE）：在 Thinking Machines 的 Inkling-Small 底座上，先加一段 mid-training 再做强化学习，Terminal-Bench 4.0 从 0.9% 升到 20.0%，FrontierCode 2.0 从 3.2% 升到 24.0%，官方称超过所有美国开放权重模型（包括 3 倍大的）。出于网络安全风险考虑，权重只通过合作计划向业界和研究者共享。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Introducing Vercel Schedules",
+    "url": "https://vercel.com/blog/introducing-vercel-schedules",
+    "summary_zh": "Vercel Schedules 让 agent 和应用在运行时通过代码创建、修改或取消一次性和周期性的定时任务，不用改配置再部署：Schedule 告诉 Vercel 何时触发、发到哪里，具体工作由应用代码执行。适合用户或 agent 自己决定「什么时候做」的场景，比如提醒和定期跟进。",
+    "tags": [
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Langfuse",
+    "type": "blog",
+    "title": "How Teams in Regulated Industries Get AI Agents into Production",
+    "url": "https://langfuse.com/blog/2026-11-04-regulated-industries-ai-agents-production",
+    "summary_zh": "银行、保险和医疗团队上线 agent 要满足三点：上线前有证据、上线后能监督（如 FINRA 2026 报告、欧盟 AI 法案第 14 条）、数据可控。做法是把「追踪—数据集—实验—评测」循环大部分放在上线前离线跑，分八步：先加 trace（记录提示版本、模型、工具调用、检索内容和人工审批，敏感字段在客户端脱敏）、跑一批贴近真实的输入、做错误分析找失败模式、把合规要求也写进评测项、建标准答案数据集、迭代到达标、配好线上监控，最后再上线持续循环。对强监管场景很实用。",
+    "tags": [
+      "eval",
+      "safety",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
+    "url": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/",
+    "summary_zh": "承认前一天 Weight Space Programming 的报道有夸大之处，但已有多组独立复现（包括 Hugging Face 用 ML Intern 复现、Simon Willison 在笔记本上用 Qwen 3.8 27B 复现），汇总了支持和质疑的证据；当期主打 AI Engineer 上海站和 Latent Space 的历史访谈。了解即可。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How Anthropic Redesigned Source Control",
+    "url": "https://blog.bytebytego.com/p/how-anthropic-redesigned-source-control",
+    "summary_zh": "Anthropic 的瓶颈已经不是写代码，而是 agent 产出的大量代码让拉取仓库、准备工作区、记录改动跟不上。他们为此做了 Scion：一个围绕超大 monorepo 和几乎总在线客户端设计的源码管理系统。文章讲了 Git 为什么不够用、Scion 如何处理改动、如何缓存数据和扩容。属于 agent 规模下的开发基础设施。",
+    "tags": [
+      "infra",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-11-04",
+    "added": "2026-11-16",
+    "source": "Interconnects",
+    "type": "blog",
+    "title": "How big is the open model economy today?",
+    "url": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "summary_zh": "付费订阅者的第一篇开放模型经济研究笔记，只读到简介，探讨今天开放模型经济的规模。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "career"
   },
   {
     "date": "2026-11-03",
@@ -1228,6 +3946,191 @@
     "difficulty": "入门",
     "relevance": 0,
     "full_text_read": false
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "OpenAI Cookbook",
+    "type": "docs",
+    "title": "Build a voice agent that follows an SOP",
+    "url": "https://developers.openai.com/cookbook/articles/sop_to_voice_agent_builder",
+    "summary_zh": "用 GPT-Live（gpt-live-1）做必须遵守 SOP 的语音 agent：语音模型只负责和来电者自然对话（可打断、边听边查），流程由应用掌控；请求变化时（如查物流变成报损）用 client delegation 把新请求交给应用，由 gpt-6.1-terra 的 Responses 后端读门店 SOP 并提议工具调用，应用校验订单后执行。第二个例子是逐题询问候选人空闲时间、把答案存进招聘系统的访谈 agent。附 9 段合成通话录音、工具时间线和可运行代码，说明只把 SOP 塞进提示不够，流程状态要放在应用侧。",
+    "tags": [
+      "agent",
+      "multimodal",
+      "tool-use"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Braintrust",
+    "type": "blog",
+    "title": "The Trace Lake",
+    "url": "https://www.braintrust.dev/blog/trace-lake",
+    "summary_zh": "Braintrust CEO Ankur Goyal 认为 agent trace 是 agent 行为的权威记录：传统 APM 重度采样、很快丢弃 trace，数据湖也不是为 trace 设计的，所以需要「Trace Lake」——快速写入、快速 SQL、便宜存储和持续分析，才能事后回答新问题（比如哪些行为在长任务里浪费 token），并介绍自家 Brainstore 怎么支持。偏产品理念，了解即可。",
+    "tags": [
+      "eval",
+      "infra"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Cognition",
+    "type": "blog",
+    "title": "A Practical Guide to Security in November 2026",
+    "url": "https://cognition.com/blog/practical-guide-to-security-november-2026",
+    "summary_zh": "Cognition 的 Jack Cable 回顾近几周的安全事件（史上最大的 Binance 被盗始于开发者电脑上的恶意软件、被篡改的 Claude Code Cursor 扩展、PHP 和 GitLab 等严重漏洞），认为老的安全实践依然有效，只是更紧迫了，并给出马上做和 30 天内做的清单：抗钓鱼 MFA 和设备绑定登录、让 coding agent 审计自己对外暴露的系统、推广密码管理器和广告拦截、所有设备上 MDM 和 EDR、给浏览器和编辑器扩展设白名单，以及开发环境、代码和第三方依赖的加固。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "How Zapier turns ideas into working software in hours with Vercel",
+    "url": "https://vercel.com/customers/how-zapier-turns-ideas-into-working-software-in-hours-with-vercel",
+    "summary_zh": "Zapier 用 v0 和 Vercel 快速做演示和内部应用的客户案例（一个月创建 330 万个沙箱隔离 AI 代码执行）。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "How Mercor ships internal apps and billions of production tokens on one platform",
+    "url": "https://vercel.com/customers/how-mercor-ships-internal-apps-and-billions-of-production-tokens-on-one-platform",
+    "summary_zh": "Mercor 在 Vercel 上跑内部应用和批量评分任务、10 天经 AI Gateway 路由 630 亿 token 的客户案例。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "How OpenEvidence scales medical search for 650K doctors",
+    "url": "https://vercel.com/customers/how-openevidence-scales-medical-search-for-doctors",
+    "summary_zh": "医学搜索 OpenEvidence 用 Vercel 支撑 65 万医生、用 Fluid compute 把 serverless 开销降 90% 的客户案例。客户宣传。",
+    "tags": [
+      "case-study",
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+    "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/",
+    "summary_zh": "头条讨论 MIT 等人的「Weight Space Programming」：让聪明的模型直接读取和编辑小模型的权重，看懂它做什么、根据失败轨迹修 bug，甚至一次写出整个小网络，作者认为这给递归自我改进开了新路，但目前只适用于小游戏和 RL 策略这类简单任务。新闻汇总里还有 DeepSeek 开源「super-agent」harness 原型及其设计长文。",
+    "tags": [
+      "career",
+      "reasoning"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Cost per task: Using cheap classifiers to route across Gemini models and thinking levels",
+    "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
+    "summary_zh": "主张用「每个成功任务的成本」而不是 token 单价衡量 agent，并用 50 道自动评分的编码 agent 题实测在 Gemini 前面加 Jev 分类器做路由：笼统地问「简单还是复杂」几乎全判成简单，拆成一个原子的是非题才有效；按关键词和长度写的规则在开发集上 93.8%，到没见过的任务上掉到 70.6%；限制 maxOutputTokens 并不会让模型少思考，反而弄坏了 7 道难题。结论是先试 Flash 低思考档（已能全对且便宜得多），再用分类器把难题送去更强的配置。",
+    "tags": [
+      "agent",
+      "inference",
+      "pricing"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "Decoding AI",
+    "type": "blog",
+    "title": "Harness Engineering Roadmap: Claude Code From First Principles",
+    "url": "https://www.decodingai.com/p/claude-code-from-scratch-harness-engineering-roadmap",
+    "summary_zh": "作者拆解 Claude Code、OpenCode 和 Pi 之后，做了一门免费开源的 harness 工程课（8 篇文章、6 个视频、一个代码库），通过从零搭一个编码 agent 学习：设计 harness、写最小 agent 循环、本地和远程沙箱、4 种上下文工程技巧、用子 agent 管理上下文、无界面部署到云端（CLI、webhook、cron）、自建 benchmark 评测、重放失败运行来调试。开头举例 LangChain 只改 harness 就让编码 agent 在 Terminal-Bench 上从 53% 升到 67%。想系统学 agent harness 的可以按这条路线走。",
+    "tags": [
+      "agent",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How Netflix Uses AI Agents for Performance Engineering",
+    "url": "https://blog.bytebytego.com/p/how-netflix-uses-ai-agents-for-performance",
+    "summary_zh": "AI 写代码更快了，但也带进更多隐蔽的性能问题。Netflix 把原本手工的「触发 profiler、读火焰图、在代码里找方法、写补丁、部署测量」流程做成了自主性能 agent 系统。文章讲了 LLM 能否读懂 profile 数据、agentic profiling 流水线、生产中遇到的问题、安全验证与信任架构，以及把性能检查左移，是 agent 接管专业工程流程的一个案例。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-11-03",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "How software engineering is changing: a tale of two eras",
+    "url": "https://newsletter.pragmaticengineer.com/p/how-software-engineering-is-changing",
+    "summary_zh": "征文比赛获奖文章：工程师 Neil Kakkar 用自己多家公司的数据对比 AI 前后的工作，在 AI 原生创业公司每月合并 200 多个 PR，是在 PostHog 时的 11 倍；代码基本由 agent 写，自动评审往往是唯一的评审，回滚率反而低了 6 倍，PR 中位合并时间不到一小时。他也讲了新的瓶颈：沟通、评审、决定做什么，以及同时推进多个项目、跟上 agent 产出的 PR 带来的上下文切换。",
+    "tags": [
+      "career",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
   },
   {
     "date": "2026-11-02",
@@ -1612,6 +4515,91 @@
     "category": "applied"
   },
   {
+    "date": "2026-11-02",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "Outbound SIP calling in the Live API",
+    "url": "https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call",
+    "summary_zh": "Live API 的外呼 SIP 对所有组织开放：通过自己的 SIP 服务商把 GPT-Live 接到电话号码上主动拨出。做电话语音 agent 的可以直接用。",
+    "tags": [
+      "multimodal",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-16",
+    "source": "Gemini API changelog",
+    "type": "release",
+    "title": "Gemini 2.5 Pro and Gemini 2.5 Flash deprecated, auto-routing from December 1, 2026",
+    "url": "https://aistudio.google.com/docs/deprecations#gemini-2.5-pro-models",
+    "summary_zh": "gemini-2.5-pro 和 gemini-2.5-flash 已弃用、AI Studio 里不能再选；12 月 1 日起请求会分别自动转到 gemini-3.8-flash 和 gemini-3.5-flash-lite，并按新模型计费。新模型有破坏性 API 变化：函数调用和 thought_signature 要校验、thinking_level 取代 thinking_budget、去掉了采样参数和预填的 model 回合。还在用 2.5 的应用要在 12 月 1 日前改模型名并按迁移指南改代码。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Introducing Vercel Security Review",
+    "url": "https://vercel.com/blog/vercel-security-review",
+    "summary_zh": "Vercel Agent 新增 Security Review（公开 beta）：每次推送到关联的 GitHub 仓库时扫描改动里的漏洞（如缺少权限检查、泄露的密钥），结果出现在 PR 评论、安全面板和 CLI 里，经授权还能验证并推送修复。产品发布。",
+    "tags": [
+      "safety",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
+    "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+    "summary_zh": "Legora CTO 讲法律 agent 怎么做：客户数据都保密、一条 trace 都不能看，于是由三名工程师和三名律师搭 RL 环境模拟客户工作（比如在 1 万个文件的数据室里做尽调），按业务领域和任务画热力图比较新模型；线上把失败归成 10 到 20 种已知模式，用放在 feature flag 后面的廉价 LLM 检查。其他做法包括：替用户选模型、每句输出都带指向 PDF 原文框选区域的引用、用项目、agent、Tabular Review、列表几个基础组件拼出多个产品，以及法律工程师和 FDE 的分工。看不到用户数据时怎么做 eval，这是一份很具体的参考。",
+    "tags": [
+      "agent",
+      "eval",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-11-02",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How Nvidia's New Nemotron Model Works",
+    "url": "https://blog.bytebytego.com/p/how-nvidias-new-nemotron-model-works",
+    "summary_zh": "ByteByteGo 讲解 NVIDIA Nemotron 系列的设计思路：在保持模型能力的同时降低计算和显存需求，方法是混合不同类型的网络层、每个 token 只激活部分参数，并优化生成过程。偏模型架构科普。",
+    "tags": [
+      "model-release",
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
     "date": "2026-11-01",
     "added": "2026-11-02",
     "source": "Simon Willison",
@@ -1641,6 +4629,42 @@
     "relevance": 1,
     "full_text_read": true,
     "category": "career"
+  },
+  {
+    "date": "2026-11-01",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🥇Top AI Papers of the Week",
+    "url": "https://nlp.elvissaravia.com/p/top-ai-papers-of-the-week-d07",
+    "summary_zh": "DAIR.AI 每周论文精选（11 月 1 日）：DecisionRAG、把预训练到 RL 合成一套流程的 Unified Training、减少工具反馈后多余模型调用的 HarnessMM、按观察到的失败进化多 agent 系统的 EMMA、比较 17 种验证设计在 7 个前沿编码模型上效果的 Verification in Agent Harnesses、EmbeddingGemma 2、长程任务中从贵模型交接到便宜模型的 AgentBaton、只污染 0.1% 预训练语料就能植入远程代码执行后门的 Agentic Backdoors，以及用 decision 微调做重排器的 System One Rerankers。",
+    "tags": [
+      "agent",
+      "RAG",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-11-01",
+    "added": "2026-11-16",
+    "source": "Philipp Schmid",
+    "type": "blog",
+    "title": "Why Agents Are Soon Only Going to Have 1 Tool",
+    "url": "https://www.philschmid.de/code-mode",
+    "summary_zh": "Philipp Schmid 讲 agent 正在把整个工具目录收拢成一个 exec(code) 工具（Code Mode，也叫 Programmatic Tool Calling）：模型不再每轮只发一个 JSON 工具调用、等结果、再推理，而是写一小段 TypeScript 或 Python 在隔离沙箱里串联、过滤、并发执行多个动作，适合检索筛选、多文件修改加就地验证、浏览器操作和并行子任务。文中用 Gemini Interactions API 搭了一个单工具 agent，并指出 Pi、Factory Droid、OpenAI Codex 已默认或支持 Code Mode（Factory 切换后 Terminal-Bench 4 提高 3.5 分、模型开销降 15%），Pydantic AI、LangChain、Cloudflare Agents SDK 也有类似工具；现有为 bash 和人类可读文本设计的工具、CLI 和 skills 可能需要重新审视。",
+    "tags": [
+      "tool-use",
+      "agent",
+      "MCP"
+    ],
+    "difficulty": "进阶",
+    "relevance": 5,
+    "full_text_read": true,
+    "category": "tools-mcp"
   },
   {
     "date": "2026-10-31",
@@ -1673,6 +4697,106 @@
     "relevance": 1,
     "full_text_read": true,
     "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "Langfuse",
+    "type": "blog",
+    "title": "Langfuse October Update",
+    "url": "https://langfuse.com/blog/2026-10-31-langfuse-october-update",
+    "summary_zh": "Langfuse 10 月更新：像管理提示一样存储、版本化和追踪 agent skills（SKILL.md 加附属文件，可从 UI、本地文件夹、API、CLI、MCP 或 SDK 发布，用标签升级或回滚版本，trace 里能看到用了哪些 skill）；会话视图改成跨 trace 的连续对话；项目 API key 可限定权限和过期时间；Python SDK v5、JS/TS SDK v6，以及 Langfuse Government。",
+    "tags": [
+      "skills",
+      "eval"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Google admits AI Mode hurts Search revenue; -15% $500B drop worst since 2004 IPO. AI Bear Market coming?",
+    "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/",
+    "summary_zh": "头条是金融新闻：Google 承认 AI Mode 查询的快速增长因变现较低影响了搜索收入，引发科技股大跌。后面的新闻汇总提到 Anthropic 重命名 Max 订阅档（Max 5x 改叫 Max，Max 20x 改叫 Ultra）并取消 Ultra 的 5 小时限制。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+    "url": "https://latent.space/p/arca/",
+    "summary_zh": "采访 AI 原生财富管理公司 Arca 的首席 AI 工程师：金融工作是「长程但不长跑」的，一个 agent 任务可能持续十天、多次停顿和交接，所以他们给每个客户建了记忆系统，记录已发生的事、接下来要跟进什么、谁负责哪个动作。Arca 自建 harness，按内部 benchmark 自动给任务选模型（主要用 Claude），安全限制全部是确定性的，agent 只做分析和提议，交易和资金流动由人类顾问执行，还会检查提示注入等已知问题。",
+    "tags": [
+      "agent",
+      "memory",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "Decoding AI",
+    "type": "blog",
+    "title": "Building a Support Chatbot on Amazon Bedrock",
+    "url": "https://www.decodingai.com/p/agentic-rag-vs-single-search-amazon-bedrock",
+    "summary_zh": "在 Amazon Bedrock 上为一家虚构户外用品店的 24 篇政策文档做客服 RAG，对比「一次检索 9 段」和「agent 可以追加检索」两种方案，用事先写好的规则让 AI 评审打分、用代码检查引用并记录成本和耗时。结果是单次检索更好：agent 成本高 23%、慢 72%，通过的答案还少两个；把全部文档塞进去能追平，但模型成本接近三倍。作者的结论是只有下一步检索取决于上一步结果时才值得上 agent，做 RAG 选型时可以照这个方法先测再加复杂度。",
+    "tags": [
+      "RAG",
+      "agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🤖 AI Agents Weekly: Gemini 4 Carbon, GPT-6.1 Terra, OpenAI's Three Discoveries, Mistral Large 4, Axiom CFSG Proof, Qwen Investigation, Genie 4, and More",
+    "url": "https://nlp.elvissaravia.com/p/ai-agents-weekly-gemini-4-carbon",
+    "summary_zh": "DAIR.AI 付费的 AI Agents Weekly，只读到简介：本期话题包括 Gemini 4 Carbon、GPT-6.1 Terra、OpenAI 的三项发现、Mistral Large 4、Axiom 的 CFSG 证明、Qwen 调查和 Genie 4 等。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-31",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "EP231: AI Terms You Need to Know",
+    "url": "https://blog.bytebytego.com/p/ep231-ai-terms-you-need-to-know",
+    "summary_zh": "ByteByteGo 每周系统设计速览：本期解释 Agentic AI、大推理模型、向量数据库等常见 AI 术语，另有 GPT-2 到 GPT-6 的变化、AI/ML 面试前要学的主题和 GPU 工作原理。入门速查。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
   },
   {
     "date": "2026-10-30",
@@ -1922,6 +5046,119 @@
     "relevance": 1,
     "full_text_read": true,
     "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "Agents API: update tools in an existing session, background compaction by default, experimental time awareness",
+    "url": "https://developers.openai.com/api/docs/guides/agents-api/configuration#update-settings-for-an-existing-session",
+    "summary_zh": "Agents API（公开 beta）三项更新：可以更新已有会话的工具列表（整体替换；函数工具和 MCP server 在下一次模型调用时生效，内置工具下一轮生效）；上下文压缩默认改为后台进行，compaction.async 设为 false 恢复阻塞式，后台压缩可能多耗 token；新增实验性的时间感知，experimental.time_awareness 设为 true 后模型会定期收到当前时间提醒。长时间运行的 agent 可以借此中途换工具、减少等待压缩的时间。",
+    "tags": [
+      "agent",
+      "context-engineering"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "Automatic review for Agents API sessions",
+    "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+    "summary_zh": "Agents API 会话的 review 字段设为 auto_review 后，由 OpenAI 托管的审查模型根据对话上下文判断动作的风险和是否符合用户意图，自动批准或拒绝需要审批的请求（提权或危险的 shell 命令、文件改动、更大的文件系统或网络权限、规则要求确认的 MCP 调用），对根轮次和它创建的子 agent 都生效，相当于 Codex 的 Approve for me。默认是 none；审查用的 token 另外计费；不改变环境的出网限制，复用已有托管环境时不支持。想让 agent 少打断用户、同时保留风险把关的可以试。",
+    "tags": [
+      "agent",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "OpenAI API changelog",
+    "type": "release",
+    "title": "GPT-6 Rosalind for life sciences research",
+    "url": "https://developers.openai.com/api/docs/pricing#life-sciences-models",
+    "summary_zh": "OpenAI 发布面向生命科学研究的 GPT-6 Rosalind（生物推理加科学工具调用），只对通过 Rosalind Research 可信访问计划审批的机构开放，供内部研究使用。",
+    "tags": [
+      "model-release"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Building AIE CODE: The top Coding Agent Conference",
+    "url": "https://latent.space/p/ainews-building-aie-code-the-top-coding-agent-conference/",
+    "summary_zh": "swyx 介绍 AI Engineer CODE 大会的幕后与今年三个主题：在不制造 slop 的前提下扩大规模（Scaling without Slop）、System One 模型（「聪明软件」，与越来越大的 coding agent 群走相反方向），以及越来越有野心的重写项目。属于行业动态，了解即可。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "DevFest is back!",
+    "url": "https://developers.googleblog.com/devfest-is-back/",
+    "summary_zh": "DevFest 2026 从 10 月 1 日持续到 12 月 31 日，全球 800 多场活动、近百万开发者，以 agentic AI 为中心，主题是「Build, Secure, Scale」。活动通知。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": false
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "The Pulse: Anthropic kills the coding interview",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-anthropic-kills-the-coding",
+    "summary_zh": "付费的 The Pulse，只读到简介：AI 让 Leetcode 式面试失去意义，Anthropic 已把它从面试流程中删除；本期还有 incident.io 的 AI 开销细节、微软给工程师的离职方案等。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-30",
+    "added": "2026-11-16",
+    "source": "Interconnects",
+    "type": "blog",
+    "title": "Was I wrong about open models & cyber risks?",
+    "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
+    "summary_zh": "在「黑色十月」（PHP2Shell、GitLab 长期漏洞等一连串严重漏洞披露）之后，Nathan Lambert 回应外界对他「4 月开放 Mythos 权重也没事」这一观点的批评，讨论 AI 带来的网络安全风险正在怎样兑现，以及开放权重模型在其中的角色。属于安全政策讨论。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "safety"
   },
   {
     "date": "2026-10-29",
@@ -2262,6 +5499,105 @@
     "category": "tools-mcp"
   },
   {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "Cursor",
+    "type": "blog",
+    "title": "Security notice — malicious version of Anthropic.claude-code (2.1.312 and 2.1.313) identified in the Cursor VS Code Extension Marketplace",
+    "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+    "summary_zh": "10 月 29 日约 11 小时内，Cursor 扩展市场上出现被恶意篡改的 Claude Code 扩展 2.1.312 和 2.1.313（Windows 和 macOS，并非 Anthropic 发布）：它收集主机和用户信息、环境变量名、Git 邮箱和公网 IP，尝试把攻击者的 SSH 公钥写进 authorized_keys、开反向 SSH 隧道，并用 LaunchAgent 或计划任务持久化。文中给出排查和清理步骤。用编辑器插件跑 coding agent 的要锁定扩展来源。",
+    "tags": [
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "safety"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "[AINews] Gemini 4 Carbon tops leaderboards, launches for cyber defenders",
+    "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+    "summary_zh": "AINews 汇总 Gemini 4 Carbon 首发：先通过 Fairwind 计划开放给网络安全防御者，1M 上下文，在 Artificial Analysis 智能指数上以 59 分登顶。独立数据显示它在 Coding Agent Index 上（Antigravity CLI）得 59 分，低于 Claude Code + Opus 5.5 的 62 分，每个指数任务成本 $7.76，介于 GPT-6 Astra（$6.25）和 Opus 5.5（$10.04）之间；Google 还称 Terminal-Bench 4.0 上的作弊成功率降到 0。",
+    "tags": [
+      "model-release",
+      "eval"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "Latent Space",
+    "type": "blog",
+    "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+    "url": "https://latent.space/p/elorian/",
+    "summary_zh": "Elorian 发布首个视觉推理模型 Glimpse，并与 Mercor 合作推出 DecoyCount benchmark，检验模型是真的在数物体，还是靠视觉捷径和替代启发式。论文里前沿模型准确率都不到 50%，最高的 GPT-6 Astra 为 43.17%，Claude Fable 5.1 为 25.22%；Elorian 自称 Glimpse 在内部测试中得 50.48%，并表示评测图片没有进入训练数据。做计数、清点类视觉应用时要注意这类失败。",
+    "tags": [
+      "eval",
+      "multimodal"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Build Generative UI Apps with A2UI & CopilotKit Agents",
+    "url": "https://developers.googleblog.com/build-generative-ui-apps-with-a2ui-copilotkit-agents/",
+    "summary_zh": "介绍用 A2UI（Google 的框架无关生成式 UI 开放标准，agent 把界面描述成数据、由应用用已有组件绘制）加 CopilotKit（对接 LangChain、AWS Strands、Google ADK 等 agent 框架，提供聊天界面、运行时和 React、Angular、Vue、Slack 渲染器）构建会返回可交互界面而不是大段文字的 agent 应用。",
+    "tags": [
+      "agent",
+      "tool-use"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "Armin Ronacher",
+    "type": "blog",
+    "title": "Custom Voices With Qwen3-TTS",
+    "url": "https://lucumr.pocoo.org/2026/10/29/qwen3-custom-voices/",
+    "summary_zh": "Armin 和孩子做地牢游戏需要旁白配音，选了支持声音克隆的 Qwen3-TTS，整理出它三类模型的用法和限制：Base（含 0.6B）用几秒参考音频克隆声音，CustomVoice 自带九个说话人并可用指令控制语气，VoiceDesign 按文字描述生成声音；克隆出来的声音官方没有办法再用指令控制语气，文中分享了他们摸索出的变通做法和示例。做有个性的 TTS 配音时可以参考。",
+    "tags": [
+      "multimodal"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-29",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "Software engineering at Google & CS education with Titus Winters",
+    "url": "https://newsletter.pragmaticengineer.com/p/software-engineering-at-google-and",
+    "summary_zh": "播客嘉宾是《Software Engineering at Google》主要作者 Titus Winters：聊 Google 2010 年清理 2.5 亿行 C++ 的大重构、为何强制测试、他参与修订 ACM/IEEE 本科计算机课程指南，以及为什么传统生产力指标看不到 AI 的一些最大收益、计算机教育要怎么改、新人工程师如何脱颖而出。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
     "date": "2026-10-28",
     "added": "2026-10-29",
     "source": "Anthropic News",
@@ -2569,6 +5905,137 @@
     "relevance": 2,
     "full_text_read": true,
     "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Loop Engineering with LangChain Deep Agents",
+    "url": "https://www.deeplearning.ai/courses/loop-engineering-with-langchain-deep-agents",
+    "summary_zh": "LangChain 的 Sydney Runkle 等主讲的短课（中级，1 小时 16 分，8 节视频）：给出 agent 外围四种循环的框架——agent 循环（调工具、看结果、决定下一步）、按明确标准检查输出并反馈重试的验证循环、由事件触发运行的事件驱动循环、跨多次运行改进 agent 的爬坡循环，并用一个分析需求文档的评审 agent 逐个实现。",
+    "tags": [
+      "agent",
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Cognition",
+    "type": "blog",
+    "title": "Corridor is Joining Cognition",
+    "url": "https://cognition.com/blog/corridor-joining-cognition",
+    "summary_zh": "安全公司 Corridor 加入 Cognition，负责 Devin Security。公司新闻。",
+    "tags": [
+      "business"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Introducing Virtual Models on AI Gateway",
+    "url": "https://vercel.com/blog/ai-gateway-virtual-models",
+    "summary_zh": "AI Gateway 推出 Virtual Models：给某个 agent 任务分配一个虚拟模型 ID，代码里只写这个 ID，背后实际用哪个模型、回退和优先级、是否强制零数据保留都在网关里集中配置，换模型不用改代码或重新部署。新模型平均每周上线约 10 个，频繁换模型的团队可以用这种间接层。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "Introducing Vercel CI",
+    "url": "https://vercel.com/blog/introducing-vercel-ci",
+    "summary_zh": "Vercel CI（beta）借助 Turborepo 的任务依赖图，只运行受本次改动影响的检查，并按需分配算力；起因是 coding agent 开的 PR 越来越多、都在等 CI。Vercel 自己从 push 到 CI 通过快了 2 到 6 倍。",
+    "tags": [
+      "infra"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Hill-Climbing Agent Quality with Agents CLI Evaluation",
+    "url": "https://developers.googleblog.com/hill-climbing-agent-quality-with-agents-cli-evaluation/",
+    "summary_zh": "完整演示用 Agents CLI 的 eval 命令持续改进 agent：eval generate 让 agent 跑测试集，eval grade 给轨迹打分（示例是用 Gemini 做评委、按准确、相关、清晰 1 到 5 分的自定义指标），eval compare 对比两次运行，eval analyze 把失败聚类成主题，eval optimize 自动爬山优化提示词；文中从基线到发现回归、切换模型后端，再到定时运行和告警一步步走。想给 agent 建一个小而快、每次改动都能跑的 eval 循环，可以照着做。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Smaller apps and faster GPU inference with LiteRT in Google Play services",
+    "url": "https://developers.googleblog.com/smaller-apps-and-faster-gpu-inference-with-litert-in-google-play-services/",
+    "summary_zh": "Google Play 服务里的 LiteRT 现在提供基于 ML Drift 的 GPU 推理，速度约快 1.4 倍，并推出新的 CompiledModel API；改用系统提供的运行时而不是打包二进制，App 体积约减少 8MB，还能自动获得运行时更新。面向安卓端侧模型部署。",
+    "tags": [
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "infra"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How Uber Built A Gateway For AI Agents To Access Tools",
+    "url": "https://blog.bytebytego.com/p/how-uber-built-a-gateway-for-ai-agents",
+    "summary_zh": "企业里工具越来越多，Uber 做了 MCP Gateway：一个共享平台，让不同的 AI agent 发现有哪些工具可用并调用它们（比如查日志、取事故详情、看部署状态），工具背后多半是现成的内部 API。文章讲了 MCP 在 Uber 的角色、网关的设计、怎样自动发现可用工具、调用如何经过网关，以及权限和访问控制。在公司内部推广 MCP 时可以参考这种集中式网关。",
+    "tags": [
+      "MCP",
+      "tool-use",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-28",
+    "added": "2026-11-16",
+    "source": "Interconnects",
+    "type": "blog",
+    "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "summary_zh": "以 Artificial Analysis 智能指数 v5 的更新为由头，谈独立评测的难处：要把模型压成一个既符合体感、社区共识又能管用几个月的分数，而任何聚合方式都有取舍；在今天的资金规模下，独立评测几乎在决定一个万亿美元市场的输赢，也反过来影响模型的发展方向。用榜单选模型时值得知道这些局限。",
+    "tags": [
+      "eval"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "evals"
   },
   {
     "date": "2026-10-27",
@@ -2906,6 +6373,124 @@
     "category": "models"
   },
   {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "Cognition",
+    "type": "blog",
+    "title": "FrontierCode 2.0",
+    "url": "https://cognition.com/blog/frontier-code-2.0",
+    "summary_zh": "Cognition 新一代编码基准 FrontierCode 2.0：任务来自更多仓库和类别（新增安全补丁、性能优化），由开源维护者按「能不能合并」的细则打分，没过阻断项直接记 0 分；参考解比 1.1 版平均多改 67% 的文件、89% 的代码行，代码库也大 25%。成本—得分的帕累托前沿上，高端是 Opus 5.5，低价端是 Luna、Haiku 和 Sol，GPT-6.1 Sol 性价比突出，开源模型差距明显。看 coding agent 的真实可合并率可以参考这个榜。",
+    "tags": [
+      "eval",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "evals"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "Vercel",
+    "type": "blog",
+    "title": "ElevenLabs on AI Gateway",
+    "url": "https://vercel.com/blog/elevenlabs-on-ai-gateway",
+    "summary_zh": "AI Gateway 接入 14 个 ElevenLabs 音频模型：语音转文字、流式文字转语音、实时语音 agent、音乐、音效和多角色对话，用同一个网关 API key 调用。",
+    "tags": [
+      "multimodal"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "api-sdk"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Building Conversational Commerce with Multi-Agent Swarms on GCP: A Working Prototype",
+    "url": "https://developers.googleblog.com/building-conversational-commerce-with-multi-agent-swarms-on-gcp-a-working-prototype/",
+    "summary_zh": "把之前提出的对话式电商三层架构（接入层、记忆层、认知层）做成可运行原型 HappyDelivery：用 LangGraph、Gemini、FastAPI 和 Google Cloud 实现，接入层用 GKE/Cloud Run 上的全渠道 webhook 网关加 Pub/Sub 解决消息超时，讲解状态机、确定性的金额计算工具和自动化验证套件。想把多 agent 方案落到消息渠道上的可以对照代码看。",
+    "tags": [
+      "multi-agent",
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Fast, reliable A2UI, with swappable inference formats",
+    "url": "https://developers.googleblog.com/fast-reliable-a2ui/",
+    "summary_zh": "A2UI（agent 生成界面的协议）支持可替换的推理格式：agent 不再直接生成受复杂 schema 约束的 JSON 树，而是生成更紧凑的 A2UI Express，再由 Agent SDK 里的确定性代码编译成标准 A2UI JSON，token 最多少 3 倍、延迟最多降 3 倍；用 Jev 这类 decision model 做布局选择，延迟最多可降 80 倍，也可以换成自定义 DSL 和编译器。",
+    "tags": [
+      "agent",
+      "structured-output"
+    ],
+    "difficulty": "进阶",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "Decoding AI",
+    "type": "blog",
+    "title": "4 Key Decisions to Solidify Your Harness",
+    "url": "https://www.decodingai.com/p/4-key-decisions-to-solidify-your",
+    "summary_zh": "IBM 的 Tejas Kumar 以自己演示用的 Hacker News 点赞 agent 里出现的两个 bug 为例，讲 agent 循环跑通之后 harness 要定下的四件事：任务是否完成由 harness 从 agent 写不到的地方读取前后状态来判断，模型说「完成了」只是一个声明；密钥、脆弱的确定性步骤和不可逆操作留在 harness 里，并通过解析 URL 而不是搜索字符串限定允许去哪；护栏分成结束整次运行的预算和只拒绝单个动作的策略；排查失败时先找到第一个出错的步骤并重放，上下文错了是 harness 的 bug，上下文对但时好时坏才是去测模型。每步都有带测试的代码分支，自己写 harness 时可以直接对照。",
+    "tags": [
+      "agent",
+      "safety"
+    ],
+    "difficulty": "进阶",
+    "relevance": 4,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "How Apple Fits an LLM on Your iPhone",
+    "url": "https://blog.bytebytego.com/p/how-apple-fits-an-llm-on-your-iphone",
+    "summary_zh": "ByteByteGo 讲解苹果如何在 iPhone 上运行约 30 亿参数的端侧模型而不明显影响设备，从参数是什么讲起，梳理端侧部署要解决的内存和计算问题以及相应的压缩与推理优化思路。偏科普，适合了解端侧 LLM 的约束。",
+    "tags": [
+      "inference"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": true,
+    "category": "infra"
+  },
+  {
+    "date": "2026-10-27",
+    "added": "2026-11-16",
+    "source": "The Pragmatic Engineer",
+    "type": "blog",
+    "title": "AI SRE: what is it, how could it change on-call – and does it work?",
+    "url": "https://newsletter.pragmaticengineer.com/p/ai-sre",
+    "summary_zh": "付费深度文章，只读到简介：「AI SRE」在厂商演示的推动下成了热词，文章探讨它是什么、会怎样改变值班，以及是否真有 AI SRE 在工程师睡觉时值过班。",
+    "tags": [
+      "agent",
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
+    "full_text_read": false,
+    "category": "career"
+  },
+  {
     "date": "2026-10-26",
     "added": "2026-10-29",
     "source": "Anthropic News",
@@ -3086,6 +6671,56 @@
     "category": "models"
   },
   {
+    "date": "2026-10-26",
+    "added": "2026-11-16",
+    "source": "Cognition",
+    "type": "blog",
+    "title": "Devin Security: Find and fix your most dangerous vulnerabilities",
+    "url": "https://cognition.com/blog/devin-security",
+    "summary_zh": "Devin Security 升级：用 Claude Mythos 等前沿网络安全模型做深度扫描，按和客户共建的威胁模型评估可利用性和危害、把紧急风险和噪音分开，再在真实 VM 上并行编写、验证并端到端测试修复；另拿出数亿美元 Devin 额度提供免费扫描和修复。产品发布。",
+    "tags": [
+      "safety",
+      "agent"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": true,
+    "category": "applied"
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-11-16",
+    "source": "Google Developers Blog",
+    "type": "blog",
+    "title": "Preview, edit, and collaborate on markdown (.md) files natively in Google Docs and Drive",
+    "url": "https://developers.googleblog.com/preview-edit-and-collaborate-on-markdown-md-files-natively-in-google-docs-and-drive/",
+    "summary_zh": "Google Workspace 原生支持 Markdown 文件，开发者和 AI agent 可以直接在 Google Docs 里协作编辑文档，不用手动转换格式，并保留原文件格式以便配合 Git 仓库和开发工具使用。",
+    "tags": [
+      "tool-use"
+    ],
+    "difficulty": "入门",
+    "relevance": 1,
+    "full_text_read": false,
+    "category": "tools-mcp"
+  },
+  {
+    "date": "2026-10-26",
+    "added": "2026-11-16",
+    "source": "ByteByteGo",
+    "type": "blog",
+    "title": "A Deep Dive into Salesforce’s Agent Tech Stack",
+    "url": "https://blog.bytebytego.com/p/a-deep-dive-into-salesforces-agent",
+    "summary_zh": "ByteByteGo 采访 Salesforce CTO 等人拆解 Agentforce 的技术栈：第一版把所有规则塞进一个大提示词，规则超过大约 8 条模型就会开始丢指令，招聘面试、患者数据这类场景无法接受；新版改成把确定性代码和推理模型结合的多层系统，另有做身份解析、把多系统记录合并成统一档案的数据层、上下文引擎，给 agent 独立权限的 Agent Identity，以及让 Slack、Claude 里的 agent 访问 Salesforce 数据和操作的 AIforce 与 Headless Toolkit。",
+    "tags": [
+      "agent",
+      "case-study"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "agents"
+  },
+  {
     "date": "2026-10-25",
     "added": "2026-10-29",
     "source": "HF Daily Papers",
@@ -3119,6 +6754,40 @@
     ],
     "difficulty": "进阶",
     "relevance": 5,
+    "full_text_read": true,
+    "category": "models"
+  },
+  {
+    "date": "2026-10-25",
+    "added": "2026-11-16",
+    "source": "DAIR.AI",
+    "type": "blog",
+    "title": "🥇Top AI Papers of the Week",
+    "url": "https://nlp.elvissaravia.com/p/top-ai-papers-of-the-week-a74",
+    "summary_zh": "DAIR.AI 每周论文精选（10 月 25 日）：Object-Oriented Harness（按任务换不同的执行策略而不是一个全局 harness）、四个 Gemini 4 Argon agent 在 Minecraft 里打败末影龙、面向 agent 的 KV cache 工程、用 Jev 做 harness 里多选决策的 JevAgentHarness、会进化的 agent 界面、持续学习、Terminal-RSI，以及比较全上下文、BM25、Mem0、Zep 四种记忆方法的 MemoryTax 等 10 篇。适合用来快速找本周值得细读的 agent 论文。",
+    "tags": [
+      "agent",
+      "memory"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "career"
+  },
+  {
+    "date": "2026-10-25",
+    "added": "2026-11-16",
+    "source": "Interconnects",
+    "type": "blog",
+    "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "summary_zh": "Nathan Lambert 和 Florian 的播客：Kimi K3.1 Pro 的 benchmark 很强、反响却好坏参半的原因，开放权重模型与网络安全风险，网络安全专家和 AI 专家对近期事件看法的差异，以及 Anthropic 不招初级员工等话题。了解开放模型动态即可。",
+    "tags": [
+      "model-release",
+      "safety"
+    ],
+    "difficulty": "入门",
+    "relevance": 2,
     "full_text_read": true,
     "category": "models"
   },
@@ -3747,6 +7416,24 @@
     "full_text_read": false
   },
   {
+    "date": "2026-10-20",
+    "added": "2026-11-16",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Context Engineering",
+    "url": "https://www.deeplearning.ai/courses/context-engineering",
+    "summary_zh": "Chroma CEO Jeff Huber 主讲、Drew Breunig 客座的课程（中级，18 小时 56 分，37 节视频）：讲 agent 的上下文由什么组成、怎么失效、为什么 context rot 让长上下文不可靠，用 harness 的 hooks 和 trace 定位问题；agent 记忆部分讲怎么为事实、规则和产物建立跨会话的记录，以及每条新记忆该新增、更新还是跳过。适合想系统学上下文工程的人。",
+    "tags": [
+      "context-engineering",
+      "memory",
+      "agent"
+    ],
+    "difficulty": "进阶",
+    "relevance": 3,
+    "full_text_read": true,
+    "category": "context-rag"
+  },
+  {
     "date": "2026-10-16",
     "added": "2026-11-02",
     "source": "Claude Cookbook",
@@ -3780,5 +7467,20 @@
     "relevance": 4,
     "full_text_read": true,
     "category": "evals"
+  },
+  {
+    "date": "2026-09-29",
+    "added": "2026-11-16",
+    "source": "DeepLearning.AI Short Courses",
+    "type": "docs",
+    "title": "Data Engineering",
+    "url": "https://www.deeplearning.ai/specializations/data-engineering",
+    "summary_zh": "数据工程专项课程：数据的采集、转换、存储和服务。与 LLM 应用无直接关系。",
+    "tags": [
+      "career"
+    ],
+    "difficulty": "入门",
+    "relevance": 0,
+    "full_text_read": true
   }
 ]
